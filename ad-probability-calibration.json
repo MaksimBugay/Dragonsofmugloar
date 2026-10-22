@@ -1,0 +1,284 @@
+{
+  "generatedAt": "2026-10-21T05:02:39.036454+00:00",
+  "source": "ad-probability-observations.jsonl",
+  "attempts": 160,
+  "games": 3,
+  "successes": 77,
+  "trapFailures": 1,
+  "level": 0,
+  "uniqueAdIds": 160,
+  "requestPauseMilliseconds": 600,
+  "sampling": "Choose randomly among available unattempted ads with the lowest sample count for their label. Heal when affordable; never upgrade. No repeated ad IDs. Fixed RNG seed 20261021.",
+  "method": "Include trap failures. Apply weighted decreasing isotonic regression (PAVA) to empirical binomial counts in enum label order, round to nearest integer, and clamp fitted estimates to 1-99 to avoid asserting certainty from finite samples. Retain original values for unobserved labels. UNKNOWN is a fallback.",
+  "confidenceLimit": "Wilson intervals describe raw label outcomes only and are approximate; observations share game state, label availability varies over turns, and fitted/pooled estimates do not have these same intervals.",
+  "statistics": {
+    "SURE_THING": {
+      "label": "Sure thing",
+      "attempts": 12,
+      "successes": 12,
+      "failures": 0,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 100.0,
+      "nonTrapSuccessPercentage": 100.0,
+      "rawWilson95PercentInterval": [
+        75.8,
+        100
+      ],
+      "previousPercentage": 100,
+      "calibratedPercentage": 99,
+      "status": "estimated"
+    },
+    "PIECE_OF_CAKE": {
+      "label": "Piece of cake",
+      "attempts": 13,
+      "successes": 12,
+      "failures": 1,
+      "trapFailures": 1,
+      "rawSuccessPercentage": 92.31,
+      "nonTrapSuccessPercentage": 100.0,
+      "rawWilson95PercentInterval": [
+        66.7,
+        98.6
+      ],
+      "previousPercentage": 95,
+      "calibratedPercentage": 92,
+      "status": "estimated"
+    },
+    "WALK_IN_THE_PARK": {
+      "label": "Walk in the park",
+      "attempts": 14,
+      "successes": 12,
+      "failures": 2,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 85.71,
+      "nonTrapSuccessPercentage": 85.71,
+      "rawWilson95PercentInterval": [
+        60.1,
+        96.0
+      ],
+      "previousPercentage": 90,
+      "calibratedPercentage": 86,
+      "status": "estimated"
+    },
+    "QUITE_LIKELY": {
+      "label": "Quite likely",
+      "attempts": 14,
+      "successes": 12,
+      "failures": 2,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 85.71,
+      "nonTrapSuccessPercentage": 85.71,
+      "rawWilson95PercentInterval": [
+        60.1,
+        96.0
+      ],
+      "previousPercentage": 80,
+      "calibratedPercentage": 86,
+      "status": "estimated"
+    },
+    "HMMM": {
+      "label": "Hmmm....",
+      "attempts": 14,
+      "successes": 7,
+      "failures": 7,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 50.0,
+      "nonTrapSuccessPercentage": 50.0,
+      "rawWilson95PercentInterval": [
+        26.8,
+        73.2
+      ],
+      "previousPercentage": 60,
+      "calibratedPercentage": 50,
+      "status": "estimated"
+    },
+    "GAMBLE": {
+      "label": "Gamble",
+      "attempts": 13,
+      "successes": 6,
+      "failures": 7,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 46.15,
+      "nonTrapSuccessPercentage": 46.15,
+      "rawWilson95PercentInterval": [
+        23.2,
+        70.9
+      ],
+      "previousPercentage": 50,
+      "calibratedPercentage": 46,
+      "status": "estimated"
+    },
+    "RISKY": {
+      "label": "Risky",
+      "attempts": 15,
+      "successes": 6,
+      "failures": 9,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 40.0,
+      "nonTrapSuccessPercentage": 40.0,
+      "rawWilson95PercentInterval": [
+        19.8,
+        64.3
+      ],
+      "previousPercentage": 40,
+      "calibratedPercentage": 40,
+      "status": "estimated"
+    },
+    "PLAYING_WITH_FIRE": {
+      "label": "Playing with fire",
+      "attempts": 14,
+      "successes": 5,
+      "failures": 9,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 35.71,
+      "nonTrapSuccessPercentage": 35.71,
+      "rawWilson95PercentInterval": [
+        16.3,
+        61.2
+      ],
+      "previousPercentage": 30,
+      "calibratedPercentage": 36,
+      "status": "estimated"
+    },
+    "RATHER_DETRIMENTAL": {
+      "label": "Rather detrimental",
+      "attempts": 14,
+      "successes": 3,
+      "failures": 11,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 21.43,
+      "nonTrapSuccessPercentage": 21.43,
+      "rawWilson95PercentInterval": [
+        7.6,
+        47.6
+      ],
+      "previousPercentage": 20,
+      "calibratedPercentage": 21,
+      "status": "estimated"
+    },
+    "SUICIDE_MISSION": {
+      "label": "Suicide mission",
+      "attempts": 18,
+      "successes": 2,
+      "failures": 16,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 11.11,
+      "nonTrapSuccessPercentage": 11.11,
+      "rawWilson95PercentInterval": [
+        3.1,
+        32.8
+      ],
+      "previousPercentage": 10,
+      "calibratedPercentage": 11,
+      "status": "estimated"
+    },
+    "IMPOSSIBLE": {
+      "label": "Impossible",
+      "attempts": 19,
+      "successes": 0,
+      "failures": 19,
+      "trapFailures": 0,
+      "rawSuccessPercentage": 0.0,
+      "nonTrapSuccessPercentage": 0.0,
+      "rawWilson95PercentInterval": [
+        0,
+        16.8
+      ],
+      "previousPercentage": 1,
+      "calibratedPercentage": 1,
+      "status": "estimated"
+    },
+    "UNKNOWN": {
+      "label": "Unknown",
+      "attempts": 0,
+      "successes": 0,
+      "failures": 0,
+      "trapFailures": 0,
+      "rawSuccessPercentage": null,
+      "nonTrapSuccessPercentage": null,
+      "rawWilson95PercentInterval": null,
+      "previousPercentage": 50,
+      "calibratedPercentage": 50,
+      "status": "retained; not observed"
+    }
+  },
+  "pooledBlocks": [
+    {
+      "labels": [
+        "SURE_THING"
+      ],
+      "successWeight": 12,
+      "totalWeight": 12
+    },
+    {
+      "labels": [
+        "PIECE_OF_CAKE"
+      ],
+      "successWeight": 12,
+      "totalWeight": 13
+    },
+    {
+      "labels": [
+        "WALK_IN_THE_PARK"
+      ],
+      "successWeight": 12,
+      "totalWeight": 14
+    },
+    {
+      "labels": [
+        "QUITE_LIKELY"
+      ],
+      "successWeight": 12,
+      "totalWeight": 14
+    },
+    {
+      "labels": [
+        "HMMM"
+      ],
+      "successWeight": 7,
+      "totalWeight": 14
+    },
+    {
+      "labels": [
+        "GAMBLE"
+      ],
+      "successWeight": 6,
+      "totalWeight": 13
+    },
+    {
+      "labels": [
+        "RISKY"
+      ],
+      "successWeight": 6,
+      "totalWeight": 15
+    },
+    {
+      "labels": [
+        "PLAYING_WITH_FIRE"
+      ],
+      "successWeight": 5,
+      "totalWeight": 14
+    },
+    {
+      "labels": [
+        "RATHER_DETRIMENTAL"
+      ],
+      "successWeight": 3,
+      "totalWeight": 14
+    },
+    {
+      "labels": [
+        "SUICIDE_MISSION"
+      ],
+      "successWeight": 2,
+      "totalWeight": 18
+    },
+    {
+      "labels": [
+        "IMPOSSIBLE"
+      ],
+      "successWeight": 0,
+      "totalWeight": 19
+    }
+  ]
+}

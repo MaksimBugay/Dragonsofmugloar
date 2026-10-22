@@ -22,3 +22,16 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+/gateway-service/target/
+/gateway-commons/target/
+
+# IntelliJ IDEA local files
+/.idea/shelf/
+/.idea/workspace.xml
+# Editor-based HTTP Client requests
+/.idea/httpRequests/
+# Ignored default folder with query files
+/.idea/queries/
+# Datasource local storage ignored files
+/.idea/dataSources/
+/.idea/dataSources.local.xml

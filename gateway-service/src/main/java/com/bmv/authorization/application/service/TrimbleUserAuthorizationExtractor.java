@@ -1,0 +1,114 @@
+package com.bmv.authorization.application.service;
+
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.trimble.transportation.reference.data.management.application.service.authorization.UserAuthorizationExtractor;
+import com.trimble.transportation.reference.data.management.application.service.authorization.UserIdentityExtractor;
+import com.trimble.transportation.reference.data.management.domain.model.api.commandment.internal.query.AuthorizationQuery;
+import com.trimble.transportation.reference.data.management.domain.model.api.exception.RdmUnauthorizedException;
+import com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole;
+import com.trimble.transportation.reference.data.management.domain.model.auth.UserAuthorization;
+import com.trimble.transportation.reference.data.management.serialization.json.JsonUtility;
+import com.trimble.transportation.reference.data.management.util.StringToBytesBase64BiConverter;
+import jakarta.validation.constraints.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import reactor.core.publisher.Mono;
+
+public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtractor {
+
+  public static final String TRIMBLE_ID_CLAIM_NAME = "sub";
+  public static final String ROLES_CLAIM_NAME = "roles";
+  public static final String JWT_TOKEN_PARTS_DELIMITER = "\\.";
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(TrimbleUserAuthorizationExtractor.class);
+  private final StringToBytesBase64BiConverter stringToBytesBase64BiConverter = new StringToBytesBase64BiConverter();
+
+  @Override
+  public String extractUserIdFromToken(String jwtToken) {
+    Map<String, Object> payloadMap = extractPayloadMapFromJwtToken(jwtToken);
+
+    return extractTrimbleId(payloadMap);
+  }
+
+  @Override
+  public Mono<UserAuthorization> authorizeByToken(String token) {
+    return Mono.just(token)
+        .map(this::parseJwtToken)
+        .doOnError(
+            error -> LOGGER.debug("Failed retrieve user authorization attempt", error)
+        )
+        .onErrorMap(
+            _ -> new RdmUnauthorizedException()
+        );
+  }
+
+  private Map<String, Object> extractPayloadMapFromJwtToken(String jwtToken) {
+    if (jwtToken == null) {
+      throw new IllegalArgumentException("Invalid JWT token: token cannot be null");
+    }
+
+    String[] parts = jwtToken.split(JWT_TOKEN_PARTS_DELIMITER);
+    if (parts.length != 3) {
+      throw new IllegalArgumentException("Invalid JWT token format: Expected 3 parts but found " + parts.length);
+    }
+
+    byte[] jsonBytes = stringToBytesBase64BiConverter.restoreFromStringAsBytes(parts[1]);
+    return JsonUtility.fromJsonToMap(jsonBytes, String.class, Object.class);
+  }
+
+  private UserAuthorization parseJwtToken(String jwtToken) {
+
+    Map<String, Object> payloadMap = extractPayloadMapFromJwtToken(jwtToken);
+
+    String trimbleId = extractTrimbleId(payloadMap);
+
+    Set<RdmRole> roles = extractRoles(payloadMap);
+
+    return new UserAuthorization(trimbleId, roles, null);
+  }
+
+  private String extractTrimbleId(Map<String, Object> payloadMap) {
+    String trimbleId = (String) payloadMap.get(TRIMBLE_ID_CLAIM_NAME);
+    if (trimbleId == null) {
+      throw new IllegalArgumentException("Missing 'sub' in JWT payload");
+    }
+
+    return trimbleId;
+  }
+
+  private Set<RdmRole> extractRoles(Map<String, Object> payloadMap) {
+    return Optional.ofNullable(payloadMap.get(ROLES_CLAIM_NAME))
+        .map(claim -> JsonUtility.fromJsonToList(JsonUtility.toJson(claim), String.class))
+        .map(roleList -> roleList.stream()
+            .map(this::mapToRdmRole)
+            .filter(Objects::nonNull)
+            .collect(Collectors.toSet()))
+        .orElse(Set.of());
+  }
+
+  private RdmRole mapToRdmRole(String role) {
+    try {
+      return RdmRole.fromExternalIdentifier(role);
+    } catch (IllegalArgumentException _) {
+      return null;
+    }
+  }
+
+  public static UserIdentityExtractor createUserIdentityExtractor() {
+    TrimbleUserAuthorizationExtractor trimbleUserAuthorizationExtractor = new TrimbleUserAuthorizationExtractor();
+
+    //noinspection Convert2Lambda
+    return new UserIdentityExtractor() {
+
+      @Override
+      public String extractUserId(@NotNull AuthorizationQuery commandment) {
+        return trimbleUserAuthorizationExtractor.extractUserId(commandment);
+      }
+    };
+  }
+}

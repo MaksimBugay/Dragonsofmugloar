@@ -1,0 +1,785 @@
+{"adId":"GNwF016P","message":"Create an advertisement campaign for Somarliðr Rupertson to promote their pan based business","reward":20,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"qOGbBQlU","message":"Create an advertisement campaign for Amal Hallgrímsson to promote their turnips based business","reward":39,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"7si3VDfd","message":"Create an advertisement campaign for Aatto Bateson to promote their squirrel based business","reward":15,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"2J7nkmhA","message":"Help Bláthnat Blackbourne to write their biographical novel about their difficulties with a deranged chicken","reward":24,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"Ch5DlvRB","message":"Escort Ferdynand Donalds to savannah in Ridgewell where they can meet with their long lost water","reward":71,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"bhwKm2n0","message":"Create an advertisement campaign for Isidore Davidson to promote their wagon based business","reward":20,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"nMSpz5ll","message":"Steal squirrel delivery to Lalla Danielson and share some of the profits with the people.","reward":60,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"4BVRjhJ4","message":"Create an advertisement campaign for Betje Yohe to promote their weed based business","reward":37,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"g1ZftTY9","message":"Help Raakel Rollins to write their biographical novel about their difficulties with a deranged pot","reward":30,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"JQfm6IMP","message":"Help Astraea Lesassier to sell an unordinary house on the local market","reward":22,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"bkHEKerG","message":"Help Veasna Summers to reach an agreement with Eoghan Salvage on the matters of disputed pot","reward":12,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"sCrKNzUD","message":"Help Sanjit Longstaff to transport a magic weed to steppe in Redville","reward":16,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"fBaVXzMP","message":"Help Feri̇de Snelling to clean their beer mug","reward":9,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"xAP9q31R","message":"Steal potatoes delivery to Yonina Evanson and share some of the profits with the people.","reward":46,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"qSlkFEcS","message":"Create an advertisement campaign for Clothildis Pemberton to promote their clothes based business","reward":17,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"I1nfTgU0","message":"Help Auberon Freyjasson to write their biographical novel about their difficulties with a deranged cat","reward":31,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"C5njMmE5","message":"Help Isabelle Breckinridge to transport a magic turnips to pasture in Newdeen","reward":8,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"DttyOsUs","message":"Steal squirrel delivery to Jeremiah Hameldon and share some of the profits with the people.","reward":62,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"eTDYn9FW","message":"Help Klaudio Simpson to reach an agreement with Cristi Sigurðdóttir on the matters of disputed beer mug","reward":3,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"mceeZpzj","message":"Help Jadran Shackleford to transport a magic pan to savannah in Greycrest","reward":4,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"s9S7gmPR","message":"Steal weed delivery to Demeter Spalding and share some of the profits with the people.","reward":47,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"bAK2SHYH","message":"Help Madlenka Kevinson to sell an unordinary pot on the local market","reward":29,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"kAhC7htQ","message":"Escort Anastasius Scrivens to grassland in Lowebane where they can meet with their long lost potatoes","reward":49,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"vbuEa1sd","message":"Create an advertisement campaign for Sieuwerd Hartell to promote their cat based business","reward":37,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"xLRsPBgY","message":"Help Martta Holly to reach an agreement with Ruža Oliverson on the matters of disputed water","reward":6,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"zUVxgCLR","message":"Create an advertisement campaign for Ludmilla Terrell to promote their cat based business","reward":24,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"AADoUo9R","message":"Escort Bertie Lynwood to peninsula in Darkgannon where they can meet with their long lost pan","reward":65,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"nHzRTYjp","message":"Steal sheep delivery to Rubab Dickson and share some of the profits with the people.","reward":57,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"i283LNAm","message":"Create an advertisement campaign for Henricus Osbourne to promote their beer mug based business","reward":43,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"3WvayY8D","message":"Rescue Amelie Emor from thrift shoppe in Redpine where they are attacked by angry clothes","reward":25,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"CefcVgPS","message":"Create an advertisement campaign for Lyuben Thorley to promote their bucket based business","reward":31,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"7SvjfFE9","message":"Create an advertisement campaign for Tisha Painter to promote their house based business","reward":50,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"Hx2EcB70","message":"Help Tejal Guðmundsson to sell an unordinary squirrel on the local market","reward":35,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"XDgg3NcY","message":"Create an advertisement campaign for Aníbal Stidolph to promote their chariot based business","reward":28,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"hocP7wtC","message":"Escort Óengus Norwood to field in Eastdale where they can meet with their long lost squirrel","reward":90,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"gqrrq6ct","message":"Steal pot delivery to Jarkko Matthewson and share some of the profits with the people.","reward":66,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Wa8o9NYh","message":"Create an advertisement campaign for Galya Edgell to promote their weed based business","reward":46,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"KQN4tuk1","message":"Create an advertisement campaign for Berengaria D'airelle to promote their wagon based business","reward":48,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"0MW8Jie4","message":"Create an advertisement campaign for Epifanio Raynerson to promote their turnips based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Yq4EDMy8","message":"Steal potatoes delivery to Tekoa Timberlake and share some of the profits with the people.","reward":64,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"QPHiA6Ub","message":"Steal cat from Mireia Gregory","reward":94,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"I7STGejh","message":"Investigate Soso Quincey and find out their relation to the magic sheep.","reward":168,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"zYlU7uKl","message":"Steal super awesome diamond squirrel from Renata Goody","reward":235,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"oJvIoi8v","message":"Steal super awesome diamond sheep from Irinushka Danniell","reward":253,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"fIDoxdAP","message":"Investigate Hyman St john and find out their relation to the magic potatoes.","reward":178,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"ei71k8O8","message":"Steal super awesome diamond wagon from Mojgan Abrahamson","reward":238,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"C3JcpcAt","message":"Escort Penny Bennett to savannah in Masonhill where they can meet with their long lost beer mug","reward":66,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"5eOVgxuk","message":"Escort Rozálie Paternoster to grassland in Fernpool where they can meet with their long lost pot","reward":74,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"EDKBH003","message":"Infiltrate The Copper Reapers and recover their secrets.","reward":198,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"zimgxRIQ","message":"Steal beer mug from Kudret Josephson","reward":129,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"EzPGa4pJ","message":"Help Grosvenor Eymer to reach an agreement with Pompiliu Michaelson on the matters of disputed dog","reward":8,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"xFMPNuc2","message":"Steal pan delivery to Braelyn Gylfadóttir and share some of the profits with the people.","reward":57,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"wRA8vX57","message":"Create an advertisement campaign for Jadran Traviss to promote their squirrel based business","reward":29,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"xNGXQcGj","message":"Create an advertisement campaign for Tõnis Quickley to promote their water based business","reward":38,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"pGv3XmMZ","message":"Create an advertisement campaign for Lillian Courtenay to promote their bucket based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"X5JNLjfr","message":"Help Cyrillus Vincent to reach an agreement with Marcio Rogerson on the matters of disputed horse","reward":17,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"OVdiXWnI","message":"Help Conrad Arrington to fix their water","reward":5,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"4OInwuvW","message":"Help Mal'akhi Samuelson to fix their chariot","reward":5,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"g9I1kYWg","message":"Create an advertisement campaign for Adalbern Robertson to promote their weed based business","reward":29,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"2qxjTDCZ","message":"Help Samuli Vilhjálmsdóttir to transport a magic pan to savannah in Millerdean","reward":15,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"wtckXLzT","message":"Help Primo Arterbury to fix their water","reward":6,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"dLq9hzIb","message":"Help Andor Ellison to sell an unordinary sheep on the local market","reward":15,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"4RlIifVj","message":"Help Heng Gabrielson to write their biographical novel about their difficulties with a deranged chariot","reward":32,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"017FNklm","message":"Help Deonne Brownlow to sell an unordinary cat on the local market","reward":16,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"LyOwSfiF","message":"Create an advertisement campaign for Deemer Soule to promote their chicken based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"n0coDr6z","message":"Help Zaïre Butcher to reach an agreement with Inderjit Strange on the matters of disputed turnips","reward":19,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"UU7HE5MR","message":"Steal water delivery to Finnguala Midgley and share some of the profits with the people.","reward":68,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"2rPJY0Cw","message":"Help Tayler Scrivener to write their biographical novel about their difficulties with a deranged house","reward":28,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"R0qvVZJd","message":"Help Altwidus Þórhallsson to reach an agreement with Patroklos Herberts on the matters of disputed turnips","reward":13,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"aVJONiDz","message":"Help Bartłomiej Sniders to transport a magic weed to village in Darktown","reward":17,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"hO9kzzdO","message":"Help Delfina Terrell to reach an agreement with Lesley Wilkinson on the matters of disputed bucket","reward":12,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"JZzyaoNM","message":"Create an advertisement campaign for Yllka Woodham to promote their beer mug based business","reward":31,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"XQUWsZMG","message":"Help Sukie Harrell to write their biographical novel about their difficulties with a deranged dog","reward":39,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"f1mEpuJZ","message":"Help Eleftherios Tirrell to transport a magic sheep to plains in Snowdrone","reward":20,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"JRkXLWkF","message":"Steal wagon delivery to Slavěna Kimball and share some of the profits with the people.","reward":60,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"R4E06usL","message":"Create an advertisement campaign for Udane Clifford to promote their pot based business","reward":25,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"uZjH1Wed","message":"Steal wagon delivery to Xochitl Wakefield and share some of the profits with the people.","reward":56,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"tjsE7R2N","message":"Help Patka Sackville to sell an unordinary squirrel on the local market","reward":29,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"bSYNj0lJ","message":"Help Pekka Soule to write their biographical novel about their difficulties with a deranged wagon","reward":40,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"98tGwSkq","message":"Help Hanke Savidge to write their biographical novel about their difficulties with a deranged chariot","reward":42,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"GFZLjn0L","message":"Create an advertisement campaign for Esen Gabrielson to promote their bucket based business","reward":39,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"k0ChHqyw","message":"Steal pot delivery to Laoghaire Franklin and share some of the profits with the people.","reward":77,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"4s1JH4vo","message":"Create an advertisement campaign for Star Richardson to promote their wagon based business","reward":33,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"ChjbEqHz","message":"Help Isma'il Donaldson to write their biographical novel about their difficulties with a deranged wagon","reward":18,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"VZAKEEju","message":"Create an advertisement campaign for Myghal Chester to promote their house based business","reward":30,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"JeGUW1Kc","message":"Create an advertisement campaign for Zeph Callow to promote their beer mug based business","reward":34,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"uimEisH7","message":"Create an advertisement campaign for Athanasios Nicolson to promote their horse based business","reward":31,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"mlliaYPm","message":"Help Akash Harland to write their biographical novel about their difficulties with a deranged wagon","reward":26,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ANbvSXEB","message":"Investigate Andrada Hibbert and find out their relation to the magic chariot.","reward":122,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"vSqsrgM0","message":"Steal weed delivery to Teuta Langley and share some of the profits with the people.","reward":66,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"4OX8r7Zd","message":"Investigate Petronius Stanton and find out their relation to the magic house.","reward":127,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"8DVwivyt","message":"Investigate Duke Sherman and find out their relation to the magic chicken.","reward":151,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"ZspJCOXa","message":"Investigate Fionnuala Cookson and find out their relation to the magic potatoes.","reward":136,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"AjFZqtKD","message":"Rescue Mariya Cookson from village in Snowdinny where they are attacked by angry chariot","reward":22,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"4eMOSFVm","message":"Help defending savannah in Towerdean from the intruders","reward":136,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"BSDpYeMR","message":"Investigate Irmtraud Madison and find out their relation to the magic horse.","reward":158,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"t1ajt8DV","message":"Help defending peninsula in Masonmere from the intruders","reward":136,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Jgmp1QFw","message":"Investigate Yumiko Blackburn and find out their relation to the magic wagon.","reward":163,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"ybHJIPV8","message":"Infiltrate The Ivory Elephants and recover their secrets.","reward":138,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"0zMsAwEa","message":"Investigate Sander Gladwyn and find out their relation to the magic water.","reward":158,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"82SJhYmJ","message":"Rescue Jonty Chandler from village in Snowfair where they are attacked by angry horse","reward":40,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"XULJqGK0","message":"Investigate Nezi̇he Orange and find out their relation to the magic pan.","reward":194,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"hmpXEVcG","message":"Investigate Taťána Terrell and find out their relation to the magic potatoes.","reward":162,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"VSx3XYwE","message":"Rescue Shakura Sigurðdóttir from peninsula in Bloodcawl where they are attacked by angry pot","reward":38,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"6eYiPHFT","message":"Infiltrate The Grizzly Gorillas and recover their secrets.","reward":162,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"vPfFst30","message":"Infiltrate The Men Of Limbo and recover their secrets.","reward":157,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"4LDd0Bta","message":"Escort Marcellus Haroldson to meadow in Ridgepool where they can meet with their long lost horse","reward":72,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"OP3K3bo7","message":"Investigate He Paulson and find out their relation to the magic chariot.","reward":194,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"3D47bGzF","message":"Infiltrate The Ebony Crosses and recover their secrets.","reward":163,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"yOZY3aHh","message":"Infiltrate The Ruby Dragontooth Riders and recover their secrets.","reward":179,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"c5IGCxB2","message":"Infiltrate The Grizzly Gorillas and recover their secrets.","reward":173,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"DFpJVmBk","message":"Kill Addie Spooner with cat and make Peony Banister from castle in Redpine to take the blame","reward":166,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"pIN0XHQ6","message":"Infiltrate The Toads and recover their secrets.","reward":196,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"N5FSUN02","message":"Help defending savannah in Thornhole from the intruders","reward":157,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"5fkqEhmz","message":"Help defending thrift shoppe in Bleakcaster from the intruders","reward":134,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"JNNCrQA6","message":"Investigate Christelle Akerman and find out their relation to the magic weed.","reward":179,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"SM9s4KX7","message":"Infiltrate The Yellow Horn Association and recover their secrets.","reward":207,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"YtEPmhGh","message":"Kill Elkanah Danniell with squirrel and make Melania Jennings from castle in Razorgannon to take the blame","reward":162,"expiresIn":2,"encrypted":2,"probability":"IMPOSSIBLE"}
+{"adId":"32S7WnMD","message":"Kill Yahweh Suggitt with beer mug and make Loviatar Alexander from dungeon in Millerdrone to take the blame","reward":155,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"R77ZC8ZF","message":"Help defending steppe in Thorndeen from the intruders","reward":157,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"rfFwgXsU","message":"Help defending thrift shoppe in Metaldeen from the intruders","reward":108,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"W0oUUTHe","message":"Infiltrate The Yellow Horn Association and recover their secrets.","reward":200,"expiresIn":2,"encrypted":1,"probability":"HMMM"}
+{"adId":"a1VLjI7Q","message":"Help defending meadow in Eastgarden from the intruders","reward":167,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"QIk1LaBm","message":"Infiltrate The Jackals and recover their secrets.","reward":209,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"mEqVOBHn","message":"Investigate Leola Webster and find out their relation to the magic weed.","reward":213,"expiresIn":3,"encrypted":1,"probability":"QUITE_LIKELY"}
+{"adId":"BE0k3hq2","message":"Investigate Ethelinda Þórhallsson and find out their relation to the magic water.","reward":210,"expiresIn":3,"encrypted":1,"probability":"IMPOSSIBLE"}
+{"adId":"ArBbZTsu","message":"Infiltrate The Ivory Elephants and recover their secrets.","reward":185,"expiresIn":2,"encrypted":1,"probability":"QUITE_LIKELY"}
+{"adId":"2chT3TNI","message":"Help defending thrift shoppe in Newmoore from the intruders","reward":153,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"yGRkaKwf","message":"Help defending plains in Lightville from the intruders","reward":158,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"HTpzG8aL","message":"Investigate Brennan Immers and find out their relation to the magic dog.","reward":206,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"za0msI7g","message":"Help defending peninsula in Dorngannon from the intruders","reward":153,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"xGAyEmIG","message":"Help defending field in Darkseed from the intruders","reward":143,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"tZaRPTCF","message":"Investigate Marzell Gilbert and find out their relation to the magic weed.","reward":201,"expiresIn":3,"encrypted":1,"probability":"HMMM"}
+{"adId":"RXqNm1eL","message":"Infiltrate The Scarlet Crocodile Tribe and recover their secrets.","reward":194,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"1Cf4dJje","message":"Investigate Bendegúz Seely and find out their relation to the magic bucket.","reward":197,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"rdF01Ocf","message":"Infiltrate The Ruby Dragontooth Riders and recover their secrets.","reward":253,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"5WkUKdEc","message":"Investigate Wattana Wembley and find out their relation to the magic squirrel.","reward":231,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"Q1xr1vIA","message":"Help defending grassland in Ravendinny from the intruders","reward":156,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"fMPRmNKr","message":"Investigate Sem Varnham and find out their relation to the magic clothes.","reward":180,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"vSzRlHS5","message":"Help defending plains in Bloodville from the intruders","reward":168,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"fbS9HSnc","message":"Help defending village in Southshore from the intruders","reward":138,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"5x5SYYdG","message":"Help defending meadow in Snowwell from the intruders","reward":128,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"EC1s3zIc","message":"Help defending peninsula in Millerfire from the intruders","reward":153,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"ijlQWIJ2","message":"Help defending thrift shoppe in Whitechester from the intruders","reward":146,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"55jo7OuH","message":"Help defending plains in Masonmoore from the intruders","reward":133,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"OXNOgK6P","message":"Help defending peninsula in Redfair from the intruders","reward":139,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"29vShqdq","message":"Help defending thrift shoppe in Ravenshaw from the intruders","reward":186,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"8oI6hU3E","message":"Help defending village in Fangcawl from the intruders","reward":158,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"kDh8TZGS","message":"Help defending steppe in Lightmere from the intruders","reward":144,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"w8PvHpOw","message":"Help defending village in Snowpool from the intruders","reward":144,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"BPyCPqYN","message":"Help defending thrift shoppe in Lightport from the intruders","reward":173,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"4mjh6vRp","message":"Help defending steppe in Lightwatch from the intruders","reward":189,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"meE4vQjB","message":"Help defending peninsula in Ridgefair from the intruders","reward":139,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"aslK6ypo","message":"Help defending grassland in Metalsheen from the intruders","reward":166,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"FyUGudNr","message":"Help defending grassland in Masonfirth from the intruders","reward":189,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"20d1vWTt","message":"Help defending meadow in Dornburg from the intruders","reward":124,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"spmPRVtV","message":"Help defending meadow in Dornwater from the intruders","reward":166,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"dUDBkU4P","message":"Help defending village in Eastspring from the intruders","reward":176,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"q6NLWd8z","message":"Help defending field in Towerfire from the intruders","reward":166,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"s0zipiHZ","message":"Help defending rocky plains in Ferntown from the intruders","reward":109,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"LeFVh5mb","message":"Help defending rocky plains in Greydean from the intruders","reward":158,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"I9AiTjkC","message":"Help defending manor in Dornshore from the intruders","reward":140,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"XoGpHaVW","message":"Help defending well in Northscale from the intruders","reward":202,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"XQJN6dtY","message":"Help defending cave in Southford from the intruders","reward":163,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"XqtkZkAj","message":"Help defending thicket in Snowbane from the intruders","reward":175,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"NqU5YIwL","message":"Help defending forest in Whitegarden from the intruders","reward":177,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"fCqtHtST","message":"Help defending woodland in Dornmere from the intruders","reward":203,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"rIC1zJQ0","message":"Help defending manor in Thorncrest from the intruders","reward":174,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"EiCKuPIJ","message":"Help defending woodland in Dovespring from the intruders","reward":198,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"qh3Jc4N4","message":"Help defending well in Fallgarden from the intruders","reward":182,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"I4N9u8SR","message":"Help defending foggy riverside in Masongannon from the intruders","reward":192,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"OeCcioyM","message":"Help defending foggy riverside in Northdrone from the intruders","reward":192,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Qbdv0uyA","message":"Help defending forest in Burnshill from the intruders","reward":151,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"L0WPkaJO","message":"Help defending rocky plains in Blackfair from the intruders","reward":204,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"cT6kANmj","message":"Help defending foggy riverside in Bleakburg from the intruders","reward":216,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"RFF178Jx","message":"Help defending church in Orrindale from the intruders","reward":174,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"V6djEkxd","message":"Help defending foggy riverside in Greyloft from the intruders","reward":165,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Fi7WTDWa","message":"Help defending woodland in Highcaster from the intruders","reward":162,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"8bhzlOlL","message":"Help defending hill in Thornwhyte from the intruders","reward":177,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"jXAIJyjv","message":"Help defending island in Millershaw from the intruders","reward":156,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"8hEowtYf","message":"Help defending hill in Eastscale from the intruders","reward":213,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"A5pp64OJ","message":"Help defending well in Strongloft from the intruders","reward":198,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"MundeqIv","message":"Help defending foggy riverside in Dovescale from the intruders","reward":189,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"HlRgPWA0","message":"Help defending thicket in Fanggannon from the intruders","reward":129,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"2OzXqOHZ","message":"Help defending thicket in Bloodcrest from the intruders","reward":236,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"32VMqkzk","message":"Help defending manor in Newdale from the intruders","reward":167,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"X8oFAiq2","message":"Help defending woodland in Bleakham from the intruders","reward":176,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"f0BPI1wp","message":"Help defending thicket in Snowheart from the intruders","reward":231,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"v6zMznaH","message":"Help defending church in Fernloft from the intruders","reward":175,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"iG195FkS","message":"Help defending fort in Darkgill from the intruders","reward":190,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"plkmuF9P","message":"Help defending keep in Scalewhyte from the intruders","reward":211,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"VvlcyG0j","message":"Help defending swamp in Darkwhyte from the intruders","reward":275,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ASShmT1D","message":"Help defending palace in Stronggarden from the intruders","reward":218,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"GR3cy6IK","message":"Help defending fort in Snowmere from the intruders","reward":217,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Q4NKU5Pj","message":"Help defending castle in Newdeen from the intruders","reward":210,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"ZrNjVIHU","message":"Help defending keep in Towerwater from the intruders","reward":207,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"GtFSs6wg","message":"Help defending castle in Fangburg from the intruders","reward":252,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"kI3wAJrW","message":"Help defending keep in Lightdale from the intruders","reward":218,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"EvM8yniE","message":"Help defending fort in Masongarden from the intruders","reward":222,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"4gEUg0vq","message":"Help defending palace in Orrinshore from the intruders","reward":209,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"iCvIWgkZ","message":"Help defending keep in Dovecawl from the intruders","reward":242,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"XeZOKTxG","message":"Help defending mystery island in Highmere from the intruders","reward":246,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"hFsMgCxE","message":"Help defending stronghold in Eastdale from the intruders","reward":144,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"XWKDMTL6","message":"Help defending mystery island in Eastcrest from the intruders","reward":246,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"UJxc6wYa","message":"Help defending mystery island in Metalseed from the intruders","reward":261,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"886W7P4P","message":"Help defending keep in Fangcawl from the intruders","reward":200,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"4KRoraRn","message":"Help defending fort in Lightfire from the intruders","reward":209,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"PMXO6Q1x","message":"Help defending mystery island in Eastshore from the intruders","reward":287,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"0RaXaGSO","message":"Help defending bog in Orrindeen from the intruders","reward":258,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"1eN7tf8c","message":"Help defending palace in Blackford from the intruders","reward":181,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"CvyQ6VdQ","message":"Help defending palace in Southmountain from the intruders","reward":249,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"dPn9IHtQ","message":"Help defending bog in Millercaster from the intruders","reward":245,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"RLII2hxX","message":"Help defending stronghold in Dornsheen from the intruders","reward":284,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"9W59BlwQ","message":"Help defending bog in Towerheart from the intruders","reward":339,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"dvTPkZxo","message":"Help defending palace in Easthole from the intruders","reward":268,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"oF5TY0ox","message":"Help defending fort in Scalemire from the intruders","reward":277,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"n3zOABUq","message":"Help defending keep in Bleaktown from the intruders","reward":270,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"7RMOsr80","message":"Help defending keep in Voidburg from the intruders","reward":266,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"lMiZM5IN","message":"Help defending mountains in Towerpeak from the intruders","reward":297,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"L11dNHa2","message":"Help defending fort in Dornwatch from the intruders","reward":230,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"3ExdxsVP","message":"Help defending keep in Highgarden from the intruders","reward":317,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"DSW45Bl2","message":"Help defending swamp in Burnsbane from the intruders","reward":341,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"uRUkYjIN","message":"Help defending mountains in Southgill from the intruders","reward":317,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"7nFmEB1A","message":"Help defending dungeon in Masondale from the intruders","reward":425,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"Y8eBHdGn","message":"Help defending mystery island in Westgannon from the intruders","reward":345,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"Tww0wXvX","message":"Help defending dungeon in Doveton from the intruders","reward":345,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"wjzD5CvN","message":"Help defending castle in Bloodscale from the intruders","reward":388,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"h6pt4Du5","message":"Help defending palace in Razorcrest from the intruders","reward":354,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"KM9M0Y5E","message":"Help defending keep in Snowhill from the intruders","reward":307,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"qdXp5cLy","message":"Help defending stronghold in Frostdeen from the intruders","reward":338,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"6qI0NNMp","message":"Help defending palace in Ridgeseed from the intruders","reward":354,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"jIC3jTwd","message":"Help defending bog in Whiteford from the intruders","reward":265,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"NzOasetJ","message":"Help defending keep in Blackhill from the intruders","reward":396,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"cEc4sejo","message":"Help defending castle in Ridgeseed from the intruders","reward":248,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"Fsxn4bZ5","message":"Help defending mountains in Burnspeak from the intruders","reward":281,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"yMxehq4C","message":"Help defending palace in Pendale from the intruders","reward":303,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"PnL5UeX7","message":"Help defending stronghold in Bleakbury from the intruders","reward":241,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"K5IUtWkC","message":"Help defending castle in Lowesheen from the intruders","reward":302,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"pBRbSOMo","message":"Help defending mountains in Snowbane from the intruders","reward":393,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"BNXtuwzm","message":"Help defending swamp in Bloodcaster from the intruders","reward":302,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"pzlZ50G1","message":"Help defending swamp in Scalebury from the intruders","reward":388,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"0BJAco0O","message":"Help defending palace in Voidwatch from the intruders","reward":285,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"CdBsZk6B","message":"Help defending tower in Ridgeheart from the intruders","reward":422,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"TGbClSYl","message":"Help defending stronghold in Highheart from the intruders","reward":396,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"m0fDSAfa","message":"Help defending stronghold in Everwhyte from the intruders","reward":348,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"9ct2kCKZ","message":"Help defending bog in Dorntown from the intruders","reward":402,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"NYS8aFUb","message":"Help defending swamp in Newloft from the intruders","reward":322,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"UcMpvfTe","message":"Help defending tower in Scalepeak from the intruders","reward":340,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"79vdvzzX","message":"Help defending castle in Southspring from the intruders","reward":403,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"Tn2jlGLp","message":"Help defending tower in Westwell from the intruders","reward":517,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"gCyCpBQE","message":"Help defending swamp in Millerwater from the intruders","reward":447,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"jtVvupft","message":"Help defending dungeon in Eastscale from the intruders","reward":371,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"NXtwPaTw","message":"Help defending fort in Towerloft from the intruders","reward":345,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"tr7ZLgME","message":"Help defending bog in Metalfair from the intruders","reward":482,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"RbjvbCeC","message":"Help defending tower in Whiteford from the intruders","reward":350,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"GbMMjn0Q","message":"Help defending dungeon in Ravenmere from the intruders","reward":488,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"4YQpsqeX","message":"Help defending mountains in Razorbury from the intruders","reward":475,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"jDr2tpE4","message":"Help defending keep in Highwatch from the intruders","reward":409,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"KsB9zKaN","message":"Help defending stronghold in Snowdeen from the intruders","reward":396,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"yMOjMBFl","message":"Help defending swamp in Redgannon from the intruders","reward":436,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"LqQqERI3","message":"Help defending palace in Darkshaw from the intruders","reward":442,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"LDkodICf","message":"Help defending dungeon in Razordean from the intruders","reward":403,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"ZVhCrUEk","message":"Help defending mountains in Masonwatch from the intruders","reward":363,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"PkWbVeGL","message":"Help defending mountains in Metalpine from the intruders","reward":376,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"kMT86FAX","message":"Help defending dungeon in Eastgannon from the intruders","reward":389,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"yHxDuJou","message":"Help defending bog in Northwatch from the intruders","reward":356,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"rIlmVZiX","message":"Help defending mystery island in Highpine from the intruders","reward":317,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"LfkXKTad","message":"Help defending castle in Redloft from the intruders","reward":350,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"ILqx8qlS","message":"Help defending dungeon in Stronghill from the intruders","reward":356,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"xooJju4Z","message":"Help defending stronghold in Burnswatch from the intruders","reward":315,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"qmUBpA47","message":"Help defending bog in Bleakdeen from the intruders","reward":435,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"VicspNw3","message":"Help defending palace in Snowcaster from the intruders","reward":360,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"soH9D3Lp","message":"Help defending keep in Greyseed from the intruders","reward":422,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"cd3aUJ2w","message":"Help defending fort in Strongdinny from the intruders","reward":360,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"rLtygRQb","message":"Help defending palace in Frostport from the intruders","reward":381,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"Rpe6OZtL","message":"Help defending keep in Burnsford from the intruders","reward":422,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"ZJc3tbTw","message":"Help defending swamp in Frostpeak from the intruders","reward":462,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"NGPPMFIi","message":"Help defending keep in Westcaster from the intruders","reward":381,"expiresIn":7,"encrypted":null,"probability":"IMPOSSIBLE"}
+{"adId":"9RO0gc1t","message":"Help defending swamp in Greypine from the intruders","reward":517,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"5LXtweRq","message":"Help defending palace in Thornpine from the intruders","reward":408,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"cwSeoieH","message":"Help defending mountains in Highgill from the intruders","reward":510,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"kDph43m3","message":"Help defending stronghold in Falldrone from the intruders","reward":496,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"e28F79AS","message":"Help Ayman Wakefield to sell an unordinary chariot on the local market","reward":26,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"aBy6kVI9","message":"Help Frannie Sackville to sell an unordinary clothes on the local market","reward":32,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"CHoUUE9w","message":"Steal squirrel delivery to Evelin Waterman and share some of the profits with the people.","reward":60,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"i2mwk04w","message":"Create an advertisement campaign for Yasmeen Lindsey to promote their dog based business","reward":14,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"u3HwtZVG","message":"Help Chike Derrickson to clean their wagon","reward":1,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"WlBumjHl","message":"Escort Ingvild Sharman to thrift shoppe in Towersheen where they can meet with their long lost sheep","reward":74,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"x1NYA8ie","message":"Help Temel Scarlett to reach an agreement with Motel Woodcock on the matters of disputed squirrel","reward":12,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"v8cQMPfQ","message":"Create an advertisement campaign for Johann Þórsson to promote their horse based business","reward":34,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"23Kx0NWO","message":"Create an advertisement campaign for Ajeet Courtier to promote their clothes based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"YYd9mJsf","message":"Steal squirrel delivery to Azure Leonard and share some of the profits with the people.","reward":57,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"usrfZIVC","message":"Help Michele Randell to sell an unordinary potatoes on the local market","reward":15,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"6gYuNKkS","message":"Help Esme Lockwood to clean their pan","reward":7,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"01E51SQ9","message":"Create an advertisement campaign for Bette Debenham to promote their horse based business","reward":39,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"d8fKXNvp","message":"Help Priska Herbert to transport a magic horse to grassland in Snowhill","reward":19,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"T10z0adu","message":"Help Xue Romilly to sell an unordinary clothes on the local market","reward":22,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"OlltWJgf","message":"Help Remigius Sappington to reach an agreement with Hortensius Danniell on the matters of disputed pan","reward":8,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"NYjXhW4B","message":"Create an advertisement campaign for Jin Horsfall to promote their bucket based business","reward":43,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"Yr1tUB34","message":"Help Wisdom Colbert to sell an unordinary weed on the local market","reward":25,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"994Ny8SY","message":"Create an advertisement campaign for Touthmosis Kipling to promote their turnips based business","reward":37,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"LhbUSknm","message":"Create an advertisement campaign for Floris Radcliff to promote their wagon based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"alaFfLVs","message":"Create an advertisement campaign for Lucineh Summers to promote their clothes based business","reward":27,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"j8SdwBMO","message":"Help Joop Emor to write their biographical novel about their difficulties with a deranged dog","reward":24,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"txt4kxfH","message":"Escort Krysia Nicolson to grassland in Lightton where they can meet with their long lost potatoes","reward":59,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Otq1Uhr1","message":"Help Kalani Bradford to reach an agreement with Proserpina Caulfield on the matters of disputed pot","reward":7,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"cKAhjxJs","message":"Help Elzė Jamison to transport a magic house to savannah in Lowemire","reward":13,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"qCgadZnH","message":"Steal chariot delivery to I'tidal Eddudóttir and share some of the profits with the people.","reward":57,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"LgSzEZ2c","message":"Help Radoslav Stanford to write their biographical novel about their difficulties with a deranged house","reward":34,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"HnQKMoNn","message":"Help Oghenekaro Kingsley to write their biographical novel about their difficulties with a deranged house","reward":22,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"O1dGOhRi","message":"Rescue Paget Bloxham from village in Easthole where they are attacked by angry pot","reward":22,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"FC7ZNgzm","message":"Create an advertisement campaign for Cáel Harding to promote their turnips based business","reward":41,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"beYIQAGM","message":"Help Blanchard Richards to write their biographical novel about their difficulties with a deranged water","reward":36,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"pVAmv8vN","message":"Help Trendafilka Timberlake to sell an unordinary wagon on the local market","reward":35,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"O2jXZBn4","message":"Create an advertisement campaign for Sheela Chancellor to promote their clothes based business","reward":15,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"BueUn4WQ","message":"Help Pankraz Mottershead to write their biographical novel about their difficulties with a deranged clothes","reward":35,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"yjmgJJJw","message":"Rescue Makena Jeffries from thrift shoppe in Greyhill where they are attacked by angry potatoes","reward":40,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Ae40cAQC","message":"Escort Daina Keighley to village in Darkbury where they can meet with their long lost squirrel","reward":86,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"RSTPVzG6","message":"Investigate Teodora Osbourne and find out their relation to the magic squirrel.","reward":161,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"v7mJNVxV","message":"Escort Rainard Elliston to thrift shoppe in Snowfire where they can meet with their long lost pan","reward":65,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"VLGuChq8","message":"Rescue Hypatos Þórhallsson from peninsula in Orrinchester where they are attacked by angry potatoes","reward":40,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"tR2crp8e","message":"Rescue Gergana Outterridge from village in Scaleheart where they are attacked by angry turnips","reward":23,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"22ga0meo","message":"Investigate Kaylyn Mallory and find out their relation to the magic pan.","reward":174,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"lC972xrE","message":"Investigate Keshet Debenham and find out their relation to the magic horse.","reward":155,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"Bd6Q0iov","message":"Create an advertisement campaign for Catrin Michaelson to promote their beer mug based business","reward":61,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"aB6wrSqy","message":"Investigate Brunilda Tindall and find out their relation to the magic turnips.","reward":209,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"5Omzajii","message":"Escort Tömörbaatar Bissette to pasture in Frostdale where they can meet with their long lost water","reward":86,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"WpQzZOQP","message":"Escort Cande Kellogg to thrift shoppe in Bleakwhyte where they can meet with their long lost water","reward":81,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"Uej1QTPH","message":"Infiltrate The Copper Reapers and recover their secrets.","reward":160,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"8WM1GDf0","message":"Steal turnips from Lloyd Barnett","reward":101,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"D1yL7Opi","message":"Infiltrate The Azure Ghosts and recover their secrets.","reward":160,"expiresIn":2,"encrypted":1,"probability":"HMMM"}
+{"adId":"QCCjVwHR","message":"Investigate Frañsez Hawking and find out their relation to the magic house.","reward":190,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"H1fURrSn","message":"Infiltrate The Emerald Forsaken Squad and recover their secrets.","reward":179,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"dxA5ZRIq","message":"Rescue Emil Nathanson from savannah in Darkdean where they are attacked by angry wagon","reward":31,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"GhXEKqPe","message":"Rescue Rhodri Cotterill from village in Easthill where they are attacked by angry turnips","reward":38,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"gGK2kVVF","message":"Rescue Tytus Kendall from savannah in Highburg where they are attacked by angry bucket","reward":45,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"nQ9YXeK8","message":"Infiltrate The Fire Wolves and recover their secrets.","reward":203,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"Mzz2LCMD","message":"Infiltrate The Jackals and recover their secrets.","reward":189,"expiresIn":2,"encrypted":1,"probability":"HMMM"}
+{"adId":"sxe8XcO1","message":"Infiltrate The Invincibles and recover their secrets.","reward":202,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"ZUjnZtS7","message":"Rescue Bartosz English from savannah in Sharpsheen where they are attacked by angry chicken","reward":38,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"IcSduNEk","message":"Infiltrate The Ivory Pygmy Posse and recover their secrets.","reward":188,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"zQAxl3gd","message":"Help defending field in Snowgill from the intruders","reward":150,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"94PL8Xo3","message":"Rescue Marlène Harding from grassland in Strongheart where they are attacked by angry chicken","reward":35,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"RlL3f5IT","message":"Investigate Hadriana Simpkin and find out their relation to the magic cat.","reward":231,"expiresIn":3,"encrypted":1,"probability":"QUITE_LIKELY"}
+{"adId":"V7JzaNdl","message":"Investigate Sameera Wootton and find out their relation to the magic cat.","reward":204,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"TE9riztn","message":"Investigate Vladimer Underhill and find out their relation to the magic chariot.","reward":240,"expiresIn":3,"encrypted":1,"probability":"HMMM"}
+{"adId":"zcti2eCw","message":"Investigate Jonny Jennings and find out their relation to the magic water.","reward":168,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"zc8u378v","message":"Infiltrate The Ivory Pygmy Posse and recover their secrets.","reward":218,"expiresIn":2,"encrypted":1,"probability":"HMMM"}
+{"adId":"RkrmZsP5","message":"Investigate Yijun Gorbold and find out their relation to the magic cat.","reward":186,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"eViW1Fvd","message":"Investigate Baptista Nicholson and find out their relation to the magic beer mug.","reward":251,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"2U31HDYF","message":"Investigate Karola Michael and find out their relation to the magic squirrel.","reward":246,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"JNAoeSRb","message":"Kill Maximillian Ace with horse and make Bud Westcott from keep in Dorntown to take the blame","reward":182,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"oJq1yM06","message":"Help defending village in Everwatch from the intruders","reward":186,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"GZQdqonO","message":"Investigate Stacey Painter and find out their relation to the magic potatoes.","reward":255,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"Am3azlxv","message":"Help defending peninsula in Frostburg from the intruders","reward":151,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"xHWAJyKT","message":"Infiltrate The Emerald Forsaken Squad and recover their secrets.","reward":253,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"00Q8UnhN","message":"Infiltrate The Yellow Horn Association and recover their secrets.","reward":209,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"zJjOuG1Y","message":"Investigate Sagit Harding and find out their relation to the magic chicken.","reward":213,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"twl9RYu7","message":"Help defending steppe in Masonchester from the intruders","reward":160,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ycY5xIRU","message":"Help defending peninsula in Oldmire from the intruders","reward":184,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"fHlObFrl","message":"Help defending village in Lightburg from the intruders","reward":133,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"gTDYChSN","message":"Investigate Gilad Wilkerson and find out their relation to the magic pan.","reward":234,"expiresIn":3,"encrypted":1,"probability":"QUITE_LIKELY"}
+{"adId":"6gJH692h","message":"Investigate Laurens Abraham and find out their relation to the magic pot.","reward":265,"expiresIn":3,"encrypted":1,"probability":"HMMM"}
+{"adId":"PLvA2zET","message":"Help defending savannah in Dovemountain from the intruders","reward":176,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"UnqG5bPW","message":"Infiltrate The Ruby Dragontooth Riders and recover their secrets.","reward":228,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"5GqMof9O","message":"Infiltrate The Royal Sharkteeth and recover their secrets.","reward":245,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"JEBhhUjj","message":"Help defending field in Blackhill from the intruders","reward":108,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"qwhPWvqm","message":"Infiltrate The Risen Demons and recover their secrets.","reward":266,"expiresIn":2,"encrypted":1,"probability":"QUITE_LIKELY"}
+{"adId":"71QRxB79","message":"Help defending village in Burnsshore from the intruders","reward":152,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"suLrtzgu","message":"Help defending field in Frostcawl from the intruders","reward":204,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"phVdyyuu","message":"Help defending peninsula in Towerdean from the intruders","reward":216,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Xbsh5iJD","message":"Help defending plains in Frostkeep from the intruders","reward":144,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"kuMMV0QI","message":"Help defending peninsula in Lowefirth from the intruders","reward":210,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"9EPk2KHs","message":"Help defending savannah in Darkgarden from the intruders","reward":216,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"ew8nb8Xe","message":"Help defending village in Thornbane from the intruders","reward":229,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"SX5983nV","message":"Help defending pasture in Lighttown from the intruders","reward":165,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Cx08EOdv","message":"Help defending pasture in Ravenpool from the intruders","reward":216,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"qerPOGTD","message":"Help defending pasture in Fallford from the intruders","reward":178,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"Z2NJdeE0","message":"Help defending village in Ridgeton from the intruders","reward":178,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"qicYe4gE","message":"Help defending thrift shoppe in Millergill from the intruders","reward":187,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"zbQCd6AF","message":"Help defending steppe in Northhole from the intruders","reward":228,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"XzndTL1h","message":"Help defending pasture in Scalepool from the intruders","reward":166,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"W5sSGzRh","message":"Help defending pasture in Frostdale from the intruders","reward":186,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"gx15cTtt","message":"Help defending peninsula in Frostcawl from the intruders","reward":175,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"xvlWzqWz","message":"Help defending grassland in Darkdean from the intruders","reward":221,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"pPpEWZGE","message":"Help defending savannah in Bloodpool from the intruders","reward":197,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"Gq7NqVOg","message":"Help defending church in Thorndinny from the intruders","reward":220,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"pXtYqvfl","message":"Help defending cave in Bleakgarden from the intruders","reward":175,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"oYUi0rtF","message":"Help defending manor in Oldheart from the intruders","reward":175,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"U2BTxlnD","message":"Help defending cave in Northwell from the intruders","reward":203,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"uiP2Akv6","message":"Help defending rocky plains in Lowepool from the intruders","reward":208,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"tK6QuS5g","message":"Help defending church in Lowepool from the intruders","reward":198,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"wCaUC4BQ","message":"Help defending rocky plains in Ravenpeak from the intruders","reward":240,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"gZ7HwyXt","message":"Help defending foggy riverside in Southsheen from the intruders","reward":165,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"zUWETAHI","message":"Help defending forest in Millerdeen from the intruders","reward":173,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"UwSSJpgB","message":"Help defending island in Eastton from the intruders","reward":195,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"nQlfLxIB","message":"Help defending cave in Loweshore from the intruders","reward":205,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"432KxHJl","message":"Escort Flaithrí Steinauer to plains in Highmere where they can meet with their long lost squirrel","reward":63,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"UN9dHIZd","message":"Create an advertisement campaign for Anđa Normanson to promote their wagon based business","reward":35,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"mrVGRL4n","message":"Create an advertisement campaign for Dina Marston to promote their pan based business","reward":36,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"reYNrxeE","message":"Steal clothes delivery to Iza Caulfield and share some of the profits with the people.","reward":30,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"SoIKIs1b","message":"Create an advertisement campaign for Meta Raynerson to promote their horse based business","reward":37,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"OduhqJ9i","message":"Steal dog delivery to Divina Tindall and share some of the profits with the people.","reward":65,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"MHpz2aXf","message":"Escort Trini Salvage to grassland in Westgarden where they can meet with their long lost wagon","reward":83,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"6yX1A6w6","message":"Help Sandalio Sniders to clean their pan","reward":2,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"EHtc1hAC","message":"Help Ludovicus Whitaker to transport a magic cat to peninsula in Metalshore","reward":8,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"SLQYyZSy","message":"Help Gloria Wilkinson to sell an unordinary pan on the local market","reward":18,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"yw27pwty","message":"Help Brittani Kevinson to write their biographical novel about their difficulties with a deranged house","reward":40,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"eiCPrPn2","message":"Help Marcellette St john to write their biographical novel about their difficulties with a deranged dog","reward":35,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"n0sSXn8N","message":"Help Miina Arrington to reach an agreement with Paul Christopher on the matters of disputed pan","reward":11,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"PAhED32h","message":"Create an advertisement campaign for Fabio Courtney to promote their squirrel based business","reward":35,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"YSgHwrZK","message":"Create an advertisement campaign for Lalawethika Wheelock to promote their weed based business","reward":26,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"FJ8Bvtq4","message":"Create an advertisement campaign for Odilia Huddleson to promote their bucket based business","reward":26,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"alvb6exP","message":"Help Lalla Patterson to transport a magic water to pasture in Redgill","reward":12,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"oTiZ5XkI","message":"Create an advertisement campaign for Gualterio Burnham to promote their beer mug based business","reward":27,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"i3ZSYt5H","message":"Help Gisella Ecclestone to sell an unordinary chicken on the local market","reward":19,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"Z2uC37oN","message":"Steal water delivery to Shakti Purcell and share some of the profits with the people.","reward":68,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"OirQ5Wnw","message":"Help Phobos Jacobson to sell an unordinary chicken on the local market","reward":22,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ftcdbhmm","message":"Create an advertisement campaign for Colten Beverly to promote their cat based business","reward":31,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"rZCA0UWG","message":"Help Kellie Swindlehurst to transport a magic sheep to meadow in Highfair","reward":24,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"CHijgnFj","message":"Help Sevi̇nc Osbourne to sell an unordinary horse on the local market","reward":23,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Lj5itmBa","message":"Help Lennard Mínervudóttir to sell an unordinary wagon on the local market","reward":18,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"8JrOWPuv","message":"Escort Zoja Hollands to field in Millerpool where they can meet with their long lost wagon","reward":61,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"KKuFn2an","message":"Create an advertisement campaign for Venceslás Studwick to promote their horse based business","reward":29,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"AuVoUZ6z","message":"Create an advertisement campaign for Dáire Albertson to promote their chicken based business","reward":22,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"xBrbcD6w","message":"Create an advertisement campaign for Kistiñe Hampton to promote their beer mug based business","reward":27,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"AyuuGU3l","message":"Escort Cormac Alfredson to meadow in Everchester where they can meet with their long lost weed","reward":68,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"a7Ep54HT","message":"Create an advertisement campaign for Andries Nicolson to promote their dog based business","reward":25,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"AogxhAXt","message":"Create an advertisement campaign for Apurva Honeysett to promote their pan based business","reward":23,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"8eEzNqsY","message":"Escort Sedna Trueman to plains in Highsheen where they can meet with their long lost pan","reward":73,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"1JSBZJBd","message":"Help Chesed Matthewson to sell an unordinary weed on the local market","reward":26,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"FCywetgm","message":"Help Adilet Abramson to write their biographical novel about their difficulties with a deranged turnips","reward":20,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"kZ0NhHSq","message":"Escort Carolyn Harrison to pasture in Thornbury where they can meet with their long lost chariot","reward":76,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"Q38qXiK9","message":"Investigate Toufik Bristow and find out their relation to the magic chariot.","reward":120,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"doUf7VMR","message":"Investigate Godelieve Clarkson and find out their relation to the magic horse.","reward":143,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"8JmWEMJ3","message":"Help Mohana Ecclestone to write their biographical novel about their difficulties with a deranged wagon","reward":35,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"nOELFoNy","message":"Investigate Felicianus Belmont and find out their relation to the magic beer mug.","reward":131,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"1bVPcUOk","message":"Infiltrate The Jackals and recover their secrets.","reward":136,"expiresIn":2,"encrypted":1,"probability":"HMMM"}
+{"adId":"UHDoSf9a","message":"Infiltrate The Royal Sharkteeth and recover their secrets.","reward":142,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"5CRCKkGO","message":"Escort Fausto Simonson to meadow in Westdale where they can meet with their long lost horse","reward":85,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"gHqG2EqV","message":"Help defending pasture in Lowefirth from the intruders","reward":112,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"9IpI7iQu","message":"Help defending pasture in Snowfirth from the intruders","reward":116,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"BIwGzZ9H","message":"Infiltrate The Invincibles and recover their secrets.","reward":157,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"2t7f21Hw","message":"Infiltrate The Ruby Dragontooth Riders and recover their secrets.","reward":127,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"57fewKXY","message":"Escort Vilhelmiina Steffen to steppe in Redchester where they can meet with their long lost house","reward":68,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"B0v7zvul","message":"Help defending grassland in Falldrone from the intruders","reward":106,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"5QjP4Tjt","message":"Help defending plains in Bleakford from the intruders","reward":106,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"kYFKa0pt","message":"Help defending village in Voiddale from the intruders","reward":93,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Et9lqIhY","message":"Help defending thrift shoppe in Burnsport from the intruders","reward":121,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"6DmLDGPF","message":"Investigate Dîyar Bloxham and find out their relation to the magic cat.","reward":141,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"iVWtip1J","message":"Investigate Fabienne Belcher and find out their relation to the magic potatoes.","reward":166,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"ycAL7sdz","message":"Infiltrate The Yellow Saber Sisterhood and recover their secrets.","reward":125,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"w5lSgwj6","message":"Investigate Orpha Plaskett and find out their relation to the magic horse.","reward":128,"expiresIn":3,"encrypted":1,"probability":"HMMM"}
+{"adId":"HBFYLoU7","message":"Investigate Eadwig Immers and find out their relation to the magic pot.","reward":119,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"zPAqisUs","message":"Infiltrate The Grizzly Boar Brotherhood and recover their secrets.","reward":127,"expiresIn":2,"encrypted":1,"probability":"IMPOSSIBLE"}
+{"adId":"8J5K2Gzp","message":"Investigate Vilko Seely and find out their relation to the magic beer mug.","reward":135,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"dPmETgdN","message":"Infiltrate The Ebony Crosses and recover their secrets.","reward":114,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"Zjo57nEO","message":"Kill Oyibo Langley with cat and make Katelyn Sanders from castle in Strongheart to take the blame","reward":124,"expiresIn":2,"encrypted":2,"probability":"IMPOSSIBLE"}
+{"adId":"aQBHePj2","message":"Help defending field in Highdean from the intruders","reward":102,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"tpLPXyIS","message":"Infiltrate The Scarlet Crocodile Tribe and recover their secrets.","reward":143,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"GfXB9e2o","message":"Help defending pasture in Northmoore from the intruders","reward":111,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"b9W0lTHZ","message":"Investigate Rotem Carpenter and find out their relation to the magic cat.","reward":142,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"6rDz5xbQ","message":"Infiltrate The Toads and recover their secrets.","reward":123,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"rikA1BFP","message":"Help defending meadow in Dovedinny from the intruders","reward":100,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"BhUiyFYP","message":"Investigate Andréa Thornton and find out their relation to the magic house.","reward":109,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"fXkFlJgD","message":"Infiltrate The Royal Sharkteeth and recover their secrets.","reward":139,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"sBjoBc9b","message":"Infiltrate The Azure Ghosts and recover their secrets.","reward":120,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"IzbC6oQN","message":"Help defending thrift shoppe in Darksheen from the intruders","reward":104,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"qQMQn6h7","message":"Investigate Kirsi Hambledon and find out their relation to the magic turnips.","reward":142,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"AKdtUt27","message":"Help defending village in Southsheen from the intruders","reward":94,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"qsXFmtsK","message":"Help defending plains in Whitefair from the intruders","reward":92,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Pd0ORkdX","message":"Investigate Giancarlo Edduson and find out their relation to the magic chicken.","reward":124,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"d4Mrh5Zt","message":"Investigate Gundahar Elliott and find out their relation to the magic pot.","reward":126,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"xu8IPeni","message":"Infiltrate The Toads and recover their secrets.","reward":118,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"O3CoZcbh","message":"Help defending peninsula in Northford from the intruders","reward":96,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"gtxTOw46","message":"Help defending plains in Newhill from the intruders","reward":105,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"jY0KZkwi","message":"Help defending plains in Fangbane from the intruders","reward":99,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"CqQMuD15","message":"Help defending thrift shoppe in Dovetown from the intruders","reward":89,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"yqr1gdlq","message":"Help defending meadow in Blackbane from the intruders","reward":96,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"TwFRgGD5","message":"Help defending village in Bleakville from the intruders","reward":79,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"vH1ty7KP","message":"Help defending plains in Towerheart from the intruders","reward":107,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"E5DkS0MA","message":"Help defending grassland in Oldshore from the intruders","reward":100,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"YZpuPvVo","message":"Help defending plains in Southgill from the intruders","reward":80,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Kcbj9uIK","message":"Help defending village in Ravenwhyte from the intruders","reward":84,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"aeHEyxw8","message":"Help defending village in Millercawl from the intruders","reward":93,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"1LhXrO0B","message":"Help defending pasture in Fallgarden from the intruders","reward":94,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"LbX5aitt","message":"Help defending field in Northscale from the intruders","reward":103,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"Aw3ijXA1","message":"Help defending field in Southville from the intruders","reward":72,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"3ixxT71b","message":"Help defending peninsula in Penmoore from the intruders","reward":93,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"P41d8PJe","message":"Help defending peninsula in Snowpeak from the intruders","reward":94,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"wbs7JcIy","message":"Help defending hill in Razorspring from the intruders","reward":68,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"AV0xfcck","message":"Help defending thicket in Northgill from the intruders","reward":71,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"pNDJG2Dm","message":"Help defending hill in Ridgemoore from the intruders","reward":106,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"PmQKSNOu","message":"Help defending forest in Dornbury from the intruders","reward":77,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"8bc5r8Uv","message":"Help defending hill in Ravendrone from the intruders","reward":71,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Tujb6zcf","message":"Help defending rocky plains in Fallsheen from the intruders","reward":72,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"08GuVbfT","message":"Help defending island in Orrinford from the intruders","reward":72,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"LWP4xXYY","message":"Help defending hill in Sharpburg from the intruders","reward":72,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"MxvxbNB6","message":"Help Buddy Þórhalldóttir to write their biographical novel about their difficulties with a deranged horse","reward":18,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"qnUPbicv","message":"Create an advertisement campaign for Solomon Haywood to promote their cat based business","reward":23,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"40c6AYW7","message":"Steal turnips delivery to Veeti Courtier and share some of the profits with the people.","reward":46,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"OfxXsRzA","message":"Escort Päivä Dickman to plains in Strongshaw where they can meet with their long lost cat","reward":64,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"CU62jFQD","message":"Help Zakiah Bissette to transport a magic pot to thrift shoppe in Ridgebane","reward":9,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"1FSy5sYY","message":"Help Pia L'hernault to clean their bucket","reward":10,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"CWILkA2S","message":"Create an advertisement campaign for Akilah Spurling to promote their water based business","reward":35,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"jFXyMCAm","message":"Steal turnips delivery to Orlagh Boothman and share some of the profits with the people.","reward":46,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"nHXZwREE","message":"Help Ruslana Hepburn to fix their sheep","reward":7,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"akrG6mNy","message":"Help Garnet Willoughby to write their biographical novel about their difficulties with a deranged chariot","reward":33,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"AxYhsGDG","message":"Help Fatma Eldridge to sell an unordinary pot on the local market","reward":30,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"yQ5RKK5G","message":"Help Kaisa Chester to reach an agreement with Radomír Chamberlain on the matters of disputed cat","reward":11,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"dh50hT2f","message":"Escort Pattie Michael to pasture in Scaleshore where they can meet with their long lost pot","reward":73,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"bUCQkhk0","message":"Escort Caryn Wembley to peninsula in Metalcawl where they can meet with their long lost water","reward":60,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"6wSgunLN","message":"Create an advertisement campaign for Liboria Raynerson to promote their horse based business","reward":33,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"M6wKzqRn","message":"Steal pan delivery to Agnessa Thorley and share some of the profits with the people.","reward":67,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ON7pqRuk","message":"Help Tora Wild to transport a magic squirrel to thrift shoppe in Greyshaw","reward":9,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"IEgjXp4n","message":"Help Bibiana Þórsson to write their biographical novel about their difficulties with a deranged pot","reward":25,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"RUjjBukw","message":"Help Arkhip Aimar to transport a magic squirrel to village in Strongport","reward":17,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"FcmxY0mt","message":"Escort Osher Stidolph to plains in Dovemire where they can meet with their long lost wagon","reward":76,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Xcn5FkfL","message":"Create an advertisement campaign for Nicoline Warrick to promote their pan based business","reward":29,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"JogrzcpN","message":"Create an advertisement campaign for Ba'al Comstock to promote their beer mug based business","reward":30,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"7Qj9P95N","message":"Help Sollemnia Björnsdóttir to transport a magic clothes to savannah in Ravenheart","reward":15,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"9HdCJjwX","message":"Steal pan delivery to Eli Hargrave and share some of the profits with the people.","reward":51,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"pp35tYUV","message":"Help Anastázia Wembley to sell an unordinary pan on the local market","reward":21,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"41pwyQ0E","message":"Create an advertisement campaign for Ercilia Maddison to promote their bucket based business","reward":34,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"cTAijAny","message":"Create an advertisement campaign for Arkadiusz Pemberton to promote their sheep based business","reward":35,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"3M22OTEh","message":"Steal chicken delivery to Makayla Hibbert and share some of the profits with the people.","reward":53,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"hgPQovZg","message":"Help Jesusa Courtenay to write their biographical novel about their difficulties with a deranged dog","reward":28,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"1ZXrG2iZ","message":"Escort Minodora Kimball to grassland in Whitescale where they can meet with their long lost sheep","reward":83,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"yq18ffeb","message":"Create an advertisement campaign for Brîska Langley to promote their house based business","reward":20,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"POSlemaX","message":"Create an advertisement campaign for Eldon Hambleton to promote their weed based business","reward":33,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"oVyn7zV9","message":"Steal clothes delivery to Garbi Kellogg and share some of the profits with the people.","reward":61,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"YAZQDQmu","message":"Create an advertisement campaign for Tupaarnaq Hepburn to promote their squirrel based business","reward":25,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"HjRmTvT8","message":"Steal potatoes delivery to Saule Linwood and share some of the profits with the people.","reward":72,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Haq1qlEE","message":"Infiltrate The Invisibles and recover their secrets.","reward":104,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"TFZX6Mjk","message":"Steal water delivery to Esau Goodwin and share some of the profits with the people.","reward":57,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"3qRp45Rw","message":"Escort Wendell Faulkner to plains in Snowcrest where they can meet with their long lost pan","reward":76,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"yvY8h7v3","message":"Steal chicken delivery to Methuselah Scarbrough and share some of the profits with the people.","reward":45,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"C6VXE7hD","message":"Investigate Septimus Pierson and find out their relation to the magic cat.","reward":131,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"YKNbbhbx","message":"Infiltrate The Ice Wolverine Tribe and recover their secrets.","reward":133,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"thvgLESB","message":"Investigate Laurence Webster and find out their relation to the magic sheep.","reward":153,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"K4j3icTI","message":"Infiltrate The Invisibles and recover their secrets.","reward":113,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"EIbGPqDD","message":"Infiltrate The Grizzly Boar Brotherhood and recover their secrets.","reward":150,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"zKZ1MhJl","message":"Escort Alanna Winslow to pasture in Dovemire where they can meet with their long lost squirrel","reward":60,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"oNL3Occi","message":"Escort Živko Forrest to steppe in Millerville where they can meet with their long lost cat","reward":84,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"4aBNu0Iq","message":"Escort Kristīna Winship to thrift shoppe in Everheart where they can meet with their long lost clothes","reward":37,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"t9LaLxXB","message":"Infiltrate The Ivory Elephants and recover their secrets.","reward":151,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"wM7dM9hj","message":"Steal super awesome diamond wagon from Kelila Clifford","reward":174,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"EIOqDskT","message":"Escort Katenka Warrick to thrift shoppe in Millerdinny where they can meet with their long lost cat","reward":77,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"7PrOZ4WG","message":"Investigate Jeltje Thorley and find out their relation to the magic weed.","reward":149,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"yfROnHfx","message":"Investigate Mungo Chambers and find out their relation to the magic house.","reward":140,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"4sUaXRy7","message":"Help defending meadow in Lightcawl from the intruders","reward":120,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"0G6AXqL6","message":"Infiltrate The Ruby Dragontooth Riders and recover their secrets.","reward":123,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"x03LzTg7","message":"Help defending peninsula in Voidwhyte from the intruders","reward":107,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"LzHsiZMV","message":"Help defending peninsula in Ravengarden from the intruders","reward":102,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"A0eNbJAA","message":"Investigate Felícia Farnham and find out their relation to the magic potatoes.","reward":136,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"gmF66Moy","message":"Steal super awesome diamond turnips from Jo Allsopp","reward":157,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"iy7xyKRB","message":"Investigate Origen Crawford and find out their relation to the magic sheep.","reward":152,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"Yesp5uFR","message":"Kill Seoc Björnsdóttir with bucket and make 'ismat Readdie from mountains in Fernloft to take the blame","reward":122,"expiresIn":2,"encrypted":2,"probability":"IMPOSSIBLE"}
+{"adId":"f7YGiebA","message":"Investigate Tully Murgatroyd and find out their relation to the magic turnips.","reward":147,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"kGHDVPF0","message":"Kill Kym Spencer with wagon and make Cynbel Hathaway from bog in Blackseed to take the blame","reward":134,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"c7kxegEx","message":"Kill Cosma Albinson with horse and make Abigail Blackbourne from stronghold in Dorncaster to take the blame","reward":116,"expiresIn":2,"encrypted":2,"probability":"IMPOSSIBLE"}
+{"adId":"Sx8knWbU","message":"Help defending peninsula in Ridgewatch from the intruders","reward":90,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"2DZX7m81","message":"Kill Ælfsige Cartwright with beer mug and make Melisizwe Salvage from stronghold in Southburg to take the blame","reward":108,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"L3L3l8Bv","message":"Investigate Miyu Parsons and find out their relation to the magic water.","reward":141,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"FdKF8ZUH","message":"Kill Epiphanius Hambledon with wagon and make Chuy Deering from swamp in Masonspring to take the blame","reward":115,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"Hm1WxCz0","message":"Steal super awesome diamond pan from Ioann Derrickson","reward":173,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"sBuWZrmh","message":"Kill Linwood Kellogg with water and make Samiya Alberts from fort in Fallchester to take the blame","reward":123,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"CslotV2G","message":"Kill Wyatt Davidson with cat and make Gizi Hunnisett from tower in Ridgepeak to take the blame","reward":104,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"zf9IfMPM","message":"Steal super awesome diamond squirrel from Adrastos Sandford","reward":164,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"CeMln7wM","message":"Help defending thrift shoppe in Ridgeton from the intruders","reward":120,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"pdHBB2kf","message":"Help defending plains in Orrinbury from the intruders","reward":99,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"b6v2ehTK","message":"Infiltrate The Emerald Forsaken Squad and recover their secrets.","reward":127,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"nilVNg2S","message":"Steal super awesome diamond chariot from Donny Sinclair","reward":175,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"d57RImyC","message":"Help defending field in Strongport from the intruders","reward":73,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"aojm6u27","message":"Help defending savannah in Lowespring from the intruders","reward":98,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"pLwecu2P","message":"Steal super awesome diamond squirrel from Adonai Presley","reward":163,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"ACPHsTE7","message":"Infiltrate The Ice Wolverine Tribe and recover their secrets.","reward":128,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"xQgdQyDK","message":"Infiltrate The Thunder Mambas and recover their secrets.","reward":131,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"A2YIyBhj","message":"Help defending pasture in Dornpeak from the intruders","reward":93,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"i3nuMTNX","message":"Infiltrate The Risen Demons and recover their secrets.","reward":136,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"WcwnuztO","message":"Steal super awesome diamond horse from Agar Rogerson","reward":193,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ptbG3sCN","message":"Steal super awesome diamond chicken from Miķelis Normanson","reward":149,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"JxKkIZgy","message":"Help defending field in Sharpdale from the intruders","reward":91,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"PBR7hqgO","message":"Help defending savannah in Strongspring from the intruders","reward":83,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"ytQTLiQh","message":"Steal super awesome diamond wagon from Pratibha Emerson","reward":162,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"H9sr9MTf","message":"Steal super awesome diamond pot from Whitney Hilmarsdóttir","reward":146,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Jl8KPxn3","message":"Help defending plains in Ravendale from the intruders","reward":91,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"SjILpP9u","message":"Steal super awesome diamond cat from Gregorios Hermanson","reward":176,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"d14SCD6b","message":"Help Jurre Endicott to fix their clothes","reward":5,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"KNNu0T4F","message":"Help Nurgül Badcock to sell an unordinary horse on the local market","reward":22,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"zrWLbzdI","message":"Escort Þórvaldr Stanford to savannah in Dorncrest where they can meet with their long lost squirrel","reward":67,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"rXAxzo6V","message":"Help Ayal Romilly to clean their chariot","reward":4,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"YPgOmO84","message":"Help Bhumi Richardson to fix their weed","reward":2,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"y6sFfNHm","message":"Create an advertisement campaign for Lorette Leavitt to promote their weed based business","reward":24,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"JTYDmeZV","message":"Help Lance Swindlehurst to write their biographical novel about their difficulties with a deranged potatoes","reward":26,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"OmCuuKgm","message":"Steal bucket delivery to Anar Rowbottom and share some of the profits with the people.","reward":64,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"NNkjTNLj","message":"Create an advertisement campaign for Xoana Kendall to promote their horse based business","reward":44,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"awbkucAH","message":"Create an advertisement campaign for Gobán Clayton to promote their house based business","reward":35,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"nwYMZio4","message":"Help Regina Michaelson to transport a magic potatoes to grassland in Westseed","reward":20,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"mzPGqigp","message":"Create an advertisement campaign for Otso Brewster to promote their house based business","reward":28,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"TrJvcEvy","message":"Help Koldobika Rowland to transport a magic beer mug to village in Metalham","reward":18,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"u25nomvP","message":"Create an advertisement campaign for Kaapro Devereux to promote their horse based business","reward":35,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"7egskzkE","message":"Help Winnie Hlöðversdóttir to transport a magic house to pasture in Burnsheart","reward":19,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"dFYMKSv8","message":"Help Sushila Richardson to sell an unordinary sheep on the local market","reward":23,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"NhIzHAWZ","message":"Steal clothes delivery to Matthäus Radclyffe and share some of the profits with the people.","reward":51,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Dolah5sa","message":"Create an advertisement campaign for Marinus Armistead to promote their pot based business","reward":50,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"2JIXtW0i","message":"Escort Celestino Michaelson to peninsula in Oldwater where they can meet with their long lost squirrel","reward":68,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"pxwCIt4t","message":"Create an advertisement campaign for Stefanos Kipling to promote their squirrel based business","reward":30,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"10larzEt","message":"Help Neeraj Headley to write their biographical novel about their difficulties with a deranged weed","reward":43,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"kYFkeyPi","message":"Help Piloqutinnguaq Wickham to reach an agreement with Ju-won Hampson on the matters of disputed turnips","reward":19,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"VuCQntVG","message":"Create an advertisement campaign for Léonce Barnett to promote their weed based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"LxLSE6oH","message":"Rescue Kora Giffard from thrift shoppe in Fernwhyte where they are attacked by angry potatoes","reward":35,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"huKUj6ZB","message":"Escort Siofra Danniel to savannah in Frostfirth where they can meet with their long lost bucket","reward":95,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"duKGD3e5","message":"Create an advertisement campaign for Jumana Lawrence to promote their bucket based business","reward":38,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"3hEpbWob","message":"Create an advertisement campaign for Libi Eccleston to promote their pot based business","reward":28,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"1GCRb6mk","message":"Steal clothes delivery to Simona Dickson and share some of the profits with the people.","reward":61,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"3RFkeXun","message":"Create an advertisement campaign for Zaina Courtney to promote their squirrel based business","reward":46,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"KAhGcqzl","message":"Create an advertisement campaign for Blasius Garrard to promote their sheep based business","reward":44,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"IiigG5Be","message":"Steal horse delivery to Chang Kimball and share some of the profits with the people.","reward":64,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"i1CjEbM3","message":"Escort Sami̇r Harland to pasture in Newford where they can meet with their long lost wagon","reward":92,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Bv9quGQr","message":"Create an advertisement campaign for Marcellette Millward to promote their horse based business","reward":30,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"95fetlkg","message":"Create an advertisement campaign for Matty Blanchard to promote their water based business","reward":49,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"PdkgHA43","message":"Rescue Tziporah Wilkerson from steppe in Fernkeep where they are attacked by angry pot","reward":43,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"Lm6x981n","message":"Steal house from Steren Hartell","reward":116,"expiresIn":7,"encrypted":null,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"XGxlnxIA","message":"Create an advertisement campaign for Zénaïde Kingston to promote their turnips based business","reward":33,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"f5LYpvJx","message":"Steal house delivery to Kealoha Bannerman and share some of the profits with the people.","reward":72,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"Law4xa09","message":"Steal water delivery to Darby Warrick and share some of the profits with the people.","reward":66,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"PlGpp4Hk","message":"Steal squirrel delivery to Torvald Robinson and share some of the profits with the people.","reward":77,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"IFTjDRb5","message":"Create an advertisement campaign for Dragoslav Varnham to promote their weed based business","reward":60,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"cyWGA135","message":"Create an advertisement campaign for Meinwen Eldridge to promote their bucket based business","reward":48,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"WgHsIUNa","message":"Steal wagon from Deonte Hampton","reward":102,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"KFauj0RB","message":"Infiltrate The Grizzly Gorillas and recover their secrets.","reward":218,"expiresIn":2,"encrypted":1,"probability":"PIECE_OF_CAKE"}
+{"adId":"kqEM8xoL","message":"Infiltrate The Royal Sharkteeth and recover their secrets.","reward":187,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"hAeCarad","message":"Infiltrate The Azure Ghosts and recover their secrets.","reward":208,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"KEOMOgq1","message":"Steal super awesome diamond bucket from Tineke Emerson","reward":272,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"talhifTJ","message":"Help defending savannah in Thornville from the intruders","reward":184,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"L5IjHXfZ","message":"Investigate Shankara Evanson and find out their relation to the magic squirrel.","reward":203,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"i34H0xg8","message":"Escort Gülden Phillips to village in Northhole where they can meet with their long lost potatoes","reward":104,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"uo7OKqQ9","message":"Investigate Ignàtziu Blanchard and find out their relation to the magic dog.","reward":250,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"L97xB4eK","message":"Infiltrate The Fire Wolves and recover their secrets.","reward":235,"expiresIn":2,"encrypted":1,"probability":"RISKY"}
+{"adId":"GHXkqhdH","message":"Escort Esther Whinery to village in Scaleseed where they can meet with their long lost pan","reward":114,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"gcrkyDq0","message":"Steal super awesome diamond chicken from Raine Walterson","reward":313,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"rq7c3KHG","message":"Help defending thrift shoppe in Newshore from the intruders","reward":156,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"V7AVITCI","message":"Rescue Thecla Honeycutt from steppe in Whitewater where they are attacked by angry bucket","reward":34,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"ChdbJ9ca","message":"Help defending meadow in Falldrone from the intruders","reward":185,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"8HBxyB6Z","message":"Investigate Doretta Forester and find out their relation to the magic chariot.","reward":250,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"YWw92MJB","message":"Kill Rumen Studwick with house and make Tu Collins from keep in Millerchester to take the blame","reward":173,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"VXbwfm4S","message":"Infiltrate The Azure Ghosts and recover their secrets.","reward":233,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"vVfYx4ke","message":"Steal super awesome diamond clothes from Saibh Everill","reward":303,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"S5cZcbEr","message":"Investigate Oluwaseyi Seymour and find out their relation to the magic chicken.","reward":209,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"UzCHAkX7","message":"Rescue Savitr Summers from meadow in Snowloft where they are attacked by angry squirrel","reward":51,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"wzjWKdDd","message":"Steal super awesome diamond pan from Colin Mathews","reward":281,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ACrLndX3","message":"Investigate Francisca Eymer and find out their relation to the magic cat.","reward":238,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"chOHxnsg","message":"Steal super awesome diamond sheep from Hyun Ólafsson","reward":303,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"Z484a1qg","message":"Steal super awesome diamond dog from Garnet Honeycutt","reward":291,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"P7OQjGvF","message":"Infiltrate The Emerald Forsaken Squad and recover their secrets.","reward":228,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"nrexDqCv","message":"Steal super awesome diamond dog from Ouida Chapman","reward":306,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"m91Pvr0Y","message":"Investigate Marylou Thorburn and find out their relation to the magic dog.","reward":255,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"O4XPaABP","message":"Help defending grassland in Westham from the intruders","reward":134,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"EafuDb8B","message":"Investigate Léonard Sanders and find out their relation to the magic house.","reward":275,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"hQOyUReq","message":"Help defending grassland in Sharpmere from the intruders","reward":172,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"aw5ow66s","message":"Investigate Azarel Nicolson and find out their relation to the magic beer mug.","reward":284,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"eFxLj7ii","message":"Infiltrate The Ruby Dragontooth Riders and recover their secrets.","reward":202,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"YNm7VRga","message":"Investigate Edit Cantrell and find out their relation to the magic weed.","reward":241,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"2G4T76d0","message":"Infiltrate The Eternals and recover their secrets.","reward":252,"expiresIn":2,"encrypted":1,"probability":"IMPOSSIBLE"}
+{"adId":"pxqcjeHF","message":"Help defending steppe in Masonkeep from the intruders","reward":153,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"NmZeUanc","message":"Help Lis Hancock to reach an agreement with Llewellyn Blakeslee on the matters of disputed bucket","reward":11,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"66ahtHPh","message":"Help Mazin Augustine to transport a magic cat to pasture in Fangdean","reward":15,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"ue2f3a6B","message":"Help Larysa Holloway to write their biographical novel about their difficulties with a deranged horse","reward":30,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"YJRvaWOO","message":"Steal potatoes delivery to Fabrizia Hunnisett and share some of the profits with the people.","reward":60,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"7x7R8MBn","message":"Create an advertisement campaign for Marte Nicholson to promote their water based business","reward":28,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"zQYtGNfq","message":"Help Emmerson Baldrick to transport a magic sheep to plains in Scaleshore","reward":20,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"VcWerBd2","message":"Help Mauritius Beckham to write their biographical novel about their difficulties with a deranged potatoes","reward":43,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"IireHqRn","message":"Help Golshan Hathaway to transport a magic chariot to savannah in Snowmountain","reward":15,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"PHM8EFxQ","message":"Create an advertisement campaign for Findlay Gabriels to promote their beer mug based business","reward":36,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"KnRGlqpj","message":"Help Nsia Cummins to transport a magic chicken to steppe in Voiddrone","reward":18,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"F2KfLOqq","message":"Help 'azazyahu Reynell to fix their potatoes","reward":3,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"vCUqLo0u","message":"Help Rodolphe Maddison to sell an unordinary chicken on the local market","reward":27,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"QRiTtMHW","message":"Create an advertisement campaign for Themistoklis Danielson to promote their squirrel based business","reward":31,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"z9qf6ajO","message":"Help Fadl Thornton to reach an agreement with Ahmose Kevinson on the matters of disputed turnips","reward":3,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"gPTH4D2x","message":"Help Madelyn Stanford to transport a magic water to village in Dornwell","reward":21,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"U6n8tb56","message":"Help Mislav Sempers to sell an unordinary chicken on the local market","reward":21,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"Ofgb0Zze","message":"Escort Jantje Botterill to savannah in Southville where they can meet with their long lost potatoes","reward":54,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"RvGV7qYI","message":"Help Fannie Desprez to transport a magic bucket to thrift shoppe in Whitespring","reward":15,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"JcnIl6Mq","message":"Steal bucket delivery to Tye Sanders and share some of the profits with the people.","reward":62,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"yLRwW0Kt","message":"Help Nazario Kjartansdóttir to reach an agreement with Jevrem Johnson on the matters of disputed chicken","reward":5,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"yAjgzmWt","message":"Escort Alvise Bradford to field in Voidpine where they can meet with their long lost wagon","reward":59,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"XpqOQlTj","message":"Create an advertisement campaign for Linza Merrill to promote their wagon based business","reward":34,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"uQ1Ddjc5","message":"Escort Lucho Blackbourne to village in Redport where they can meet with their long lost house","reward":74,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"qPzjnczc","message":"Help Yohanes Wyndham to transport a magic sheep to peninsula in Greybane","reward":7,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"K00gHSTf","message":"Help Neoptolemos Haylock to reach an agreement with Albin Randell on the matters of disputed weed","reward":16,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"dao3dOI6","message":"Steal house delivery to America Garnett and share some of the profits with the people.","reward":56,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ZUZOiUmT","message":"Create an advertisement campaign for Stine Breckinridge to promote their dog based business","reward":37,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"LGJM0YXQ","message":"Help Jabir Hlöðversdóttir to write their biographical novel about their difficulties with a deranged pot","reward":39,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"ny5g5Ztm","message":"Escort Shannon Haylock to thrift shoppe in Millerdean where they can meet with their long lost pot","reward":76,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"bexP9fTz","message":"Steal beer mug delivery to Diocletian Edwardson and share some of the profits with the people.","reward":72,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"MwhWKtcN","message":"Escort Sipho Sheppard to village in Dornkeep where they can meet with their long lost chicken","reward":61,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"CruUx27L","message":"Create an advertisement campaign for Zacharie Carpenter to promote their wagon based business","reward":36,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"5syYMqTS","message":"Create an advertisement campaign for Dashiell Branson to promote their bucket based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"TdEwIRy4","message":"Escort Eustathios Pickering to pasture in Strongchester where they can meet with their long lost potatoes","reward":75,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"p0fcHDR6","message":"Steal pot delivery to Ninel Thorburn and share some of the profits with the people.","reward":45,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ogH4Ihcn","message":"Create an advertisement campaign for Shaheen Breckinridge to promote their chariot based business","reward":32,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"4wDeMgZP","message":"Steal house delivery to Obdulia Broadbent and share some of the profits with the people.","reward":59,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"mXZOmIKW","message":"Help Máel Burnham to write their biographical novel about their difficulties with a deranged wagon","reward":41,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"woIGhcGk","message":"Investigate Catherin Gorbold and find out their relation to the magic turnips.","reward":136,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"k4TecyWb","message":"Infiltrate The Eagle Soldiers and recover their secrets.","reward":122,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"vejyDTUu","message":"Steal horse delivery to Margareeta Steffen and share some of the profits with the people.","reward":58,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"FnEum9kt","message":"Investigate Murat Woodrow and find out their relation to the magic clothes.","reward":114,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"K6RQcZqK","message":"Help Karmen Rennold to write their biographical novel about their difficulties with a deranged horse","reward":29,"expiresIn":7,"encrypted":null,"probability":"SUICIDE_MISSION"}
+{"adId":"YaYbcvSQ","message":"Infiltrate The Invincibles and recover their secrets.","reward":145,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"er8rzhhY","message":"Investigate Marin Henryson and find out their relation to the magic house.","reward":143,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"ikep2YvY","message":"Escort Drahoslav Maddison to peninsula in Orrinville where they can meet with their long lost potatoes","reward":72,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"NRlnrPih","message":"Help defending meadow in Oldville from the intruders","reward":89,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Cy7M512D","message":"Investigate Jemima Blakesley and find out their relation to the magic cat.","reward":118,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"yG8uJobS","message":"Infiltrate The Invisibles and recover their secrets.","reward":148,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"EGpG9cjQ","message":"Help defending field in Dovemere from the intruders","reward":91,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"xmNM06kZ","message":"Investigate Meli̇k Hallman and find out their relation to the magic bucket.","reward":135,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"tw1ZTdNv","message":"Escort Isaia Randell to grassland in Metalmire where they can meet with their long lost weed","reward":74,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"F4cSCOtm","message":"Infiltrate The Ebony Crosses and recover their secrets.","reward":147,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"ralmtoYh","message":"Infiltrate The Men Of Limbo and recover their secrets.","reward":151,"expiresIn":2,"encrypted":1,"probability":"HMMM"}
+{"adId":"0lL0tUaT","message":"Investigate Marjolein Belmont and find out their relation to the magic water.","reward":140,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"ttSgappM","message":"Infiltrate The Eagle Soldiers and recover their secrets.","reward":138,"expiresIn":2,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"AksG66di","message":"Investigate Nayden Williams and find out their relation to the magic horse.","reward":138,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"Z06uPTec","message":"Investigate Agathangelos Eymer and find out their relation to the magic pot.","reward":145,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"hjtyk19E","message":"Investigate Manoj Butcher and find out their relation to the magic squirrel.","reward":123,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"i9WgJN3G","message":"Investigate Marduk Beverley and find out their relation to the magic squirrel.","reward":129,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"wIQcCsVs","message":"Investigate Sequoia Granger and find out their relation to the magic sheep.","reward":139,"expiresIn":3,"encrypted":1,"probability":"IMPOSSIBLE"}
+{"adId":"cUGE3C3P","message":"Kill Sharar Sharrow with potatoes and make Mélanie Matthewson from stronghold in Millercawl to take the blame","reward":123,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"34GHbBr2","message":"Kill Alyce Jacobson with beer mug and make Achaab Brigham from palace in Blackwatch to take the blame","reward":133,"expiresIn":2,"encrypted":2,"probability":"IMPOSSIBLE"}
+{"adId":"spbAfg8R","message":"Infiltrate The Toads and recover their secrets.","reward":142,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"SAmS4EI7","message":"Kill Ortrun Hogarth with cat and make Svantepolk Sinclair from mountains in Orrinheart to take the blame","reward":103,"expiresIn":2,"encrypted":2,"probability":"SUICIDE_MISSION"}
+{"adId":"PhDfZPu4","message":"Investigate Sati Leighton and find out their relation to the magic potatoes.","reward":117,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"XjUyw1A2","message":"Investigate Zéphyrine Wootton and find out their relation to the magic weed.","reward":164,"expiresIn":3,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"A3medrKj","message":"Investigate Margaret Northrop and find out their relation to the magic pan.","reward":119,"expiresIn":3,"encrypted":1,"probability":"PLAYING_WITH_FIRE"}
+{"adId":"SQlnagE7","message":"Investigate Hormazd Whitaker and find out their relation to the magic turnips.","reward":125,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"Iteb7wLk","message":"Investigate Brava Wardrobe and find out their relation to the magic pot.","reward":136,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"uuTRnclJ","message":"Investigate Bridget Quickley and find out their relation to the magic water.","reward":152,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"2Wj3DgPv","message":"Kill Khayri Stevenson with horse and make Kenanyahu Christinsen from dungeon in Orrinburg to take the blame","reward":114,"expiresIn":2,"encrypted":2,"probability":"IMPOSSIBLE"}
+{"adId":"Ivbu4yNu","message":"Infiltrate The Emerald Forsaken Squad and recover their secrets.","reward":122,"expiresIn":2,"encrypted":1,"probability":"WALK_IN_THE_PARK"}
+{"adId":"tcnDIGo4","message":"Investigate Marketta Stephens and find out their relation to the magic house.","reward":161,"expiresIn":3,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"8IC2uYYr","message":"Infiltrate The Ice Wolverine Tribe and recover their secrets.","reward":143,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"k5aKmovO","message":"Help defending peninsula in Sharpscale from the intruders","reward":89,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"V4yFhPGk","message":"Help defending plains in Eastmere from the intruders","reward":97,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"tiauwFud","message":"Help defending steppe in Eastgill from the intruders","reward":94,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"7mZq5Gmr","message":"Infiltrate The Jackals and recover their secrets.","reward":111,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"P6y8zsG2","message":"Investigate Elżbieta Sergeant and find out their relation to the magic horse.","reward":147,"expiresIn":3,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"EMvb4MGG","message":"Help defending steppe in Whitefire from the intruders","reward":83,"expiresIn":7,"encrypted":null,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"uLnJMczC","message":"Infiltrate The Toads and recover their secrets.","reward":139,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"x5mREMGQ","message":"Investigate Pitambara Jeffers and find out their relation to the magic pot.","reward":135,"expiresIn":3,"encrypted":1,"probability":"RISKY"}
+{"adId":"hVWD5HIs","message":"Infiltrate The Men Of Limbo and recover their secrets.","reward":150,"expiresIn":2,"encrypted":1,"probability":"GAMBLE"}
+{"adId":"au8KooMv","message":"Infiltrate The Skeleton Company and recover their secrets.","reward":122,"expiresIn":2,"encrypted":1,"probability":"RATHER_DETRIMENTAL"}
+{"adId":"gIIDu4c3","message":"Infiltrate The Eagle Soldiers and recover their secrets.","reward":130,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"jHRI5or2","message":"Infiltrate The Ebony Crosses and recover their secrets.","reward":142,"expiresIn":2,"encrypted":1,"probability":"SUICIDE_MISSION"}
+{"adId":"O86xMLl3","message":"Help defending meadow in Darkmoore from the intruders","reward":83,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"EjvpFWcR","message":"Investigate Wallis Carpenter and find out their relation to the magic potatoes.","reward":109,"expiresIn":3,"encrypted":1,"probability":"QUITE_LIKELY"}
+{"adId":"eViH00H9","message":"Help defending peninsula in Fangcrest from the intruders","reward":91,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"ncoUzBXm","message":"Help defending thrift shoppe in Frostfire from the intruders","reward":93,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"pV5Ey2VV","message":"Help defending field in Ravenfire from the intruders","reward":92,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"yCHyRs7v","message":"Help defending grassland in Snowwater from the intruders","reward":89,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"KNhQzvxC","message":"Help defending grassland in Dovebane from the intruders","reward":93,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"kcWeYB4A","message":"Help defending savannah in Greydrone from the intruders","reward":96,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"sVMmdEx2","message":"Help defending field in Redhill from the intruders","reward":84,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"xZsDjc5N","message":"Help defending savannah in Masonhill from the intruders","reward":99,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"COQbnyrg","message":"Create an advertisement campaign for Elisabet Immers to promote their pan based business","reward":45,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"B3jlnMlz","message":"Help Janna Meadows to fix their weed","reward":9,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"kkdnpHWt","message":"Help Aurora Fairburn to clean their pan","reward":8,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Mjov7ymF","message":"Help Nonna Gladwyn to sell an unordinary potatoes on the local market","reward":25,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"DRUrQBzC","message":"Help Mirja Thomson to fix their pot","reward":1,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"6i58a3UG","message":"Help Danijel Jenkins to reach an agreement with Masozi Þórsdóttir on the matters of disputed wagon","reward":13,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"PTclupJD","message":"Help Maldwyn Townsend to clean their sheep","reward":2,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"fofTFtNW","message":"Help Eutropia Pierson to write their biographical novel about their difficulties with a deranged potatoes","reward":36,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"P8lYU0bj","message":"Help Elpida Rennell to write their biographical novel about their difficulties with a deranged horse","reward":23,"expiresIn":7,"encrypted":null,"probability":"RISKY"}
+{"adId":"SOdLeRji","message":"Create an advertisement campaign for Inmaculada Davidson to promote their water based business","reward":12,"expiresIn":7,"encrypted":null,"probability":"WALK_IN_THE_PARK"}
+{"adId":"iKnq1yJM","message":"Help Venceslás Winterbottom to sell an unordinary beer mug on the local market","reward":25,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"D79YnoLE","message":"Help Jacinda Huxtable to reach an agreement with Miho Rennold on the matters of disputed cat","reward":13,"expiresIn":7,"encrypted":null,"probability":"HMMM"}
+{"adId":"64Piz6dl","message":"Help Feruza Holmwood to clean their cat","reward":10,"expiresIn":7,"encrypted":null,"probability":"SURE_THING"}
+{"adId":"qTCzS14c","message":"Help Sedef Holmwood to write their biographical novel about their difficulties with a deranged weed","reward":30,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"b6lDBOVG","message":"Help Brónach Hollins to write their biographical novel about their difficulties with a deranged wagon","reward":38,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"5p232Vwy","message":"Help Tia Atwater to sell an unordinary turnips on the local market","reward":30,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"YC9xWdnq","message":"Help Şadi̇ye Immers to reach an agreement with Scarlet Harland on the matters of disputed horse","reward":4,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"OS4BPiJY","message":"Create an advertisement campaign for Udo Herbert to promote their pan based business","reward":42,"expiresIn":7,"encrypted":null,"probability":"GAMBLE"}
+{"adId":"XC9lccWq","message":"Help Natasza Williams to reach an agreement with Ifan Swindlehurst on the matters of disputed cat","reward":7,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"Pp8IoKg2","message":"Help Brynne Pickering to reach an agreement with Veceslav Bardsley on the matters of disputed pot","reward":4,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}
+{"adId":"DFkzbh2z","message":"Steal horse delivery to Godfried Robertson and share some of the profits with the people.","reward":33,"expiresIn":7,"encrypted":null,"probability":"PIECE_OF_CAKE"}
+{"adId":"3PCnmBP4","message":"Escort Kadri Richardson to field in Everdrone where they can meet with their long lost bucket","reward":46,"expiresIn":7,"encrypted":null,"probability":"QUITE_LIKELY"}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <springProfile name="local">
+        <include resource="org/springframework/boot/logging/logback/default.xml"/>
+        <include resource="org/springframework/boot/logging/logback/console-appender.xml"/>
+
+        <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+                <charset>utf8</charset>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+        <logger name="org.springframework.web" level="DEBUG"/>
+    </springProfile>
+
+    <springProfile name="!local">
+        <property resource="application.properties"/>
+        <springProperty scope="context" name="app_name" source="spring.application.name"/>
+
+        <shutdownHook class="ch.qos.logback.core.hook.DelayingShutdownHook"/>
+
+        <include resource="org/springframework/boot/logging/logback/default.xml"/>
+
+        <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder class="net.logstash.logback.encoder.LoggingEventCompositeJsonEncoder">
+                <providers>
+                    <timestamp>
+                        <fieldName>timestamp</fieldName>
+                        <timeZone>UTC</timeZone>
+                        <pattern>yyyy-MM-dd HH:mm:ss.SSS</pattern>
+                    </timestamp>
+                    <pattern>
+                        <pattern>
+                            {
+                            "app-name": "${app_name}"
+                            }
+                        </pattern>
+                    </pattern>
+                    <logLevel>
+                        <fieldName>level</fieldName>
+                    </logLevel>
+                    <loggerName/>
+                    <threadName>
+                        <fieldName>thread</fieldName>
+                    </threadName>
+                    <mdc>
+                        <fieldName>mdc</fieldName>
+                    </mdc>
+                    <message>
+                        <fieldName>message</fieldName>
+                    </message>
+                    <pid/>
+                    <stackTrace>
+                        <fieldName>stackTrace</fieldName>
+                    </stackTrace>
+                </providers>
+            </encoder>
+        </appender>
+
+        <root level="INFO">
+            <appender-ref ref="CONSOLE"/>
+        </root>
+    </springProfile>
+
+</configuration>

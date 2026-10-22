@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.trimble.transportation.reference.data.management</groupId>
+    <artifactId>gateway-commons</artifactId>
+    <version>1.4.12</version>
+
+    <properties>
+        <maven.compiler.source>25</maven.compiler.source>
+        <maven.compiler.target>25</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+        <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
+
+        <ttc-rdm-common.version>3.3.35</ttc-rdm-common.version>
+        <spring-framework.version>7.0.9</spring-framework.version>
+        <reactor-bom.version>2025.0.7</reactor-bom.version>
+        <netty.version>4.2.19.Final</netty.version>
+        <micrometer.version>1.16.7</micrometer.version>
+        <junit-jupiter-api.version>6.1.1</junit-jupiter-api.version>
+        <mockito-junit-jupiter.version>5.23.0</mockito-junit-jupiter.version>
+        <swagger-annotations-jakarta.version>2.2.52</swagger-annotations-jakarta.version>
+        <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
+        <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>tcx-virtual-maven</id>
+            <name>Trimble E-Tools Artifactory-releases</name>
+            <url>https://artifactory.trimble.tools/artifactory/tcx-shared-maven</url>
+            <uniqueVersion>true</uniqueVersion>
+        </repository>
+    </distributionManagement>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Align Micrometer, including the runtime dependency brought in by Resilience4j. -->
+            <dependency>
+                <groupId>io.micrometer</groupId>
+                <artifactId>micrometer-bom</artifactId>
+                <version>${micrometer.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.projectreactor</groupId>
+                <artifactId>reactor-bom</artifactId>
+                <version>${reactor-bom.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-bom</artifactId>
+                <version>${netty.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${spring-framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webflux</artifactId>
+            <version>${spring-framework.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-http</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.trimble.transportation.reference.data.management</groupId>
+            <artifactId>ttc-rdm-common</artifactId>
+            <version>${ttc-rdm-common.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.swagger.core.v3</groupId>
+            <artifactId>swagger-annotations-jakarta</artifactId>
+            <version>${swagger-annotations-jakarta.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>${jakarta.validation-api.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.annotation</groupId>
+            <artifactId>jakarta.annotation-api</artifactId>
+            <version>${jakarta.annotation-api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>${junit-jupiter-api.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+            <version>${mockito-junit-jupiter.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>${maven-surefire-plugin.version}</version>
+                <configuration>
+                    <argLine>
+                        -javaagent:${settings.localRepository}/org/jacoco/org.jacoco.agent/${jacoco-maven-plugin.version}/org.jacoco.agent-${jacoco-maven-plugin.version}-runtime.jar=destfile=${project.build.directory}/jacoco.exec
+                        -javaagent:${settings.localRepository}/org/mockito/mockito-core/${mockito-junit-jupiter.version}/mockito-core-${mockito-junit-jupiter.version}.jar
+                        -Xshare:off
+                    </argLine>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <excludes>
+                        <!-- Exclude specific API packages (but keep validation logic) -->
+                        <exclude>**/api/dto/request/**</exclude>
+                        <exclude>**/api/dto/response/**</exclude>
+                        <exclude>**/api/dto/common/**</exclude>
+
+                        <!-- Exclude request classes -->
+                        <exclude>**/*Request.class</exclude>
+                        <exclude>**/*request.class</exclude>
+
+                        <!-- Exclude response classes -->
+                        <exclude>**/*Response.class</exclude>
+                        <exclude>**/*response.class</exclude>
+
+                        <!-- Exclude DTO classes -->
+                        <exclude>**/*Dto.class</exclude>
+                        <exclude>**/*dto.class</exclude>
+                        <exclude>**/*DTO.class</exclude>
+
+                        <!-- Exclude pagination-related classes -->
+                        <exclude>**/pagination/**</exclude>
+                        <exclude>**/*Pagination*.class</exclude>
+                        <exclude>**/*Link*.class</exclude>
+                    </excludes>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

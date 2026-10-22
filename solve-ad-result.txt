@@ -1,0 +1,5 @@
+{"success":false,"lives":2,"gold":599,"score":799,"highScore":0,"turn":28,"message":"You fell into a trap set up, by people who did not appreciate your dealings."}
+
+"You successfully solved the mission!" — 100 occurrences.
+
+"You failed on the mission!" — 39 occurrences.
