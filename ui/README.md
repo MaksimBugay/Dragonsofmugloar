@@ -57,7 +57,7 @@ p = AdProbability.successPercentage / 100
 expectedValue = p * reward - (1 - p) * ShopItemId.HEALING_COST
 ```
 
-The current healing cost is 50. Ties follow `PerformGameActionService.VALUE_RANKING`: higher probability, then sooner expiry. Expired ads (`expiresIn <= 0`) always follow non-expired ads, and their buttons are disabled.
+The current healing cost is 50. Display order is Easy, Uncertain, Risky, Expired, then Trap. Trap ads always stay at the end, including expired traps. Within each category, active ads precede expired ads and higher expected value comes first; ties follow `PerformGameActionService.VALUE_RANKING`: higher probability, then sooner expiry. Expired ads (`expiresIn <= 0`) have disabled buttons.
 
 The Java enum itself has no colour field. Green uses the existing `GameConfig` default easy set (Sure thing, Piece of cake, Walk in the park, Quite likely). Red uses `RISKY` and the enum's lower success estimates; remaining non-expired labels are blue. Expired notices are gray. The estimated percentages are not presented as server-guaranteed odds.
 

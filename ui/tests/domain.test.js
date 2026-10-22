@@ -41,7 +41,7 @@ test('expected value uses calibrated Java probability and healing cost', () => {
   assert.equal(expectedValue(ad({ probability: P.IMPOSSIBLE, reward: 50 })), -49);
 });
 
-test('value ranking breaks ties by probability and expiry, always putting expired ads last', () => {
+test('ranking preserves value, probability, and expiry ordering within categories', () => {
   const candidates = [
     ad({ adId: 'expired', reward: 10000, expiresIn: 0 }),
     ad({ adId: 'late', expiresIn: 5 }),
@@ -52,8 +52,8 @@ test('value ranking breaks ties by probability and expiry, always putting expire
   assert.deepEqual(rankAds(candidates).map((a) => a.adId), ['early', 'late', 'risky', 'negative-expiry', 'expired']);
   assert.equal(candidates[0].adId, 'expired');
   const equalValue = [
-    ad({ adId: 'lower', probability: P.RISKY, reward: 200 }),
-    ad({ adId: 'higher', probability: P.HMMM, reward: 150 }),
+    ad({ adId: 'lower', probability: P.PLAYING_WITH_FIRE, reward: 50 }),
+    ad({ adId: 'higher', probability: P.RISKY, reward: 40 }),
   ];
   assert.deepEqual(rankAds(equalValue).map((a) => a.adId), ['higher', 'lower']);
 });
@@ -162,4 +162,20 @@ test('reputation investigations accept signed fractions, advance one turn, and p
   for (const result of [null, {}, { ...reputation, people: '1' }, { ...reputation, state: Infinity }, { ...reputation, underworld: NaN }]) {
     assert.throws(() => applyReputation(before, result), /Invalid reputation response/);
   }
+});
+
+test('category order keeps lucrative risky ads below safer groups and all traps at the very end', () => {
+  const trapMessage = 'Steal super awesome diamond dog from the vault';
+  const candidates = [
+    ad({ adId: 'expired-trap', message: trapMessage, reward: 1_000_000, expiresIn: 0, probability: P.SURE_THING }),
+    ad({ adId: 'trap', message: trapMessage, reward: 1_000_000, probability: P.SURE_THING }),
+    ad({ adId: 'risky', probability: P.RISKY, reward: 100_000 }),
+    ad({ adId: 'expired', expiresIn: 0, reward: 1_000_000 }),
+    ad({ adId: 'uncertain', probability: P.HMMM, reward: 10_000 }),
+    ad({ adId: 'easy', reward: 0 }),
+  ];
+  assert.deepEqual(rankAds(candidates).map(ad => ad.adId), ['easy', 'uncertain', 'risky', 'expired', 'trap', 'expired-trap']);
+  assert.equal(candidates[0].adId, 'expired-trap');
+  assert.deepEqual(rankAds(candidates.filter(ad => ad.expiresIn > 0)).map(ad => ad.adId), ['easy', 'uncertain', 'risky', 'trap']);
+  assert.deepEqual(rankAds(candidates.filter(ad => !isTrapAd(ad))).map(ad => ad.adId), ['easy', 'uncertain', 'risky', 'expired']);
 });

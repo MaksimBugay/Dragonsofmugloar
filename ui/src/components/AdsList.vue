@@ -28,7 +28,7 @@ const count = (id) => id === 'all' ? props.ads.length : props.ads.filter((ad) =>
       <div class="bounty-filters" role="group" aria-label="Filter bounties">
         <button v-for="option in filters" :key="option.id" :aria-pressed="filter === option.id" :class="{ selected: filter === option.id }" @click="filter = option.id">{{ option.label }} <span>{{ count(option.id) }}</span></button>
       </div>
-      <span class="rank-note" title="Ranked using the Java strategy's expected reward minus healing cost; ties favour probability, then sooner expiry.">Best prospects first</span>
+      <span class="rank-note" title="Easy, Uncertain, Risky, then Expired; traps always last. Within each group: expected reward minus healing cost, then probability and sooner expiry.">Best prospects first</span>
     </div>
     <div v-if="error" class="board-error error-message" role="alert"><GameIcon name="warning" /><span>{{ error }} The board must refresh before you can solve another ad.</span><button class="text-button" :disabled="loading || Boolean(pending)" @click="$emit('refresh')">Try again</button></div>
     <div class="noticeboard-scroll" tabindex="0" aria-label="Available bounties">

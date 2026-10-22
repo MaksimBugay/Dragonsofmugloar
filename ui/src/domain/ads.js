@@ -61,9 +61,14 @@ export function adStatus(ad) {
   return 'normal';
 }
 
-// PerformGameActionService.VALUE_RANKING, with expired notices placed last for display.
+const categoryOrder = { easy: 0, normal: 1, risky: 2, expired: 3, trap: 4 };
+const rankingCategory = (ad) => isTrapAd(ad) ? categoryOrder.trap : categoryOrder[adStatus(ad)];
+
+// Category first; retain the Java strategy's value ranking within each category.
+// Trap wording takes priority over expiry so even expired traps stay at the end.
 export function rankAds(ads) {
-  return [...ads].sort((a, b) => Number(a.expiresIn <= 0) - Number(b.expiresIn <= 0)
+  return [...ads].sort((a, b) => rankingCategory(a) - rankingCategory(b)
+    || Number(a.expiresIn <= 0) - Number(b.expiresIn <= 0)
     || expectedValue(b) - expectedValue(a)
     || b.probability.successPercentage - a.probability.successPercentage
     || a.expiresIn - b.expiresIn);
