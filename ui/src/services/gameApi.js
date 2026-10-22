@@ -57,6 +57,7 @@ export function createGameApi({ baseUrl = API_BASE, fetcher = globalThis.fetch, 
     startGame: () => request('/game/start', 'POST'),
     getAds: (gameId) => request(`/${segment(gameId)}/messages`),
     solveAd: (gameId, adId) => request(`/${segment(gameId)}/solve/${segment(adId)}`, 'POST'),
+    investigateReputation: (gameId) => request(`/${segment(gameId)}/investigate/reputation`, 'POST'),
     getShop: (gameId) => request(`/${segment(gameId)}/shop`),
     buyItem: (gameId, itemId) => request(`/${segment(gameId)}/shop/buy/${segment(itemId)}`, 'POST'),
   };

@@ -73,7 +73,7 @@ Each action is compared with the state immediately before it. Solve responses pr
 | GET | `/{gameId}/shop` | Fetch items |
 | POST | `/{gameId}/shop/buy/{itemId}` | Purchase item |
 
-As recorded in the repository findings and verified live, listings are arrays, rewards are numeric, and `shoppingSuccess` is boolean. These observations correct outdated details in the documentation. No paid reputation investigation is performed implicitly.
+As recorded in the repository findings and verified live, listings are arrays, rewards are numeric, and `shoppingSuccess` is boolean. These observations correct outdated details in the documentation. The header reputation widget investigates People, State, and Underworld only when its refresh button is pressed. Each investigation uses one turn, refreshes the bounty board, and records a journal entry. Values remain the last investigated snapshot until refreshed; no investigation runs automatically.
 
 ## Verification
 

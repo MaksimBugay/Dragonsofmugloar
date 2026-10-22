@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { decodeText, decodeAd, expectedValue, rankAds, adStatus, ageAds, isTrapAd, adReputation } from '../src/domain/ads.js';
 import { AD_PROBABILITIES as P, SHOP_ITEM_FEATURES } from '../src/domain/java-models.js';
-import { initialGame, applyAction, adventureEvent } from '../src/domain/game.js';
+import { initialGame, applyAction, applyReputation, adventureEvent } from '../src/domain/game.js';
 import { shopItem } from '../src/domain/shop.js';
 
 const ad = (overrides = {}) => ({ adId: 'quest', message: 'Help the kingdom.', reward: 100, expiresIn: 3, probability: P.PIECE_OF_CAKE, ...overrides });
@@ -148,5 +148,18 @@ test('reputation badges use the opening word of decoded ad text', () => {
   assert.equal(adReputation(ad({ message: 'steal the crown' })), 'negative');
   for (const message of ['Helping the village', 'Stealth mission', 'Please Help the village', '']) {
     assert.equal(adReputation(ad({ message })), 'neutral');
+  }
+});
+
+test('reputation investigations accept signed fractions, advance one turn, and preserve game resources', () => {
+  const before = initial();
+  const reputation = { people: -1.25, state: 2.5, underworld: 0 };
+  const after = applyReputation(before, reputation);
+  assert.deepEqual(after.lastInvestigatedReputation, reputation);
+  assert.equal(after.lastReputationInvestigationTurn, before.turn + 1);
+  assert.equal(after.turn, before.turn + 1);
+  for (const field of ['gold', 'lives', 'level', 'score', 'highScore', 'gameId', 'startedAt']) assert.equal(after[field], before[field]);
+  for (const result of [null, {}, { ...reputation, people: '1' }, { ...reputation, state: Infinity }, { ...reputation, underworld: NaN }]) {
+    assert.throws(() => applyReputation(before, result), /Invalid reputation response/);
   }
 });

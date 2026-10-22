@@ -16,8 +16,8 @@ export function initialGame(result) {
   return {
     gameId: result.gameId,
     ...numericFields(result, stateFields),
-    lastInvestigatedReputation: { people: 0, state: 0, underworld: 0 },
-    lastReputationInvestigationTurn: result.turn,
+    lastInvestigatedReputation: null,
+    lastReputationInvestigationTurn: null,
     startedAt: Date.now(),
     lastAction: 'START_GAME',
   };
@@ -31,6 +31,18 @@ export function applyAction(before, type, result) {
   return { ...before, ...updates, lastAction: type === 'solve' ? 'SOLVE_AD' : 'BUY_ITEM' };
 }
 
+export function applyReputation(before, result) {
+  const reputation = Object.fromEntries(['people', 'state', 'underworld'].map((faction) => {
+    if (typeof result?.[faction] !== 'number' || !Number.isFinite(result[faction])) {
+      throw new Error(`Invalid reputation response: ${faction}`);
+    }
+    return [faction, result[faction]];
+  }));
+  const turn = before.turn + 1;
+  return { ...before, turn, lastInvestigatedReputation: reputation,
+    lastReputationInvestigationTurn: turn, lastAction: 'REFRESH_REPUTATION' };
+}
+
 export function stateDifferences(before, after) {
   return Object.fromEntries(stateFields.map((field) => [field, after[field] - before[field]]));
 }
@@ -41,7 +53,7 @@ export function adventureEvent(type, subject, result, before, after) {
     type,
     subject: structuredClone(subject),
     result: { ...result },
-    success: type === 'solve' ? result.success : result.shoppingSuccess,
+    success: type === 'reputation' || (type === 'solve' ? result.success : result.shoppingSuccess),
     before: structuredClone(before),
     after: structuredClone(after),
     differences: stateDifferences(before, after),

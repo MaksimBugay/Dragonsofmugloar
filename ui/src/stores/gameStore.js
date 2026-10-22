@@ -1,6 +1,6 @@
 import { computed, readonly, ref, toRaw } from 'vue';
 import { ageAds, decodeAd, rankAds } from '../domain/ads.js';
-import { adventureEvent, applyAction, initialGame } from '../domain/game.js';
+import { adventureEvent, applyAction, applyReputation, initialGame } from '../domain/game.js';
 import { shopItem } from '../domain/shop.js';
 
 function decodeListing(response, decode, message) {
@@ -20,6 +20,7 @@ export function createGameStore(api) {
   const adsError = ref('');
   const shopError = ref('');
   const actionError = ref('');
+  const reputationError = ref('');
   const adsStale = ref(true);
   const uncertain = ref(false);
   let adsRequest = 0;
@@ -84,6 +85,7 @@ export function createGameStore(api) {
       history.value = [];
       shopLoading.value = false;
       shopError.value = '';
+      reputationError.value = '';
       uncertain.value = false;
       adsStale.value = true;
       phase.value = 'active';
@@ -91,6 +93,37 @@ export function createGameStore(api) {
     } catch (error) {
       actionError.value = error.message;
       phase.value = previousPhase;
+    } finally {
+      pending.value = null;
+    }
+  }
+
+  async function refreshReputation() {
+    if (!canAct.value) return;
+    pending.value = { type: 'reputation' };
+    reputationError.value = '';
+    actionError.value = '';
+    const before = structuredClone(toRaw(game.value));
+    let receivedResult = false;
+    try {
+      const result = await api.investigateReputation(before.gameId);
+      receivedResult = true;
+      const after = applyReputation(before, result);
+      const reputation = after.lastInvestigatedReputation;
+      const message = `People: ${reputation.people} · State: ${reputation.state} · Underworld: ${reputation.underworld}`;
+      const event = adventureEvent('reputation', { name: 'Reputation investigation', message: 'A report from the kingdom’s informants.' },
+        { ...result, message }, before, after);
+      game.value = after;
+      history.value.push(event);
+      ads.value = ageAds(ads.value, after.turn - before.turn);
+      adsStale.value = true;
+      await refreshAds();
+    } catch (error) {
+      uncertain.value = Boolean(error.uncertain || receivedResult);
+      reputationError.value = error.message;
+      if (uncertain.value) {
+        actionError.value = `${error.message} The investigation may have reached the server and used a turn. Begin a new adventure to continue safely.`;
+      }
     } finally {
       pending.value = null;
     }
@@ -142,8 +175,9 @@ export function createGameStore(api) {
     phase: readonly(phase), pending: readonly(pending), busy, gameOver, canAct, latestEvent,
     adsLoading: readonly(adsLoading), shopLoading: readonly(shopLoading),
     adsError: readonly(adsError), shopError: readonly(shopError), actionError: readonly(actionError),
+    reputationError: readonly(reputationError),
     adsStale: readonly(adsStale), uncertain: readonly(uncertain),
-    startGame, refreshAds, refreshShop,
+    startGame, refreshAds, refreshShop, refreshReputation,
     solveAd: (ad) => perform('solve', ad),
     buyItem: (item) => perform('purchase', item),
   };

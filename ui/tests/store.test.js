@@ -12,6 +12,7 @@ const fixture = (overrides = {}) => {
   const api = {
     startGame: async () => ({ ...base }), getAds: async () => [{ ...rawAd }],
     getShop: async () => [{ ...potion }], solveAd: async () => ({ ...result }),
+    investigateReputation: async () => ({ people: -1.25, state: 2.5, underworld: 0 }),
     buyItem: async () => ({ shoppingSuccess: true, lives: 4, gold: 120, level: 0, turn: 2 }),
     ...overrides,
   };
@@ -197,3 +198,94 @@ test('a rejected solve preserves the board until the user refreshes it', async (
   assert.equal(reads, 2);
   assert.equal(store.ads.value[0].adId, 'quest-2');
 });
+
+test('reputation is investigated only on request and updates the turn, board, and journal', async () => {
+  let investigations = 0; let reads = 0;
+  const { store } = fixture({
+    investigateReputation: async () => { investigations++; return { people: -1.25, state: 2.5, underworld: 0 }; },
+    getAds: async () => { reads++; return [{ ...rawAd }]; },
+  });
+  await store.startGame();
+  assert.equal(investigations, 0);
+  assert.equal(store.game.value.lastInvestigatedReputation, null);
+  assert.equal(store.game.value.lastReputationInvestigationTurn, null);
+  await store.refreshReputation();
+  assert.equal(investigations, 1);
+  assert.equal(reads, 2);
+  assert.equal(store.game.value.turn, 1);
+  assert.equal(store.game.value.lastReputationInvestigationTurn, 1);
+  assert.deepEqual(store.game.value.lastInvestigatedReputation, { people: -1.25, state: 2.5, underworld: 0 });
+  assert.equal(store.history.value[0].type, 'reputation');
+  assert.equal(store.history.value[0].success, true);
+  assert.equal(store.history.value[0].differences.turn, 1);
+  for (const field of ['gold', 'lives', 'level', 'score', 'highScore']) assert.equal(store.game.value[field], base[field]);
+  await store.startGame();
+  assert.equal(investigations, 1);
+  assert.equal(store.game.value.lastInvestigatedReputation, null);
+  assert.equal(store.history.value.length, 0);
+});
+
+test('reputation investigation shares the action lock and suppresses double clicks', async () => {
+  const investigation = deferred(); let calls = 0; let mutations = 0;
+  const { store } = fixture({
+    investigateReputation: () => { calls++; return investigation.promise; },
+    solveAd: async () => { mutations++; }, buyItem: async () => { mutations++; },
+  });
+  await store.startGame(); await store.refreshShop();
+  const first = store.refreshReputation();
+  assert.equal(store.canAct.value, false);
+  assert.equal(store.pending.value.type, 'reputation');
+  await store.refreshReputation(); await store.solveAd(store.ads.value[0]); await store.buyItem(store.items.value[0]); await store.startGame();
+  investigation.resolve({ people: 1, state: -2, underworld: 0 }); await first;
+  assert.equal(calls, 1); assert.equal(mutations, 0);
+  assert.equal(store.canAct.value, true);
+  assert.equal(store.history.value.length, 1);
+});
+
+test('a rejected reputation investigation preserves the last snapshot and does not refresh the board', async () => {
+  let calls = 0; let reads = 0;
+  const { store } = fixture({
+    investigateReputation: async () => { if (++calls > 1) throw new ApiError('Unavailable', { status: 400 }); return { people: 1, state: -2, underworld: 0 }; },
+    getAds: async () => { reads++; return [{ ...rawAd }]; },
+  });
+  await store.startGame(); await store.refreshReputation(); await store.refreshReputation();
+  assert.equal(store.game.value.turn, 1);
+  assert.equal(reads, 2);
+  assert.equal(store.history.value.length, 1);
+  assert.deepEqual(store.game.value.lastInvestigatedReputation, { people: 1, state: -2, underworld: 0 });
+  assert.equal(store.reputationError.value, 'Unavailable');
+  assert.equal(store.uncertain.value, false);
+  assert.equal(store.canAct.value, true);
+  await store.startGame();
+  assert.equal(store.reputationError.value, '');
+});
+
+test('a failed board refresh cannot roll back the reputation investigation and cached ads age by one turn', async () => {
+  let reads = 0;
+  const { store } = fixture({ getAds: async () => { if (++reads > 1) throw new Error('Read failed'); return [{ ...rawAd }]; } });
+  await store.startGame(); await store.refreshReputation();
+  assert.equal(store.game.value.turn, 1);
+  assert.equal(store.game.value.lastInvestigatedReputation.state, 2.5);
+  assert.equal(store.history.value[0].type, 'reputation');
+  assert.equal(store.ads.value.length, 1);
+  assert.equal(store.ads.value[0].expiresIn, 3);
+  assert.equal(store.adsStale.value, true);
+  assert.equal(store.adsError.value, 'Read failed');
+  assert.equal(store.reputationError.value, '');
+});
+
+for (const [name, investigateReputation] of [
+  ['lost response', async () => { throw new ApiError('Network loss', { uncertain: true }); }],
+  ['malformed response', async () => ({ people: 1 })],
+]) {
+  test(`an investigation with a ${name} freezes actions without inventing a turn or reputation`, async () => {
+    const { store } = fixture({ investigateReputation });
+    await store.startGame(); await store.refreshReputation();
+    assert.equal(store.game.value.turn, 0);
+    assert.equal(store.game.value.lastInvestigatedReputation, null);
+    assert.equal(store.history.value.length, 0);
+    assert.equal(store.uncertain.value, true);
+    assert.equal(store.canAct.value, false);
+    assert.match(store.actionError.value, /investigation may have reached the server/);
+  });
+}

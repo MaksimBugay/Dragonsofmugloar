@@ -10,10 +10,12 @@ test('all documented endpoints use the real origin, correct verbs, and escaped p
   await api.solveAd('game/a', 'decoded+id');
   await api.getShop('game/a');
   await api.buyItem('game/a', 'hpot');
+  await api.investigateReputation('game/a');
   assert.deepEqual(calls.map(({ url, method }) => [url, method]), [
     [`${API_BASE}/game/start`, 'POST'], [`${API_BASE}/game%2Fa/messages`, 'GET'],
     [`${API_BASE}/game%2Fa/solve/decoded%2Bid`, 'POST'], [`${API_BASE}/game%2Fa/shop`, 'GET'],
     [`${API_BASE}/game%2Fa/shop/buy/hpot`, 'POST'],
+    [`${API_BASE}/game%2Fa/investigate/reputation`, 'POST'],
   ]);
   assert.ok(calls.every((call) => call.credentials === 'omit' && call.cache === 'no-store'));
 });
