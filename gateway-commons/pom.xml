@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.trimble.transportation.reference.data.management</groupId>
+    <groupId>com.bmv</groupId>
     <artifactId>gateway-commons</artifactId>
     <version>1.4.12</version>
 
@@ -27,15 +27,6 @@
         <jakarta.validation-api.version>3.1.1</jakarta.validation-api.version>
         <jakarta.annotation-api.version>3.0.0</jakarta.annotation-api.version>
     </properties>
-
-    <distributionManagement>
-        <repository>
-            <id>tcx-virtual-maven</id>
-            <name>Trimble E-Tools Artifactory-releases</name>
-            <url>https://artifactory.trimble.tools/artifactory/tcx-shared-maven</url>
-            <uniqueVersion>true</uniqueVersion>
-        </repository>
-    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>

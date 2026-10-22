@@ -8,7 +8,7 @@
         <version>4.1.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.trimble.transportation.reference.data.management</groupId>
+    <groupId>com.bmv</groupId>
     <artifactId>gateway-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>gateway-service</name>
@@ -109,7 +109,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.trimble.transportation.reference.data.management</groupId>
+            <groupId>com.bmv</groupId>
             <artifactId>gateway-commons</artifactId>
             <version>${gateway-commons.version}</version>
         </dependency>

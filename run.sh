@@ -48,8 +48,29 @@ if curl --noproxy '*' --silent --output /dev/null --connect-timeout 1 --max-time
     exit 1
 fi
 
+LIB_DIR="$ROOT_DIR/lib"
+LIB_GROUP_ID=com.trimble.transportation.reference.data.management
+MAVEN_REPO=${MAVEN_REPO:-"$HOME/.m2/repository"}
+# Installs lib/<artifact>-<version>[-<classifier>].jar with its lib/<artifact>-<version>.pom unless already in MAVEN_REPO.
+install_lib() {
+    artifact=$1 version=$2 classifier=${3:-}
+    file="$artifact-$version${classifier:+-$classifier}.jar"
+    if [ -f "$MAVEN_REPO/$(printf '%s' "$LIB_GROUP_ID" | tr . /)/$artifact/$version/$file" ]; then
+        return
+    fi
+    printf 'Installing %s into %s...\n' "$file" "$MAVEN_REPO"
+    mvn -B -ntp -q org.apache.maven.plugins:maven-install-plugin:3.1.4:install-file \
+        -Dmaven.repo.local="$MAVEN_REPO" \
+        -Dfile="$LIB_DIR/$file" \
+        -DpomFile="$LIB_DIR/$artifact-$version.pom" \
+        ${classifier:+-Dclassifier="$classifier"}
+}
+install_lib ttc-rdm-common 3.3.35
+install_lib ttc-rdm-common 3.3.35 tests
+install_lib rdm-spring-boot-data-redis-starter 1.7.0
+
 printf '%s\n' 'Building the executable fat JAR...'
-mvn -B -ntp -pl gateway-service -am -DskipTests package
+mvn -B -ntp -Dmaven.repo.local="$MAVEN_REPO" -pl gateway-service -am -DskipTests package
 set -- "$ROOT_DIR"/gateway-service/target/gateway-service-*.jar
 if [ "$#" -ne 1 ] || [ ! -f "$1" ]; then
     printf '%s\n' 'Expected exactly one gateway-service/target/gateway-service-*.jar.' >&2

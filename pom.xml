@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.trimble.transportation.reference.data.management</groupId>
+    <groupId>com.bmv</groupId>
     <artifactId>bmv-gateway</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bmv-gateway</name>
