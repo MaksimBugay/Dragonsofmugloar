@@ -1,0 +1,58 @@
+Generate single page UI application for Dragons of Mugloar game
+
+1. server API is here https://dragonsofmugloar.com/doc/
+
+2. For all visualizations/animation/effects try to use html/css and only if no way to avoid use JS
+
+3. Use pure JS for visualizations/animation/effects and Vue.js for business logic implementation. Keep that JS separately
+
+4. For business logic JS apply SOLID principals. Always re-use existing code if possible without copy/paste.
+   Single responsibility is a key for Vue components
+
+5. Pay attention to encryption trick described in /Users/mbugai/work/Dragonsofmugloar/DRAGONS_OF_MUGLOAR_FINDINGS.md
+   So decrypt with JS to show proper text for ads
+
+6. Create gorgeous page design with all assets/images inspired by King's bounty and Heroes of Might and Magic games compatible with https://dragonsofmugloar.com/
+
+7. Write simple well formatted easy read by human code
+
+Game mechanic
+
+1. show game story as animated rolling text of ancient paper with heroic background and start game button at the bottom
+
+2. when user push start game button:
+   - game story and start game button disappear
+   - start game api call with Vue
+   - save game state in memory using data structures similar to /Users/mbugai/work/Dragonsofmugloar/gateway-commons/src/main/java/com/bmv/dragonsofmugloar/domain/model
+   - display current game state at the page bottom using nice self-explain icons and wording. Turn number should be displayed separately at the top middle of the page.
+   - load list of the ads, decrypt ads and display it in the middle of the page (60% of screen).
+     It should looks like medieval board for bounty hunters. Expired games are gray, easy - green, risky - red, rest - blue (/Users/mbugai/work/Dragonsofmugloar/gateway-commons/src/main/java/com/bmv/dragonsofmugloar/domain/model/AdProbability.java)
+     use ad id as a title, message as a body. reward/expiresIn/probability should be shown as attributes at the right bottom of ad element.
+     order ads according to rank calculated like here com.bmv.dragonsofmugloar.application.service.ChooseGameActionService.expectedValue, expired Ads always the latest
+     Near every Ad should be 'solve Ad' button with nice icon and message
+
+3. when user push 'solve Ad' button:
+   - Try to solve one of the message API call with Vue
+   - Calculate solving results (success + diffs between lives, gold, score from response and from current state)
+   - save into history Ad and solving result
+   - update current state
+
+4. On the right page side should be collapsable panel (close by default) with Adventure journal (history). Again nice medieval style
+
+5. On the left page side should be collapsable panel Potion Shop (looks like tavern or apteke) with refresh button
+
+6. when user unfold shop panel or user push refresh button
+   - load list of potions using Get the listing of items available in shop endpoint
+   - display every potion as a small image with com.bmv.dragonsofmugloar.domain.model.ShopItem.name as a hint and icon in bottom right corner that show effect (+1 live or +n level)
+7. when user click on potion image
+   - do Purchase an item API call
+   - update current game state based on response (include turn)
+   - calculate diffs and store buy event into history log, they should be displayed in Adventure journal alongside with Solve game results
+
+Use separate Vue components at list for:
+1. turn
+2. current game state
+3. Ads list
+4. Adventure journal
+5. Shop
+

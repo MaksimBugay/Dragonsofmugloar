@@ -1,0 +1,19 @@
+{
+  "name": "dragons-of-mugloar-ui",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.12.0" },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test tests/*.test.js",
+    "check": "node scripts/sync-java-models.mjs --check && npm test && npm run build",
+    "sync:models": "node scripts/sync-java-models.mjs",
+    "sync:story": "node scripts/sync-story.mjs",
+    "test:live": "node scripts/live-smoke.mjs"
+  },
+  "dependencies": { "vue": "^3.5.22" },
+  "devDependencies": { "@vitejs/plugin-vue": "^6.0.1", "vite": "^7.1.7" }
+}

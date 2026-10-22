@@ -1,0 +1,22 @@
+/* Presentation stays in CSS. No animation timers or effects in the game store. */
+@keyframes unfurl { from { transform: translateY(9px) scaleY(.975); } to { transform: translateY(0) scaleY(1); } }
+@keyframes story-roll { from { transform: translateY(10px); } to { transform: translateY(0); } }
+@keyframes drift { 0% { transform: translate3d(0, 30px, 0); opacity: 0; } 20%, 75% { opacity: .55; } 100% { transform: translate3d(25px, -120px, 0); opacity: 0; } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes arrive { from { opacity: .3; transform: translateY(7px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 50% { box-shadow: 0 0 55px #c7b37755; } }
+.story-scroll { transform-origin: top; animation: unfurl 1.4s ease-out both; }
+.story-copy { animation: story-roll 7s ease-out both; }
+.ambient-motes { position: fixed; inset: 0; z-index: -1; pointer-events: none; overflow: hidden; }
+.ambient-motes i { --i: 0; position: absolute; left: calc(var(--i) * 13%); top: calc(30% + var(--i) * 7%); width: 3px; height: 3px; border-radius: 50%; background: #edc478; box-shadow: 0 0 8px 2px #f1be6444; animation: drift calc(10s + var(--i) * 1s) linear infinite; animation-delay: calc(var(--i) * -2s); }
+.spinning { animation: spin 1.2s linear infinite; }
+.loading-crest { animation: pulse 2s ease-in-out infinite; }
+.action-feedback, .state-stat dd, .turn-medallion strong { animation: arrive .3s ease-out; }
+.panel-left-enter-active, .panel-left-leave-active, .panel-right-enter-active, .panel-right-leave-active { transition: transform .25s ease, opacity .25s ease; }
+.panel-left-enter-from, .panel-left-leave-to { transform: translateX(-30px); opacity: 0; }
+.panel-right-enter-from, .panel-right-leave-to { transform: translateX(30px); opacity: 0; }
+.backdrop-enter-active, .backdrop-leave-active { transition: opacity .2s ease; }.backdrop-enter-from, .backdrop-leave-to { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .ambient-motes { display: none; }
+}

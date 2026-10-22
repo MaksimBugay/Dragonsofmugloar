@@ -1,0 +1,18 @@
+Implement the complete Dragons of Mugloar single-page application according to `DRAGONS_OF_MUGLOAR_UI_IMPLEMENTATION_SPEC.md`.
+
+Before implementation, carefully inspect the existing project structure, referenced Java domain models, business logic, and encryption findings. Reuse existing concepts and algorithms rather than reinventing them.
+
+Follow every requirement in the specification, including UI design, game mechanics, API integration, Vue.js component architecture, state management, ad decryption, ranking, and adventure history.
+
+Prioritize a polished, immersive medieval fantasy experience inspired by King's Bounty and Heroes of Might and Magic. Use CSS for animations and visual effects wherever possible, keeping standalone JavaScript effects separate from Vue business logic.
+
+**Implementation rules:**
+- Implement the entire application, not just scaffolding or mockups.
+- Use actual Dragons of Mugloar API endpoints and real game data.
+- Follow SOLID principles, especially single responsibility and code reuse.
+- Keep the code simple, readable, modular, and maintainable.
+- Do not introduce unnecessary dependencies or abstractions.
+- Do not omit, simplify, or silently change requirements.
+- Make reasonable implementation decisions independently without asking for confirmation.
+
+After implementation, run available build and validation checks, fix detected issues, and report the completed functionality, any remaining limitations, and how to launch the application.
