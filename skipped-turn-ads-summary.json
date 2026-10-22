@@ -1,0 +1,144 @@
+{
+  "definition": {
+    "strictEasy": [
+      "SURE_THING",
+      "PIECE_OF_CAKE"
+    ],
+    "broadEasy": [
+      "SURE_THING",
+      "PIECE_OF_CAKE",
+      "WALK_IN_THE_PARK"
+    ]
+  },
+  "design": {
+    "games": 3,
+    "skippedTurnsPerGame": 28,
+    "actions": "Only reputation investigations and ad fetches; no solving or purchases",
+    "pauseMilliseconds": 600,
+    "allBoardsSize": 10,
+    "reputationAlwaysZero": true,
+    "unchangedReadOnlyControls": 3
+  },
+  "games": [
+    {
+      "gameNumber": 1,
+      "gameId": "5c8zwV35",
+      "strictEasyAtTurn0": 6,
+      "strictEasyAtTurn28": 1,
+      "broadEasyAtTurn0": 8,
+      "broadEasyAtTurn28": 3,
+      "strictEasyMeanTurns0to6": 6,
+      "strictEasyMeanTurns21to28": 1.25,
+      "checkpoints": [
+        {
+          "turn": 0,
+          "strictEasy": 6,
+          "broadEasy": 8
+        },
+        {
+          "turn": 7,
+          "strictEasy": 3,
+          "broadEasy": 4
+        },
+        {
+          "turn": 14,
+          "strictEasy": 3,
+          "broadEasy": 5
+        },
+        {
+          "turn": 21,
+          "strictEasy": 1,
+          "broadEasy": 2
+        },
+        {
+          "turn": 28,
+          "strictEasy": 1,
+          "broadEasy": 3
+        }
+      ]
+    },
+    {
+      "gameNumber": 2,
+      "gameId": "qSgk0n3n",
+      "strictEasyAtTurn0": 3,
+      "strictEasyAtTurn28": 1,
+      "broadEasyAtTurn0": 5,
+      "broadEasyAtTurn28": 1,
+      "strictEasyMeanTurns0to6": 3,
+      "strictEasyMeanTurns21to28": 1.375,
+      "checkpoints": [
+        {
+          "turn": 0,
+          "strictEasy": 3,
+          "broadEasy": 5
+        },
+        {
+          "turn": 7,
+          "strictEasy": 4,
+          "broadEasy": 4
+        },
+        {
+          "turn": 14,
+          "strictEasy": 3,
+          "broadEasy": 5
+        },
+        {
+          "turn": 21,
+          "strictEasy": 1,
+          "broadEasy": 3
+        },
+        {
+          "turn": 28,
+          "strictEasy": 1,
+          "broadEasy": 1
+        }
+      ]
+    },
+    {
+      "gameNumber": 3,
+      "gameId": "oJZCbukG",
+      "strictEasyAtTurn0": 2,
+      "strictEasyAtTurn28": 2,
+      "broadEasyAtTurn0": 4,
+      "broadEasyAtTurn28": 2,
+      "strictEasyMeanTurns0to6": 2,
+      "strictEasyMeanTurns21to28": 1.875,
+      "checkpoints": [
+        {
+          "turn": 0,
+          "strictEasy": 2,
+          "broadEasy": 4
+        },
+        {
+          "turn": 7,
+          "strictEasy": 3,
+          "broadEasy": 4
+        },
+        {
+          "turn": 14,
+          "strictEasy": 0,
+          "broadEasy": 1
+        },
+        {
+          "turn": 21,
+          "strictEasy": 1,
+          "broadEasy": 3
+        },
+        {
+          "turn": 28,
+          "strictEasy": 2,
+          "broadEasy": 2
+        }
+      ]
+    }
+  ],
+  "totals": {
+    "strictEasyAtTurn0": 11,
+    "strictEasyAtTurn28": 4,
+    "broadEasyAtTurn0": 17,
+    "broadEasyAtTurn28": 6,
+    "sameAdComparisons": 708,
+    "sameAdProbabilityChanges": 0
+  },
+  "interpretation": "Easy-ad counts fell overall while boards stayed full, but fluctuated and did not decrease in every game. This supports a risk from skipping turns, not a universal monotonic-decline rule. Labels are estimates; no actual mission outcomes were measured."
+}

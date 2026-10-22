@@ -42,15 +42,80 @@ Reference: [official API documentation](https://dragonsofmugloar.com/doc/).
 
 ### Ad encoding
 
-| `encrypted` | Observed interpretation | Distinct ads in ads.txt |
+The official documentation describes four ad fields: `adId`, `message`, `reward` and `expiresIn`. Live ads carry two more: `probability`, the success label, and `encrypted`, a marker saying how the ad's text fields are encoded. Neither is documented. The mapping below was established from live responses, not from documentation.
+
+| `encrypted` | Encoding | Distinct ads in ads.txt |
 |---|---|---:|
 | `null` | Plain text | 609 |
 | `1` | Base64 | 159 |
 | `2` | ROT13 | 17 |
 
-The adapter decoded ad IDs, descriptions and probability labels. Numeric rewards remained numeric in these observations. The message investigation attempted 27 Base64 ads and one ROT13 ad through the adapter.
+`0` was never observed. The adapter treats it as plain text as a defensive assumption, not an observation.
 
-A separate Base64 probe confirmed that the decoded ID was accepted by the solve endpoint. Retaining the raw encryption marker in the model preserves how an ad was received.
+#### Which fields are encoded
+
+| Field | Encoded? |
+|---|---|
+| `adId` | Yes |
+| `message` | Yes |
+| `probability` | Yes |
+| `reward` | No, always a JSON number |
+| `expiresIn` | No, always a JSON number |
+| `encrypted` | No, the marker itself |
+
+All three text fields of an ad use the same encoding. No ad mixed encodings.
+
+#### Raw and decoded examples
+
+Raw encoded responses were not saved during the investigations; [ads.txt](ads.txt) holds decoded ads. The raw forms below were reproduced by re-encoding two ads from ads.txt. Both encodings are reversible, so these are the strings the API sent.
+
+Base64 (`encrypted: 1`):
+
+```json
+{"adId":"WFVMSnFHSzA=",
+ "message":"SW52ZXN0aWdhdGUgTmV6acyHaGUgT3JhbmdlIGFuZCBmaW5kIG91dCB0aGVpciByZWxhdGlvbiB0byB0aGUgbWFnaWMgcGFuLg==",
+ "reward":194,"expiresIn":3,"encrypted":1,"probability":"U3VpY2lkZSBtaXNzaW9u"}
+```
+
+decodes to `XULJqGK0`, `Investigate Nezi̇he Orange and find out their relation to the magic pan.` and `Suicide mission`.
+
+ROT13 (`encrypted: 2`):
+
+```json
+{"adId":"QScWIzOx",
+ "message":"Xvyy Nqqvr Fcbbare jvgu png naq znxr Crbal Onavfgre sebz pnfgyr va Erqcvar gb gnxr gur oynzr",
+ "reward":166,"expiresIn":2,"encrypted":2,"probability":"Fhvpvqr zvffvba"}
+```
+
+decodes to `DFpJVmBk`, `Kill Addie Spooner with cat and make Peony Banister from castle in Redpine to take the blame` and `Suicide mission`.
+
+#### How each encoding was identified
+
+- **Base64.** The values contain only `A–Z`, `a–z`, `0–9`, `+` and `/`, have lengths that are multiples of four, and often end in `=` padding. Every decoded value is readable text. For example, `R2FtYmxl` decodes to `Gamble`.
+- **ROT13.** Word lengths, spaces, capitals and punctuation match ordinary English, but every letter is substituted, which points to a letter-shift cipher. Plain ads supply the full set of probability labels as known plaintext: `Vzcbffvoyr` lines up letter for letter with `Impossible`, a shift of 13.
+- **Live confirmation.** A solve request with a decoded ID was accepted for both encodings. A separate Base64 probe confirmed this first. In ad-probability-observations.jsonl, all 19 Base64 solves and all 3 ROT13 solves returned a normal mission result and advanced the turn. The 3 ROT13 missions failed, but the endpoint recognised every ID.
+
+#### Decoding rules
+
+- **Base64:** the standard alphabet (RFC 4648), not the URL-safe one, with `=` padding. The decoded bytes must be read as UTF-8, because names contain non-ASCII letters. `Nezi̇he` in the example uses a combining dot (`U+0307`).
+- **ROT13:** only ASCII letters rotate (`a–z` and `A–Z`), each by 13 places with its case kept. Digits, spaces, punctuation and non-ASCII letters such as `ð` or `í` are unchanged. ROT13 is its own inverse.
+
+After decoding, the probability label (for example `Suicide mission`) is matched exactly against the known labels and mapped to an `AdProbability` value. An unrecognised label becomes `UNKNOWN`. ads.txt stores these enum names (`SUICIDE_MISSION`), not the API's label text.
+
+#### Why the encoding matters
+
+- **The decoded ID is required.** Solve requests must use the decoded `adId`.
+- **The label is unreadable while encoded.** A client that does not decode cannot judge these ads by their probability label.
+- **Encoded ads pay more on average.** In ads.txt, the average reward is 168.6 gold for Base64 ads, 132.8 for ROT13 ads and 117.9 for plain ads.
+- **A UI shows garbage without decoding.** About 22% of ads would display as encoded text.
+
+#### Implementation and limits
+
+`DragonsofmugloarAdapter` decodes all three fields while converting each ad. It also keeps the raw marker in `Ad#encrypted`, which preserves how the ad was received. ads.txt and the observation logs were written from the domain model, so they show the marker next to already-decoded text.
+
+An unknown marker raises `IllegalArgumentException("Unsupported ad encryption: <n>")` instead of returning garbled fields. This happens while the whole ad list is converted, so one unrecognised ad fails the entire `getAds` call for that turn, not just that ad.
+
+The message investigation attempted 27 Base64 ads and one ROT13 ad through the adapter. Numeric rewards stayed numeric in every observation.
 
 No claim is made about other encryption markers or formats.
 
@@ -484,11 +549,13 @@ stop endpoint or overwrite the final state with `STOP_GAME`.
 ### Adapter and error handling
 
 `DragonsofmugloarAdapter` implements the six port operations listed in section 2
-against `https://dragonsofmugloar.com/api/v2`. It uses the shared HTTP/1 client
-pool and its configured default read timeout.
+against the base URL configured as `dragonsofmugloar.api.url` in
+`application.properties` (`https://dragonsofmugloar.com/api/v2`). It uses the
+shared HTTP/1 client pool and its configured default read timeout.
 
 It decodes ad ID, message and probability using the encryption marker: null or
-zero is plain text, one is UTF-8 Base64, and two is ROT13. It retains the marker.
+zero is plain text, one is UTF-8 Base64, and two is ROT13 (see "Ad encoding"
+in section 2). It retains the marker.
 Unsupported markers and unknown shop item IDs raise errors. Shop IDs are mapped
 to `ShopItemId`, and prices are taken from each live shop response.
 
