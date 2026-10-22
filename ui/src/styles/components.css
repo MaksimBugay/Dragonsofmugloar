@@ -45,6 +45,11 @@
 .quest-attributes .reward { font-size: 11px; font-weight: 700; color: #735522; }
 .quest-attributes .reward dd span { font-weight: 400; font-size: 9px; }
 .quest-attributes .probability { justify-content: flex-end; color: var(--status-color); font-weight: 600; }
+.quest-attributes .reputation-badge { justify-content: center; width: 22px; height: 21px; border: 1px solid #8c785b4d; border-radius: 4px; background: #8c785b0d; color: #77664a; }
+.reputation-badge dd { display: flex; align-items: center; }
+.quest-attributes .reputation-badge .icon { width: 13px; height: 13px; }
+.quest-attributes .reputation-badge.positive { color: #386441; border-color: #38644140; background: #3864410d; }
+.quest-attributes .reputation-badge.negative { color: #9c4033; border-color: #9c403340; background: #9c40330d; }
 .board-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 16px; border-top: 1px solid #bb99572d; padding: 13px 6px; font: 9px var(--sans); color: #c4b698; }
 .board-footer > span { display: flex; white-space: nowrap; align-items: center; gap: 5px; }
 .legend-dot { width: 5px; height: 5px; border-radius: 50%; background: #8a8c86; }.legend-dot.easy { background: #8fba7b; }.legend-dot.normal { background: #84b6c8; }.legend-dot.risky { background: #d87e69; }.legend-dot.trap { background: #e6a15c; }
@@ -55,6 +60,7 @@
 .board-error { display: flex; align-items: center; gap: 9px; padding: 12px; background: #6c342c55; border: 1px solid #d8895b44; margin-top: 10px; }.board-error .text-button { flex-shrink: 0; }
 .action-feedback { display: flex; align-items: center; gap: 12px; background: #203f32ed; border: 1px solid #a6b6796e; border-radius: 3px; padding: 13px 16px; margin-bottom: 16px; color: #e2e8c9; box-shadow: 0 4px 15px #0003; }
 .action-feedback > .icon { color: #b5cf9d; }.action-feedback > div { flex: 1; }.action-feedback strong { font: 600 12px var(--sans); }.action-feedback p { font: 11px/1.6 var(--sans); margin-top: 5px; }.action-feedback .state-deltas { margin-top: 7px; }.action-feedback .icon-button { color: #d2c595; }
+.feedback-actions { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }.feedback-actions .text-button { font-size: 10px; }
 .failed-feedback, .error-feedback { background: #4a3029f2; border-color: #b483626e; color: #f0d7bf; }.failed-feedback > .icon, .error-feedback > .icon { color: #efb593; }
 .state-deltas { display: flex; flex-wrap: wrap; align-items: center; gap: 7px 12px; font: 10px var(--sans); }
 .state-deltas > div { display: flex; align-items: center; gap: 4px; opacity: .75; }.state-deltas .icon { width: 12px; height: 12px; }.state-deltas dd > span { font-size: 9px; }

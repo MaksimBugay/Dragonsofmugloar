@@ -1,6 +1,5 @@
 <script setup>
 import { ref, watch } from 'vue';
-import { scheduleFeedbackDismissal } from '../presentation/feedbackLifetime.js';
 import GameIcon from './GameIcon.vue';
 import StateDeltas from './StateDeltas.vue';
 const props = defineProps({ event: { type: Object, default: null }, error: { type: String, default: '' }, uncertain: Boolean });
@@ -8,13 +7,8 @@ defineEmits(['journal', 'restart']);
 
 const feedbackVisible = ref(false);
 
-watch(() => props.event?.id, (eventId, _previousId, onCleanup) => {
-  feedbackVisible.value = Boolean(eventId);
-  if (eventId) {
-    onCleanup(scheduleFeedbackDismissal(() => {
-      feedbackVisible.value = false;
-    }));
-  }
+watch(() => props.event, (event) => {
+  feedbackVisible.value = Boolean(event);
 }, { immediate: true });
 </script>
 
@@ -23,6 +17,9 @@ watch(() => props.event?.id, (eventId, _previousId, onCleanup) => {
   <div v-else-if="event && feedbackVisible" :key="event.id" class="action-feedback" :class="{ 'failed-feedback': !event.success }" role="status" aria-live="polite">
     <GameIcon :name="event.success ? 'check' : 'shield'" />
     <div><strong>{{ event.type === 'purchase' ? (event.success ? `${event.subject.name} purchased` : 'Purchase unsuccessful') : (event.success ? 'Bounty claimed!' : 'The quest was unsuccessful') }}</strong><p v-if="event.result.message">{{ event.result.message }}</p><StateDeltas :differences="event.differences" /></div>
-    <button class="icon-button" aria-label="View event in Adventure Journal" title="Read your journal" @click="$emit('journal')"><GameIcon name="book" /></button>
+    <span class="feedback-actions">
+      <button class="icon-button" aria-label="View event in Adventure Journal" title="Read your journal" @click="$emit('journal')"><GameIcon name="book" /></button>
+      <button class="text-button" aria-label="Hide feedback" @click="feedbackVisible = false"><GameIcon name="close" />Hide</button>
+    </span>
   </div>
 </template>

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { decodeText, decodeAd, expectedValue, rankAds, adStatus, ageAds, isTrapAd } from '../src/domain/ads.js';
+import { decodeText, decodeAd, expectedValue, rankAds, adStatus, ageAds, isTrapAd, adReputation } from '../src/domain/ads.js';
 import { AD_PROBABILITIES as P, SHOP_ITEM_FEATURES } from '../src/domain/java-models.js';
 import { initialGame, applyAction, adventureEvent } from '../src/domain/game.js';
 import { shopItem } from '../src/domain/shop.js';
@@ -130,4 +130,23 @@ test('active diamond traps have their own category regardless of the advertised 
   }
   assert.equal(adStatus(ad({ message, expiresIn: 0 })), 'expired');
   assert.equal(adStatus(ad({ message, expiresIn: -1 })), 'expired');
+});
+
+test('reputation badges use the opening word of decoded ad text', () => {
+  for (const [message, expected] of [
+    ['Help the village', 'positive'],
+    ['Steal super awesome diamond dog from the vault', 'negative'],
+    ['Escort the messenger', 'neutral'],
+  ]) {
+    for (const encrypted of [0, 1, 2]) {
+      const encode = (text) => encrypted === 1 ? btoa(text) : encrypted === 2 ? decodeText(text, 2) : text;
+      const decoded = decodeAd({ adId: encode('reputation'), message: encode(message), probability: encode('Sure thing'), reward: 100, expiresIn: 3, encrypted });
+      assert.equal(adReputation(decoded), expected);
+    }
+  }
+  assert.equal(adReputation(ad({ message: '  HELP the village' })), 'positive');
+  assert.equal(adReputation(ad({ message: 'steal the crown' })), 'negative');
+  for (const message of ['Helping the village', 'Stealth mission', 'Please Help the village', '']) {
+    assert.equal(adReputation(ad({ message })), 'neutral');
+  }
 });

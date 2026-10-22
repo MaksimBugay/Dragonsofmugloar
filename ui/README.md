@@ -31,7 +31,7 @@ The turn appears at the top center. Lives, gold, dragon level, score, and the se
 
 Open **Potion Shop** on the left to load its current inventory. Refresh fetches it again without taking a turn. Click an affordable item's image to purchase it. The image tooltip uses the server's name; its badge shows the effect from the Java item model. Insufficient-gold items are disabled.
 
-Open **Adventure Journal** on the right to see quest attempts and purchases in one chronology, including failures, source quest/item, result, and changes in lives, gold, score, and level. It begins closed. The latest outcome is also shown above the board for 10 seconds. Each new result restarts that timer; journal entries remain available. Each entry retains independent before/after snapshots. All game state and history are **in memory**: reloading the page or choosing **New adventure** starts fresh. A game-over summary allows another adventure while keeping the completed journal readable until then.
+Open **Adventure Journal** on the right to see quest attempts and purchases in one chronology, including failures, source quest/item, result, and changes in lives, gold, score, and level. It begins closed. The latest outcome also stays above the board until you press Hide or another result replaces it. Each new result shows the banner again; hiding it keeps its journal entry available. Each entry retains independent before/after snapshots. All game state and history are **in memory**: reloading the page or choosing **New adventure** starts fresh. A game-over summary allows another adventure while keeping the completed journal readable until then.
 
 Panels support Escape and focus restoration. Overlay panels contain keyboard focus. CSS animations respect `prefers-reduced-motion`. Buttons and status changes have accessible labels, and quest risk is communicated with text as well as colour.
 
@@ -44,7 +44,7 @@ Panels support Escape and focus restoration. Overlay panels contain keyboard foc
 - `src/domain/shop.js`: live item names/prices with observed Java item effects.
 - `src/domain/java-models.js`: generated definitions from `AdProbability`, `ShopItemId`, and the default easy set in `GameConfig`. Run `npm run sync:models` after changing the Java models.
 - `src/components/`: separate TurnIndicator, CurrentGameState, AdsList/AdNotice, AdventureJournal, and ShopPanel components, plus small shared presentation components.
-- `src/styles/`: theme, layout, component styling, and CSS-only animation. `src/presentation/` contains standalone keyboard/focus and feedback-dismissal helpers; no visual effects run inside game logic.
+- `src/styles/`: theme, layout, component styling, and CSS-only animation. `src/presentation/` contains standalone keyboard/focus helpers; no visual effects run inside game logic.
 
 ### Exact domain rules
 

@@ -42,6 +42,13 @@ export function expectedValue(ad) {
   return p * ad.reward - (1 - p) * -SHOP_ITEM_FEATURES.hpot.goldDiff;
 }
 
+export function adReputation(ad) {
+  const message = ad.message.trimStart();
+  if (/^help\b/i.test(message)) return 'positive';
+  if (/^steal\b/i.test(message)) return 'negative';
+  return 'neutral';
+}
+
 export function isTrapAd(ad) {
   return ad.message.toLowerCase().startsWith('steal super awesome diamond');
 }

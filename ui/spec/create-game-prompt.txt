@@ -16,3 +16,5 @@ Prioritize a polished, immersive medieval fantasy experience inspired by King's 
 - Make reasonable implementation decisions independently without asking for confirmation.
 
 After implementation, run available build and validation checks, fix detected issues, and report the completed functionality, any remaining limitations, and how to launch the application.
+
+Escort Help Steal Infiltrate
