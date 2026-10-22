@@ -38,7 +38,7 @@ class DragonsofmugloarAdapterIT {
 
   @BeforeEach
   void setUp() {
-    adapter = new DragonsofmugloarAdapter();
+    adapter = new DragonsofmugloarAdapter("https://dragonsofmugloar.com/api/v2");
   }
 
   @AfterEach

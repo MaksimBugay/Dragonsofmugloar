@@ -36,19 +36,21 @@ import reactor.core.publisher.Mono;
 public class DragonsofmugloarAdapter implements DragonsofmugloarPort, DisposableBean {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(DragonsofmugloarAdapter.class);
-  private static final String API_URL = "https://dragonsofmugloar.com/api/v2";
 
+  private final String apiUrl;
   private final WebClientWithPool webClient;
   private final Duration timeout;
 
-  public DragonsofmugloarAdapter() {
+  public DragonsofmugloarAdapter(String apiUrl) {
     this(
+        apiUrl,
         HttpWebClientFactory.createWebClient(InternalApiPortMode.HTTP1),
         Duration.ofMillis(HttpWebClientConfig.DEFAULT_CONFIG.readTimeoutMs())
     );
   }
 
-  DragonsofmugloarAdapter(WebClientWithPool webClient, Duration timeout) {
+  DragonsofmugloarAdapter(String apiUrl, WebClientWithPool webClient, Duration timeout) {
+    this.apiUrl = apiUrl;
     this.webClient = webClient;
     this.timeout = timeout;
   }
@@ -92,7 +94,7 @@ public class DragonsofmugloarAdapter implements DragonsofmugloarPort, Disposable
 
   private <T> Mono<T> send(HttpMethod method, String path, Class<T> responseType, Object... uriVariables) {
     return webClient.getWebClient().method(method)
-        .uri(API_URL + path, uriVariables)
+        .uri(apiUrl + path, uriVariables)
         .retrieve()
         .onStatus(status -> !status.is2xxSuccessful(), ClientResponse::createException)
         .bodyToMono(String.class)
@@ -100,7 +102,7 @@ public class DragonsofmugloarAdapter implements DragonsofmugloarPort, Disposable
         .switchIfEmpty(Mono.error(new IllegalStateException("Empty Dragons of Mugloar response: " + path)))
         .timeout(timeout)
         .onErrorMap(error -> !isClientError(error),
-            error -> new DragonsofmugloarServerException(error, method + " " + API_URL + path, statusCode(error)))
+            error -> new DragonsofmugloarServerException(error, method + " " + apiUrl + path, statusCode(error)))
         .map(body -> JsonUtility.fromJson(body, responseType))
         .doOnError(error -> LOGGER.error("Dragons of Mugloar request failed: {} {}", method, path, error));
   }

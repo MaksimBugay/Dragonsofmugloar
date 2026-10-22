@@ -4,6 +4,7 @@ import com.bmv.dragonsofmugloar.application.service.ChooseGameActionService;
 import com.bmv.dragonsofmugloar.application.service.PerformGameActionService;
 import com.bmv.dragonsofmugloar.infrastructure.adapter.DragonsofmugloarAdapter;
 import com.bmv.dragonsofmugloar.port.out.DragonsofmugloarPort;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
 public class DragonsofmugloarGameConfig {
 
   @Bean
-  public DragonsofmugloarPort dragonsofmugloarPort() {
-    return new DragonsofmugloarAdapter();
+  public DragonsofmugloarPort dragonsofmugloarPort(@Value("${dragonsofmugloar.api.url}") String apiUrl) {
+    return new DragonsofmugloarAdapter(apiUrl);
   }
 
   @Bean

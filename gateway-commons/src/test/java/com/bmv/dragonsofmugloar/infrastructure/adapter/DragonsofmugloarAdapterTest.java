@@ -41,11 +41,13 @@ import reactor.core.publisher.Mono;
 
 class DragonsofmugloarAdapterTest {
 
+  private static final String API_URL = "https://dragonsofmugloar.com/api/v2";
+
   private final List<ClientRequest> requests = new ArrayList<>();
 
   @Test
   void createsAndDisposesDefaultHttpClient() {
-    new DragonsofmugloarAdapter().destroy();
+    new DragonsofmugloarAdapter(API_URL).destroy();
   }
 
   @Test
@@ -234,7 +236,7 @@ class DragonsofmugloarAdapterTest {
         .exchangeFunction(_ -> Mono.error(new ConnectException("Connection refused")))
         .build();
     DragonsofmugloarAdapter adapter = new DragonsofmugloarAdapter(
-        new WebClientWithPool(client, null), Duration.ofSeconds(2)
+        API_URL, new WebClientWithPool(client, null), Duration.ofSeconds(2)
     );
 
     var error = assertThrows(DragonsofmugloarServerException.class, () -> adapter.getShopItems("game1").block());
@@ -280,7 +282,7 @@ class DragonsofmugloarAdapterTest {
   void timesOutWhenApiDoesNotRespond() {
     WebClient client = WebClient.builder().exchangeFunction(_ -> Mono.never()).build();
     DragonsofmugloarAdapter adapter = new DragonsofmugloarAdapter(
-        new WebClientWithPool(client, null), Duration.ofMillis(20)
+        API_URL, new WebClientWithPool(client, null), Duration.ofMillis(20)
     );
 
     var error = assertThrows(DragonsofmugloarServerException.class, () -> adapter.startGame().block());
@@ -292,7 +294,7 @@ class DragonsofmugloarAdapterTest {
   @Test
   void disposesConnectionPool() {
     WebClientWithPool client = mock(WebClientWithPool.class);
-    DragonsofmugloarAdapter adapter = new DragonsofmugloarAdapter(client, Duration.ofSeconds(2));
+    DragonsofmugloarAdapter adapter = new DragonsofmugloarAdapter(API_URL, client, Duration.ofSeconds(2));
 
     adapter.destroy();
 
@@ -311,13 +313,13 @@ class DragonsofmugloarAdapterTest {
           );
         })
         .build();
-    return new DragonsofmugloarAdapter(new WebClientWithPool(client, null), Duration.ofSeconds(2));
+    return new DragonsofmugloarAdapter(API_URL, new WebClientWithPool(client, null), Duration.ofSeconds(2));
   }
 
   private void assertRequest(HttpMethod method, String path) {
     ClientRequest request = requests.getLast();
     assertEquals(method, request.method());
-    assertEquals("https://dragonsofmugloar.com/api/v2" + path, request.url().toString());
+    assertEquals(API_URL + path, request.url().toString());
     assertNull(request.headers().getFirst(HttpHeaders.AUTHORIZATION));
   }
 }
