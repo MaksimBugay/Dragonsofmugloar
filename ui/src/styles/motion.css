@@ -16,6 +16,8 @@
 .panel-left-enter-from, .panel-left-leave-to { transform: translateX(-30px); opacity: 0; }
 .panel-right-enter-from, .panel-right-leave-to { transform: translateX(30px); opacity: 0; }
 .backdrop-enter-active, .backdrop-leave-active { transition: opacity .2s ease; }.backdrop-enter-from, .backdrop-leave-to { opacity: 0; }
+@keyframes trap-embers { 0%, 100% { opacity: .45; } 50% { opacity: .85; } }
+.ad-notice.trap::after { animation: trap-embers 4.5s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
   .ambient-motes { display: none; }

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
-import { decodeText, decodeAd, expectedValue, rankAds, adStatus, ageAds } from '../src/domain/ads.js';
+import { decodeText, decodeAd, expectedValue, rankAds, adStatus, ageAds, isTrapAd } from '../src/domain/ads.js';
 import { AD_PROBABILITIES as P, SHOP_ITEM_FEATURES } from '../src/domain/java-models.js';
 import { initialGame, applyAction, adventureEvent } from '../src/domain/game.js';
 import { shopItem } from '../src/domain/shop.js';
@@ -107,4 +107,27 @@ test('the imported story retains two paragraphs and official attribution', async
   assert.equal(story.paragraphs.length, 2);
   assert.ok(story.paragraphs.every((paragraph) => paragraph.length > 400));
   assert.match(story.attribution, /Copyright © 2018 Bigbank AS/);
+});
+
+test('trap detection matches the decoded message prefix regardless of case', () => {
+  const message = 'Steal super awesome diamond from the royal vault';
+  for (const encrypted of [0, 1, 2]) {
+    const encode = (text) => encrypted === 1 ? btoa(text) : encrypted === 2 ? decodeText(text, 2) : text;
+    const decoded = decodeAd({ adId: encode('trap'), message: encode(message), probability: encode('Sure thing'), reward: 100, expiresIn: 3, encrypted });
+    assert.equal(isTrapAd(decoded), true);
+  }
+  assert.equal(isTrapAd(ad({ message: message.toUpperCase() })), true);
+  assert.equal(isTrapAd(ad({ message: 'Help recover the Steal super awesome diamond notice' })), false);
+  assert.equal(isTrapAd(ad()), false);
+});
+
+test('active diamond traps have their own category regardless of the advertised probability', () => {
+  const message = 'Steal super awesome diamond from the royal vault';
+  for (const probability of Object.values(P)) {
+    const trap = ad({ message, probability });
+    assert.equal(adStatus(trap), 'trap');
+    for (const other of ['easy', 'normal', 'risky']) assert.notEqual(adStatus(trap), other);
+  }
+  assert.equal(adStatus(ad({ message, expiresIn: 0 })), 'expired');
+  assert.equal(adStatus(ad({ message, expiresIn: -1 })), 'expired');
 });

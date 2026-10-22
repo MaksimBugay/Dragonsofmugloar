@@ -27,6 +27,8 @@
 .ad-notice.easy { --status-color: var(--easy); }
 .ad-notice.risky { --status-color: var(--risky); }
 .ad-notice.expired { --status-color: #666963; background-color: #c5c2b4; background-image: url('../../public/assets/parchment.svg'); color: #55564e; }
+.ad-notice.trap { --status-color: var(--trap); box-shadow: inset 0 0 32px #7e5e2526, 0 3px 12px #0006; }
+.ad-notice.trap::after { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: .65; box-shadow: inset 0 -1px #d68b4c, inset 0 -16px 22px -20px #bb4a13, 0 0 10px #b64d1e24; }
 .notice-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .notice-kicker { text-transform: uppercase; font: 700 8px var(--sans); letter-spacing: .12em; color: var(--status-color); }
 .notice-header h3 { font-family: 'Caesar Dressing', var(--title), serif; font-weight: 400; font-size: 26px; letter-spacing: .06em; line-height: 1.35; margin-top: 4px; overflow-wrap: anywhere; color: #3f3523; }
@@ -43,9 +45,9 @@
 .quest-attributes .reward { font-size: 11px; font-weight: 700; color: #735522; }
 .quest-attributes .reward dd span { font-weight: 400; font-size: 9px; }
 .quest-attributes .probability { justify-content: flex-end; color: var(--status-color); font-weight: 600; }
-.board-footer { display: flex; align-items: center; justify-content: flex-start; gap: 16px; border-top: 1px solid #bb99572d; padding: 13px 6px; font: 9px var(--sans); color: #c4b698; }
-.board-footer > span { display: flex; align-items: center; gap: 5px; }
-.legend-dot { width: 5px; height: 5px; border-radius: 50%; background: #8a8c86; }.legend-dot.easy { background: #8fba7b; }.legend-dot.normal { background: #84b6c8; }.legend-dot.risky { background: #d87e69; }
+.board-footer { display: flex; flex-wrap: wrap; align-items: center; justify-content: flex-start; gap: 16px; border-top: 1px solid #bb99572d; padding: 13px 6px; font: 9px var(--sans); color: #c4b698; }
+.board-footer > span { display: flex; white-space: nowrap; align-items: center; gap: 5px; }
+.legend-dot { width: 5px; height: 5px; border-radius: 50%; background: #8a8c86; }.legend-dot.easy { background: #8fba7b; }.legend-dot.normal { background: #84b6c8; }.legend-dot.risky { background: #d87e69; }.legend-dot.trap { background: #e6a15c; }
 .board-footer-note { margin-left: auto; font: italic 10px Georgia, serif; }
 .board-empty { min-height: 230px; display: grid; align-content: center; justify-items: center; text-align: center; gap: 14px; padding: 24px; color: #d6c6a2; }
 .board-empty > .icon { width: 37px; height: 37px; color: #bca16b; }

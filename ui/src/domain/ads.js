@@ -42,8 +42,13 @@ export function expectedValue(ad) {
   return p * ad.reward - (1 - p) * -SHOP_ITEM_FEATURES.hpot.goldDiff;
 }
 
+export function isTrapAd(ad) {
+  return ad.message.toLowerCase().startsWith('steal super awesome diamond');
+}
+
 export function adStatus(ad) {
   if (ad.expiresIn <= 0) return 'expired';
+  if (isTrapAd(ad)) return 'trap';
   if (EASY_PROBABILITIES.includes(ad.probability.key)) return 'easy';
   if (ad.probability.successPercentage <= AD_PROBABILITIES.RISKY.successPercentage) return 'risky';
   return 'normal';

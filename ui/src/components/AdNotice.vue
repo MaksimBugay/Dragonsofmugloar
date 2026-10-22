@@ -9,14 +9,14 @@ const props = defineProps({
 });
 defineEmits(['solve']);
 const status = computed(() => adStatus(props.ad));
-const statusLabel = { easy: 'Favourable', risky: 'Dangerous', normal: 'Uncertain', expired: 'Expired' };
+const statusLabel = { easy: 'Favourable', risky: 'Dangerous', normal: 'Uncertain', trap: 'Trap', expired: 'Expired' };
 </script>
 
 <template>
   <article class="ad-notice parchment" :class="status" :aria-labelledby="`quest-${ad.adId}`" :data-status="status">
     <header class="notice-header">
       <div><span class="notice-kicker">Royal bounty · {{ statusLabel[status] }}</span><h3 :id="`quest-${ad.adId}`">{{ ad.adId }}</h3></div>
-      <span class="wax-seal" :title="statusLabel[status]"><GameIcon :name="status === 'risky' ? 'sword' : status === 'expired' ? 'clock' : 'dragon'" /></span>
+      <span class="wax-seal" :title="statusLabel[status]"><GameIcon :name="status === 'trap' ? 'flame' : status === 'risky' ? 'sword' : status === 'expired' ? 'clock' : 'dragon'" /></span>
     </header>
     <p class="quest-description">{{ ad.message }}</p>
     <div class="notice-bottom">
