@@ -29,10 +29,6 @@ function toggleJournal() {
   journalOpen.value = !journalOpen.value;
   if (journalOpen.value) shopOpen.value = false;
 }
-function openJournal() {
-  journalOpen.value = true;
-  shopOpen.value = false;
-}
 watch(() => game.value?.gameId, () => {
   shopOpen.value = false;
   journalOpen.value = false;
@@ -58,7 +54,7 @@ watch(() => game.value?.gameId, () => {
       <ShopPanel :open="shopOpen" :items="items" :gold="game.gold" :loading="shopLoading" :disabled="!canAct" :error="shopError" :pending="pending" @toggle="toggleShop" @refresh="store.refreshShop" @buy="store.buyItem" />
       <main id="main-content" class="adventure-main">
         <div class="adventure-heading"><span class="eyebrow"><GameIcon name="spark" /> Fortune favours the brave</span><span class="game-id" :title="`Game ${game.gameId}`">Adventure {{ game.gameId }}</span></div>
-        <ActionFeedback :event="latestEvent" :error="actionError" :uncertain="uncertain" @journal="openJournal" @restart="store.startGame" />
+        <ActionFeedback :event="latestEvent" :error="actionError" :uncertain="uncertain" @restart="store.startGame" />
         <section v-if="gameOver" class="game-over parchment" aria-labelledby="game-over-title" role="status"><GameIcon name="crown" /><div><p class="eyebrow">Every legend has its ending</p><h2 id="game-over-title">Your adventure is complete</h2><p>You earned {{ game.score }} points in {{ game.turn }} turns. Your deeds live on in the journal.</p></div><button class="button button-primary" :disabled="busy" @click="store.startGame"><GameIcon name="dragon" />New adventure</button></section>
         <AdsList :ads="ads" :loading="adsLoading" :disabled="!canAct" :stale="adsStale" :error="adsError" :pending="pending" @solve="store.solveAd" @refresh="store.refreshAds" />
         <div class="adventure-caption"><GameIcon name="feather" /><span>Spend wisely. Choose bravely. Leave a legend.</span><button class="text-button restart-adventure" :disabled="busy" title="Start a fresh game and clear this adventure’s journal" @click="store.startGame">New adventure <GameIcon name="arrow" /></button></div>
