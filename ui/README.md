@@ -25,7 +25,7 @@ Preview runs at **http://127.0.0.1:4173/**. Deploy the generated `dist/` directo
 
 ## Play
 
-Read the two original introductory paragraphs on the animated scroll, then choose **Start Game**. Open **Dragon Slayer’s Code** beside the board’s Refresh button for a gameplay guide (a book icon on mobile). Choose **Solve Ad** on a notice to attempt that quest. The API decides its outcome; favourable labels are estimates rather than guarantees.
+Read the two original introductory paragraphs on the animated scroll, then choose **Start Game**. Open **Dragon Slayer’s Code** beside the board’s Refresh button for a blood-stained parchment guide to the survival strategy (a book icon on mobile), with seven steps covering healing reserves, quest difficulty, upgrades, and reputation checks. Choose **Solve Ad** on a notice to attempt that quest. The API decides its outcome; favourable labels are estimates rather than guarantees.
 
 The turn appears at the top center. Lives, gold, dragon level, score, and the server's high score appear along the bottom. The central board occupies 60% of a desktop viewport and presents its notices in one column, with rune-inspired lettering for ad IDs. On smaller screens, it expands for readability and the panels become overlays. During mobile gameplay, the header, turn and reputation banners, panel buttons, and bottom state bar stay fixed while only the ads list scrolls. Compact controls keep the list usable on shorter phone screens.
 
@@ -109,6 +109,8 @@ Availability, rate limits, quest outcomes, and future undocumented encryption/it
 
 
 ## Portable deployment freshness
+
+`Cache-Control`, `Pragma`, and `Expires` are not supported HTML `http-equiv` values. Configure caching through HTTP response headers: the host must send `Cache-Control: no-cache` for both portable HTML pages to require a freshness check on each new opening.
 
 `bash deploy-game.sh --dry-run` lists the current files and the normal public URL. Deployment uploads assets before the HTML, then downloads both public HTML pages, their JS/CSS bundles, and all shop images and compares their contents with the local portable files. A mismatch makes deployment fail verification. Run `bash deploy-game.sh --verify` to repeat these public checks without uploading or connecting over SSH.
 

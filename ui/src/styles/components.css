@@ -215,19 +215,55 @@
 .dragon-code-button .icon { width: 16px; height: 16px; }
 .board-heading-actions { margin-left: auto; display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
 .board-heading-actions .board-refresh { margin-left: 0; }
-.dragon-code-dialog { width: min(640px, calc(100% - 32px)); }
+/* A weathered manuscript; its heading stays within reach as the laws scroll. */
+.dragon-code-dialog {
+  width: min(700px, calc(100% - 32px));
+  max-height: min(860px, calc(100dvh - 32px));
+  padding: 38px 38px 34px;
+  color: #352316;
+  color-scheme: light;
+  border: 1px solid #75502c;
+  border-radius: 12px / 5px;
+  background-color: #dfc18a;
+  background-image: url('../../public/assets/dragon-code-blood.svg'), url('../../public/assets/parchment.svg'), linear-gradient(90deg, #78512366, #ead3a1 7%, #f2dfb5 48%, #e6c992 92%, #78512366);
+  background-size: 100% 100%, 180px 180px, 100% 100%;
+  box-shadow: 0 24px 80px #000b, inset 0 0 38px #75471966;
+}
 .dragon-code-dialog[open] { display: flex; flex-direction: column; overflow: hidden; }
-.dragon-code-dialog .game-dialog-heading, .dragon-code-intro { flex-shrink: 0; }
-.dragon-code-intro { color: #d4c39e; font: italic 13px/1.6 Georgia, serif; margin-bottom: 18px; }
-.dragon-code-rules { min-height: 0; overflow-y: auto; overscroll-behavior: contain; margin: 0; padding: 0 8px 0 24px; color: #e4cf9f; }
-.dragon-code-rules li { padding-left: 8px; }
-.dragon-code-rules li + li { margin-top: 16px; }
-.dragon-code-rules li::marker { color: #d5b775; font-family: var(--title), serif; }
-.dragon-code-rules h3 { font-size: 18px; margin-bottom: 5px; }
-.dragon-code-rules p { color: #d0cfb8; font: 12px/1.8 var(--sans); }
+.dragon-code-dialog::before, .dragon-code-dialog::after { content: ''; position: absolute; left: 0; right: 0; height: 20px; pointer-events: none; border: 1px solid #7c542c; border-radius: 8px; background: linear-gradient(#69401f, #c39b5d 18%, #f3dba5 42%, #d2aa6b 65%, #79502b); box-shadow: 0 3px 7px #4a2b1955; }
+.dragon-code-dialog::before { top: 0; }
+.dragon-code-dialog::after { bottom: 0; transform: rotate(180deg); }
+.dragon-code-dialog::backdrop { background: #100b08c9; }
+.dragon-code-dialog .game-dialog-heading { flex-shrink: 0; gap: 12px; padding-bottom: 16px; margin-bottom: 0; border-bottom: 3px double #82552f88; color: #492517; }
+.dragon-code-dialog .game-dialog-heading > .icon { color: #7c3024; width: 28px; height: 28px; }
+.dragon-code-dialog .game-dialog-heading h2 { font-size: clamp(22px, 3.6vw, 30px); }
+.dragon-code-dialog .game-dialog-heading .icon-button { color: #58281d; border-color: #82552f88; background: #f3ddb5cc; width: 36px; height: 36px; }
+.dragon-code-dialog .icon-button:hover { background: #e7c58e; color: #39180f; }
+.dragon-code-dialog :focus-visible { outline-color: #792d22; outline-offset: 2px; }
+.dragon-code-manuscript { min-height: 0; overflow-y: auto; overscroll-behavior: contain; padding: 20px 14px 8px 4px; scrollbar-color: #91663f #c9a87255; scrollbar-width: thin; }
+.dragon-code-kicker { text-align: center; font: 600 10px/1.6 var(--sans); letter-spacing: .17em; text-transform: uppercase; color: #773428; margin-bottom: 14px; }
+.dragon-code-intro { color: #503523; font: italic 16px/1.75 Georgia, serif; margin-bottom: 24px; }
+.dragon-code-intro::first-letter { float: left; padding: 6px 7px 0 0; color: #812d23; font: 50px/.9 var(--title), serif; }
+.dragon-code-rules { margin: 0; padding: 0 0 0 32px; list-style-type: upper-roman; }
+.dragon-code-rules li { padding-left: 10px; }
+.dragon-code-rules li + li { margin-top: 22px; }
+.dragon-code-rules li::marker { color: #792d22; font: 600 14px var(--title), serif; }
+.dragon-code-rules h3 { color: #64291e; font-size: 21px; margin-bottom: 6px; }
+.dragon-code-rules p { color: #352619; font: 15px/1.8 Georgia, serif; }
+.dragon-code-oath { margin-top: 28px; padding-top: 20px; border-top: 3px double #82552f66; text-align: center; color: #712b21; font: italic 19px/1.6 var(--title), serif; }
+.dragon-code-footnote { margin-top: 16px; text-align: center; color: #60452e; font: italic 12px/1.7 Georgia, serif; }
 @media (max-width: 767px) {
   .board-heading-actions { gap: 5px; }
   .dragon-code-button { width: 30px; min-height: 32px; padding: 5px; }
   .dragon-code-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-  .dragon-code-dialog .game-dialog-heading h2 { font-size: 20px; }
+  .dragon-code-dialog { width: calc(100% - 24px); max-height: calc(100dvh - 24px); padding: 30px 18px 28px; }
+  .dragon-code-dialog .game-dialog-heading { gap: 8px; padding-bottom: 12px; }
+  .dragon-code-dialog .game-dialog-heading > .icon { display: none; }
+  .dragon-code-dialog .game-dialog-heading h2 { font-size: 22px; }
+  .dragon-code-manuscript { padding: 16px 8px 6px 3px; }
+  .dragon-code-kicker { font-size: 9px; letter-spacing: .1em; }
+  .dragon-code-rules { padding-left: 27px; }
+  .dragon-code-rules li { padding-left: 5px; }
+  .dragon-code-rules h3 { font-size: 19px; }
+  .dragon-code-rules p { font-size: 14px; }
 }

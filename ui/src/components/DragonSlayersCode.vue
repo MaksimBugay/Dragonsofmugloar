@@ -2,10 +2,8 @@
 import { ref } from 'vue';
 import GameDialog from './GameDialog.vue';
 import GameIcon from './GameIcon.vue';
-import { SHOP_ITEM_FEATURES } from '../domain/java-models.js';
 
 const popup = ref(null);
-const healingCost = -SHOP_ITEM_FEATURES.hpot.goldDiff;
 </script>
 
 <template>
@@ -14,14 +12,20 @@ const healingCost = -SHOP_ITEM_FEATURES.hpot.goldDiff;
     <GameIcon name="book" /><span class="dragon-code-label">Dragon Slayer’s Code</span>
   </button>
   <GameDialog id="dragon-slayers-code" ref="popup" class="dragon-code-dialog" title="Dragon Slayer’s Code" icon="book">
-    <p class="dragon-code-intro">Choose wisely. Guard your lives. Leave a legend.</p>
-    <ol class="dragon-code-rules">
-      <li><h3>Read the risk</h3><p>Green bounties are Easy, blue Uncertain, and red Risky. The probability is an estimate, so even an easy quest can fail.</p></li>
-      <li><h3>Beware the glitter</h3><p>Orange notices about stealing a super awesome diamond are flagged as traps. Expired bounties cannot be attempted. Use the filters to find the quests you want.</p></li>
-      <li><h3>Trust the order</h3><p>The board lists Easy, Uncertain, Risky, then Expired bounties, with traps last. Within each group, it weighs the reward against the risk and the cost of healing.</p></li>
-      <li><h3>Guard your lives and your gold</h3><p>A failed quest can cost a life. A healing potion costs {{ healingCost }} gold and restores one life; upgrades raise your dragon’s level. Quest attempts and purchases can advance the turn, including unsuccessful actions.</p></li>
-      <li><h3>Know your reputation</h3><p>Thumb badges show reputation hints: helping is positive, stealing negative, and other wording neutral. The Reputation banner shows People/State. Open it for all three factions; investigating uses one turn. Refreshing the bounty board or shop is free.</p></li>
-      <li><h3>Keep your chronicle</h3><p>Adventure Journal records quest attempts, purchases, and reputation investigations, including failures and changes to your dragon. Your adventure ends when no lives remain. Reloading or choosing New adventure clears the game and journal.</p></li>
-    </ol>
+    <div class="dragon-code-manuscript" tabindex="0" role="region" aria-label="The seven rules of survival">
+      <p class="dragon-code-kicker">Seven rules · a path to glory</p>
+      <p class="dragon-code-intro">Slayer, guard your life, claim the easier victories, and build your strength before facing greater foes.</p>
+      <ol class="dragon-code-rules">
+        <li><h3>Keep gold for one more life</h3><p>Always keep enough gold in reserve to buy +1 life. Whenever only one life remains, buy another if you can afford it. Live to hunt another day.</p></li>
+        <li><h3>Claim the easy victories</h3><p>Solve the Easy quests, starting at the top of the board. Keep going while easy quests remain.</p></li>
+        <li><h3>Grow stronger when easy quests run out</h3><p>If no Easy quests remain, buy a +1 or +2 level upgrade if you can afford it while keeping your life reserve. Then check the board for Easy quests again.</p></li>
+        <li><h3>Face the uncertain trials</h3><p>Move on to Uncertain quests. After every attempt, check for Easy quests again and take those first.</p></li>
+        <li><h3>Build your strength once more</h3><p>If no Uncertain quests remain either, buy a +1 or +2 level upgrade if your gold allows, keeping your life reserve. Check the board again for Easy or Uncertain quests.</p></li>
+        <li><h3>Buy time when hope runs thin</h3><p>If you have no gold, only one life, and nothing but Risky quests or suspected traps left, try investigating your reputation. Each investigation spends a turn. After two or three turns, Easy or Uncertain quests may appear. Check the board after each turn.</p></li>
+        <li><h3>Pray, then brave the danger</h3><p>If no better path opens, say a prayer and attempt a Risky quest. May your courage hold and your blade strike true.</p></li>
+      </ol>
+      <p class="dragon-code-oath">Stay alive. Make every turn count.<br />Build a legend the kingdom will remember.</p>
+      <p class="dragon-code-footnote">No strategy guarantees victory. The odds are estimates, and even easy quests can fail.</p>
+    </div>
   </GameDialog>
 </template>
