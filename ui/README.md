@@ -27,7 +27,7 @@ Preview runs at **http://127.0.0.1:4173/**. Deploy the generated `dist/` directo
 
 Read the two original introductory paragraphs on the animated scroll, then choose **Start Game**. Choose **Solve Ad** on a notice to attempt that quest. The API decides its outcome; favourable labels are estimates rather than guarantees.
 
-Open **Dragon Slayer’s Code** beside the board’s Refresh button (a book icon on mobile) for a blood-stained parchment guide written for the dragon slayer in clear language with a light epic tone. Its seven steps cover:
+Open **Dragon Trainer’s Code** beside the board’s Refresh button (a book icon on mobile) for a blood-stained parchment guide written for the dragon trainer in clear language with a light epic tone, focused on caring for and guiding their dragon. Its seven steps cover:
 
 1. Reserve gold for +1 life and heal on the last life.
 2. Solve Easy quests from the top of the board.
@@ -59,7 +59,7 @@ Panels support Escape and focus restoration. Overlay panels contain keyboard foc
 - `src/domain/game.js`: Java-shaped `GameState`, partial-response application, state differences, and immutable event snapshots.
 - `src/domain/shop.js`: live item names/prices with observed Java item effects.
 - `src/domain/java-models.js`: generated definitions from `AdProbability`, `ShopItemId`, and the default easy set in `GameConfig`. Run `npm run sync:models` after changing the Java models.
-- `src/components/`: separate TurnIndicator, CurrentGameState, AdsList/AdNotice, AdventureJournal, ShopPanel, ReputationBanner/ReputationWidget, and DragonSlayersCode components. GameDialog shares modal behavior between the guide and reputation report.
+- `src/components/`: separate TurnIndicator, CurrentGameState, AdsList/AdNotice, AdventureJournal, ShopPanel, ReputationBanner/ReputationWidget, and DragonCode components. GameDialog shares modal behavior between the guide and reputation report.
 - `src/styles/`: theme, layout, component styling, and CSS-only animation. `src/presentation/` contains standalone keyboard/focus helpers and the shared one-decimal reputation formatter; no visual effects run inside game logic.
 
 ### Exact domain rules

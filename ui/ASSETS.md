@@ -5,7 +5,7 @@
 - `public/assets/crest.svg`: original dragon heraldry.
 - `public/assets/fonts/caesar-dressing-latin.woff2`: locally hosted Caesar Dressing by Open Window, used for rune-inspired ad IDs. Downloaded unmodified from [Google Fonts](https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap); [upstream source](https://github.com/google/fonts/tree/main/ofl/caesardressing). Its SIL Open Font License and copyright notice are included in `public/assets/fonts/OFL-Caesar-Dressing.txt`.
 - `public/assets/parchment.svg`: original procedural paper texture.
-- `public/assets/dragon-code-blood.svg`: original procedural SVG blood stains for the Dragon Slayer’s Code scroll; paired with the parchment texture and CSS scroll rolls.
+- `public/assets/dragon-code-blood.svg`: original procedural SVG blood stains for the Dragon Trainer’s Code scroll; paired with the parchment texture and CSS scroll rolls.
 - `src/content/story.json`: imported source content and attribution from https://dragonsofmugloar.com/ via `npm run sync:story`. The official site's illustrations and background photo are not reused by this UI. The full original attribution remains preserved in the story credits.
 
 No remote fonts or runtime image services are required.
