@@ -142,3 +142,47 @@
   .reputation-heading { margin-bottom: 7px; }
   .in-adventure .panel-tab { top: 198px; }.in-adventure .side-panel { top: 245px; }.in-adventure .panel-backdrop { inset: 184px 0 93px; }
 }
+
+
+/* Keep the mobile game within the viewport; only the bounty list scrolls. */
+@media (max-width: 767px) {
+  .game-shell.in-adventure {
+    --mobile-header-height: 184px;
+    --mobile-footer-height: calc(69px + max(12px, env(safe-area-inset-bottom)));
+    position: fixed;
+    inset: 0;
+    height: 100dvh;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .in-adventure .masthead { flex: 0 0 var(--mobile-header-height); }
+  .in-adventure .adventure-main { flex: 1; min-height: 0; height: auto; display: flex; padding: 66px 0 calc(var(--mobile-footer-height) + 12px); }
+  .in-adventure .state-bar { height: var(--mobile-footer-height); }
+  .in-adventure .panel-tab { top: calc(var(--mobile-header-height) + 14px); }
+  .in-adventure .side-panel { top: calc(var(--mobile-header-height) + 61px); bottom: calc(var(--mobile-footer-height) + 12px); }
+  .in-adventure .panel-backdrop { inset: var(--mobile-header-height) 0 calc(var(--mobile-footer-height) + 12px); }
+  .in-adventure .bounty-board { overflow: hidden; }
+  .in-adventure .noticeboard-scroll { min-height: 0; overflow-y: auto; }
+  .in-adventure .adventure-caption > .icon, .in-adventure .adventure-caption > span,
+  .in-adventure .rank-note, .in-adventure .board-footer .board-footer-note { display: none; }
+  .in-adventure .adventure-caption { margin-top: 6px; }
+  .in-adventure .restart-adventure { flex-basis: auto; padding-top: 6px; }
+  .in-adventure .board-tools { display: block; padding-bottom: 8px; }
+  .in-adventure .bounty-filters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .in-adventure .bounty-filters button { padding: 6px 2px; white-space: nowrap; }
+  .in-adventure .board-footer { padding-block: 7px; gap: 7px; }
+}
+@media (max-width: 767px) and (max-height: 700px) {
+  .in-adventure .adventure-heading, .in-adventure .board-heading .eyebrow, .in-adventure .board-heading p:last-child { display: none; }
+  .in-adventure .board-heading { padding: 10px 4px; }
+  .in-adventure .board-heading-symbol { height: 36px; width: 30px; flex-shrink: 0; }
+  .in-adventure .board-heading h1 { font-size: 22px; margin: 0; }
+}
+@media (max-width: 767px) and (max-height: 650px) {
+  .game-shell.in-adventure { --mobile-header-height: 161px; }
+  .in-adventure .masthead.has-reputation { grid-template-rows: 64px 84px; }
+  .in-adventure .turn-medallion { height: 70px; }
+  .in-adventure .adventure-main { padding-top: 56px; }
+}

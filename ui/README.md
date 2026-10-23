@@ -27,7 +27,7 @@ Preview runs at **http://127.0.0.1:4173/**. Deploy the generated `dist/` directo
 
 Read the two original introductory paragraphs on the animated scroll, then choose **Start Game**. Choose **Solve Ad** on a notice to attempt that quest. The API decides its outcome; favourable labels are estimates rather than guarantees.
 
-The turn appears at the top center. Lives, gold, dragon level, score, and the server's high score appear along the bottom. The central board occupies 60% of a desktop viewport and presents its notices in one column, with rune-inspired lettering for ad IDs. On smaller screens, it expands for readability and the panels become overlays.
+The turn appears at the top center. Lives, gold, dragon level, score, and the server's high score appear along the bottom. The central board occupies 60% of a desktop viewport and presents its notices in one column, with rune-inspired lettering for ad IDs. On smaller screens, it expands for readability and the panels become overlays. During mobile gameplay, the header, reputation, panel buttons, and bottom state bar stay fixed while only the ads list scrolls. Compact controls keep the list usable on shorter phone screens.
 
 Open **Potion Shop** on the left to load its current inventory. Refresh fetches it again without taking a turn. Click an affordable item's image to purchase it. The image tooltip uses the server's name; its badge shows the effect from the Java item model. Insufficient-gold items are disabled.
 
@@ -106,3 +106,10 @@ Validated on 22 October 2026: production build; 26 regression tests; npm depende
 The public API exposes no read-only game-state recovery endpoint or action idempotency key. If a mutating request loses its response, the client cannot know whether the server advanced the game. It keeps the last confirmed state/history, explains the uncertainty, disables further actions, and offers a new adventure rather than retrying a potentially completed purchase or quest. A new adventure is also available if the server expires a session.
 
 Availability, rate limits, quest outcomes, and future undocumented encryption/item changes are controlled by the external API. There is no offline game mode or cross-reload persistence, consistent with the in-memory requirement.
+
+
+## Portable deployment freshness
+
+`bash deploy-game.sh --dry-run` lists the current files and the normal public URL. Deployment uploads assets before the HTML, then downloads both public HTML pages and their JS/CSS bundles and compares their contents with the local portable files. A mismatch makes deployment fail verification. Run `bash deploy-game.sh --verify` to repeat these public checks without uploading or connecting over SSH.
+
+The game host currently serves HTML with `Cache-Control: public, max-age=3600`, so a phone can keep the previous page and its old bundle names for one hour after deployment. Reload or clear the browser cache if the previous version appears after deployment. To always check for a new release at the normal public URL, configure the host to serve game HTML with `Cache-Control: no-cache`; hashed assets can remain cached.
