@@ -13,7 +13,7 @@ const factions = [
   { id: 'state', label: 'State', icon: 'crown' },
   { id: 'underworld', label: 'Underworld', icon: 'mask' },
 ];
-const number = new Intl.NumberFormat('en', { maximumFractionDigits: 2, signDisplay: 'exceptZero' });
+const number = new Intl.NumberFormat('en', { minimumFractionDigits: 1, maximumFractionDigits: 1, signDisplay: 'exceptZero' });
 const reputation = computed(() => props.game.lastInvestigatedReputation);
 const lastChecked = computed(() => props.game.lastReputationInvestigationTurn);
 const freshness = computed(() => lastChecked.value == null ? 'Not checked' : `Checked · turn ${lastChecked.value}`);

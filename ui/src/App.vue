@@ -10,7 +10,7 @@ import AdsList from './components/AdsList.vue';
 import ShopPanel from './components/ShopPanel.vue';
 import AdventureJournal from './components/AdventureJournal.vue';
 import ActionFeedback from './components/ActionFeedback.vue';
-import ReputationWidget from './components/ReputationWidget.vue';
+import ReputationBanner from './components/ReputationBanner.vue';
 
 const store = createGameStore(createGameApi());
 const { game, ads, items, history, phase, pending, busy, gameOver, canAct, latestEvent,
@@ -18,6 +18,10 @@ const { game, ads, items, history, phase, pending, busy, gameOver, canAct, lates
 const shopOpen = ref(false);
 const journalOpen = ref(false);
 
+function closePanels() {
+  shopOpen.value = false;
+  journalOpen.value = false;
+}
 function toggleShop() {
   shopOpen.value = !shopOpen.value;
   if (shopOpen.value) {
@@ -40,12 +44,14 @@ watch(() => game.value?.gameId, () => {
     <a class="skip-link" href="#main-content">Skip to adventure</a>
     <div class="world-backdrop" aria-hidden="true"></div>
     <div class="ambient-motes" aria-hidden="true"><i v-for="n in 7" :key="n" :style="{ '--i': n }"></i></div>
-    <header class="masthead" :class="{ 'has-reputation': game && phase === 'active' }">
+    <header class="masthead">
       <div class="brand"><span class="brand-crest"><GameIcon name="dragon" /></span><div><strong>Dragons <span>of</span> Mugloar</strong><span class="brand-tagline">A dragon’s fortune</span></div></div>
-      <TurnIndicator v-if="game && phase === 'active'" :turn="game.turn" />
+      <div v-if="game && phase === 'active'" class="adventure-banners">
+        <TurnIndicator :turn="game.turn" />
+        <ReputationBanner :game="game" :loading="pending?.type === 'reputation'" :disabled="!canAct" :error="reputationError" @open="closePanels" @refresh="store.refreshReputation" />
+      </div>
       <span v-else class="header-ornament" aria-hidden="true">✦</span>
-      <ReputationWidget v-if="game && phase === 'active'" :game="game" :loading="pending?.type === 'reputation'" :disabled="!canAct" :error="reputationError" @refresh="store.refreshReputation" />
-      <div v-else class="realm-status"><span class="realm-dot"></span>Welcome to the kingdom</div>
+      <div v-if="!game || phase !== 'active'" class="realm-status"><span class="realm-dot"></span>Welcome to the kingdom</div>
     </header>
 
     <IntroStory v-if="phase === 'intro'" :error="actionError" @start="store.startGame" />

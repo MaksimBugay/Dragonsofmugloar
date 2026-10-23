@@ -27,7 +27,7 @@ Preview runs at **http://127.0.0.1:4173/**. Deploy the generated `dist/` directo
 
 Read the two original introductory paragraphs on the animated scroll, then choose **Start Game**. Choose **Solve Ad** on a notice to attempt that quest. The API decides its outcome; favourable labels are estimates rather than guarantees.
 
-The turn appears at the top center. Lives, gold, dragon level, score, and the server's high score appear along the bottom. The central board occupies 60% of a desktop viewport and presents its notices in one column, with rune-inspired lettering for ad IDs. On smaller screens, it expands for readability and the panels become overlays. During mobile gameplay, the header, reputation, panel buttons, and bottom state bar stay fixed while only the ads list scrolls. Compact controls keep the list usable on shorter phone screens.
+The turn appears at the top center. Lives, gold, dragon level, score, and the server's high score appear along the bottom. The central board occupies 60% of a desktop viewport and presents its notices in one column, with rune-inspired lettering for ad IDs. On smaller screens, it expands for readability and the panels become overlays. During mobile gameplay, the header, turn and reputation banners, panel buttons, and bottom state bar stay fixed while only the ads list scrolls. Compact controls keep the list usable on shorter phone screens.
 
 Open **Potion Shop** on the left to load its current inventory. Refresh fetches it again without taking a turn. Click an affordable item's image to purchase it. The image tooltip uses the server's name; its badge shows the effect from the Java item model. Insufficient-gold items are disabled.
 
@@ -73,7 +73,7 @@ Each action is compared with the state immediately before it. Solve responses pr
 | GET | `/{gameId}/shop` | Fetch items |
 | POST | `/{gameId}/shop/buy/{itemId}` | Purchase item |
 
-As recorded in the repository findings and verified live, listings are arrays, rewards are numeric, and `shoppingSuccess` is boolean. These observations correct outdated details in the documentation. The header reputation widget investigates People, State, and Underworld only when its refresh button is pressed. Each investigation uses one turn, refreshes the bounty board, and records a journal entry. Values remain the last investigated snapshot until refreshed; no investigation runs automatically.
+As recorded in the repository findings and verified live, listings are arrays, rewards are numeric, and `shoppingSuccess` is boolean. These observations correct outdated details in the documentation. The Reputation banner uses a person-and-star icon and shows the last investigated People/State values as `0.3/4.5`, always with one decimal place. It sits beside Turn on mobile and at the right of the header on desktop. Select it to open the full Reputation popup, including People, State, and Underworld. Opening the popup is free; its refresh button investigates all three factions, and its close button or Escape returns to the board. Each investigation uses one turn, refreshes the bounty board, and records a journal entry. Values remain the last investigated snapshot until refreshed; no investigation runs automatically.
 
 ## Verification
 

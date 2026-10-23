@@ -1,5 +1,5 @@
 // Presentation-only keyboard behavior, independent of Vue and game state.
-export function managePanelFocus(element, close) {
+export function managePanelFocus(element, close, { trapFocus = false } = {}) {
   const previous = document.activeElement;
   const mobile = window.matchMedia('(max-width: 1279px)');
   const controls = () => [...element.querySelectorAll('button:not(:disabled), a[href], summary, [tabindex="0"]')]
@@ -9,7 +9,7 @@ export function managePanelFocus(element, close) {
       event.preventDefault();
       close();
     }
-    if (event.key !== 'Tab' || !mobile.matches) return;
+    if (event.key !== 'Tab' || (!trapFocus && !mobile.matches)) return;
     const focusable = controls();
     const first = focusable[0];
     const last = focusable.at(-1);
