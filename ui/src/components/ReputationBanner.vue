@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import GameDialog from './GameDialog.vue';
 import GameIcon from './GameIcon.vue';
 import ReputationWidget from './ReputationWidget.vue';
+import { formatReputation } from '../presentation/reputation.js';
 
 const props = defineProps({
   game: { type: Object, required: true },
@@ -13,13 +14,12 @@ const props = defineProps({
 const emit = defineEmits(['open', 'refresh']);
 const popup = ref(null);
 const open = computed(() => popup.value?.open ?? false);
-const number = new Intl.NumberFormat('en', { minimumFractionDigits: 1, maximumFractionDigits: 1, useGrouping: false });
 const reputation = computed(() => props.game.lastInvestigatedReputation);
 const value = computed(() => reputation.value == null ? '—/—'
-  : `${number.format(reputation.value.people)}/${number.format(reputation.value.state)}`);
+  : `${formatReputation(reputation.value.people)}/${formatReputation(reputation.value.state)}`);
 const description = computed(() => reputation.value == null
   ? 'Open reputation. People and State reputation have not been investigated.'
-  : `Open reputation. People: ${number.format(reputation.value.people)}. State: ${number.format(reputation.value.state)}. Last checked on turn ${props.game.lastReputationInvestigationTurn}.`);
+  : `Open reputation. People: ${formatReputation(reputation.value.people)}. State: ${formatReputation(reputation.value.state)}. Last checked on turn ${props.game.lastReputationInvestigationTurn}.`);
 
 function showReputation() {
   emit('open');

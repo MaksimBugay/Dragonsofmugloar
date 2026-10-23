@@ -2,6 +2,7 @@ import { computed, readonly, ref, toRaw } from 'vue';
 import { ageAds, decodeAd, rankAds } from '../domain/ads.js';
 import { adventureEvent, applyAction, applyReputation, initialGame } from '../domain/game.js';
 import { shopItem } from '../domain/shop.js';
+import { formatReputation } from '../presentation/reputation.js';
 
 function decodeListing(response, decode, message) {
   if (!Array.isArray(response)) throw new Error(message);
@@ -110,7 +111,7 @@ export function createGameStore(api) {
       receivedResult = true;
       const after = applyReputation(before, result);
       const reputation = after.lastInvestigatedReputation;
-      const message = `People: ${reputation.people} · State: ${reputation.state} · Underworld: ${reputation.underworld}`;
+      const message = `People: ${formatReputation(reputation.people)} · State: ${formatReputation(reputation.state)} · Underworld: ${formatReputation(reputation.underworld)}`;
       const event = adventureEvent('reputation', { name: 'Reputation investigation', message: 'A report from the kingdom’s informants.' },
         { ...result, message }, before, after);
       game.value = after;

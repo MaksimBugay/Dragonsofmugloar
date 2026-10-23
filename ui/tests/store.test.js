@@ -216,6 +216,7 @@ test('reputation is investigated only on request and updates the turn, board, an
   assert.equal(store.game.value.lastReputationInvestigationTurn, 1);
   assert.deepEqual(store.game.value.lastInvestigatedReputation, { people: -1.25, state: 2.5, underworld: 0 });
   assert.equal(store.history.value[0].type, 'reputation');
+  assert.equal(store.history.value[0].result.message, 'People: -1.3 · State: 2.5 · Underworld: 0.0');
   assert.equal(store.history.value[0].success, true);
   assert.equal(store.history.value[0].differences.turn, 1);
   for (const field of ['gold', 'lives', 'level', 'score', 'highScore']) assert.equal(store.game.value[field], base[field]);
