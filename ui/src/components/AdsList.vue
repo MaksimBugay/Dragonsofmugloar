@@ -3,6 +3,7 @@ import { computed, ref } from 'vue';
 import { adStatus } from '../domain/ads.js';
 import AdNotice from './AdNotice.vue';
 import GameIcon from './GameIcon.vue';
+import DragonSlayersCode from './DragonSlayersCode.vue';
 const props = defineProps({
   ads: { type: Array, required: true },
   loading: Boolean, disabled: Boolean, stale: Boolean,
@@ -22,7 +23,10 @@ const count = (id) => id === 'all' ? props.ads.length : props.ads.filter((ad) =>
     <header class="board-heading">
       <div class="board-heading-symbol"><GameIcon name="scroll" /></div>
       <div><p class="eyebrow">By decree of the kingdom</p><h1 id="board-title">The Bounty Board</h1><p>Choose a quest. Claim your fortune.</p></div>
-      <button class="icon-button board-refresh" :disabled="loading || Boolean(pending)" aria-label="Refresh bounty board" title="Refresh bounties · does not use a turn" @click="$emit('refresh')"><GameIcon name="refresh" :class="{ spinning: loading }" /></button>
+      <div class="board-heading-actions">
+        <DragonSlayersCode />
+        <button class="icon-button board-refresh" :disabled="loading || Boolean(pending)" aria-label="Refresh bounty board" title="Refresh bounties · does not use a turn" @click="$emit('refresh')"><GameIcon name="refresh" :class="{ spinning: loading }" /></button>
+      </div>
     </header>
     <div class="board-tools">
       <div class="bounty-filters" role="group" aria-label="Filter bounties">
