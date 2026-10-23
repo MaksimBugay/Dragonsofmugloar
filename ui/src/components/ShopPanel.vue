@@ -9,18 +9,19 @@ defineProps({
   pending: { type: Object, default: null },
 });
 defineEmits(['toggle', 'refresh', 'buy']);
+const itemImageUrl = (id) => `${import.meta.env.BASE_URL}assets/items/${id}.svg`;
 </script>
 
 <template>
   <SidePanel id="potion-shop" side="left" title="Potion Shop" subtitle="The Gilded Flask" icon="flask" :open="open" @toggle="$emit('toggle')">
-    <div class="shop-banner"><img src="/assets/items/hpot.svg" alt="" /><div><h3>A little magic.<br />A mighty difference.</h3><p>Elixirs & curios for your dragon.</p></div></div>
+    <div class="shop-banner"><img :src="itemImageUrl('hpot')" alt="" /><div><h3>A little magic.<br />A mighty difference.</h3><p>Elixirs & curios for your dragon.</p></div></div>
     <div class="shop-tools"><span><GameIcon name="coin" />{{ gold }} gold</span><button class="text-button" :disabled="loading || Boolean(pending)" @click="$emit('refresh')"><GameIcon name="refresh" :class="{ spinning: loading }" />Refresh</button></div>
     <p v-if="error" class="error-message" role="alert">{{ error }}</p>
     <p v-if="loading && !items.length" class="panel-empty" role="status">The apothecary is checking the shelves…</p>
     <div v-else-if="items.length" class="shop-grid" :aria-busy="loading">
       <div v-for="item in items" :key="item.id" class="shop-item" :class="{ unaffordable: item.cost > gold }">
         <button class="item-image" :title="item.name" :aria-label="`Buy ${item.name} for ${item.cost} gold`" :disabled="disabled || loading || Boolean(error) || item.cost > gold" @click="$emit('buy', item)">
-          <img :src="`/assets/items/${item.id}.svg`" :alt="item.name" width="88" height="88" />
+          <img :src="itemImageUrl(item.id)" :alt="item.name" width="88" height="88" />
           <span class="item-effect" :title="item.features.livesDiff ? '+1 life' : `+${item.features.levelDiff} level`"><GameIcon :name="item.features.livesDiff ? 'heart' : 'dragon'" />+{{ item.features.livesDiff || item.features.levelDiff }}<span class="sr-only">{{ item.features.livesDiff ? ' life' : ' level' }}</span></span>
           <span v-if="pending?.type === 'purchase' && pending.id === item.id" class="item-pending"><GameIcon name="refresh" class="spinning" /></span>
         </button>

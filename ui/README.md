@@ -110,6 +110,6 @@ Availability, rate limits, quest outcomes, and future undocumented encryption/it
 
 ## Portable deployment freshness
 
-`bash deploy-game.sh --dry-run` lists the current files and the normal public URL. Deployment uploads assets before the HTML, then downloads both public HTML pages and their JS/CSS bundles and compares their contents with the local portable files. A mismatch makes deployment fail verification. Run `bash deploy-game.sh --verify` to repeat these public checks without uploading or connecting over SSH.
+`bash deploy-game.sh --dry-run` lists the current files and the normal public URL. Deployment uploads assets before the HTML, then downloads both public HTML pages, their JS/CSS bundles, and all shop images and compares their contents with the local portable files. A mismatch makes deployment fail verification. Run `bash deploy-game.sh --verify` to repeat these public checks without uploading or connecting over SSH.
 
 The game host currently serves HTML with `Cache-Control: public, max-age=3600`, so a phone can keep the previous page and its old bundle names for one hour after deployment. Reload or clear the browser cache if the previous version appears after deployment. To always check for a new release at the normal public URL, configure the host to serve game HTML with `Cache-Control: no-cache`; hashed assets can remain cached.
