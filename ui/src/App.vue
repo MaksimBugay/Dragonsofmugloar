@@ -11,12 +11,17 @@ import ShopPanel from './components/ShopPanel.vue';
 import AdventureJournal from './components/AdventureJournal.vue';
 import ActionFeedback from './components/ActionFeedback.vue';
 import ReputationBanner from './components/ReputationBanner.vue';
+import { manageInactivityReload } from './presentation/inactivity.js';
 
 const store = createGameStore(createGameApi());
 const { game, ads, items, history, phase, pending, busy, gameOver, canAct, latestEvent,
   adsLoading, shopLoading, adsError, shopError, actionError, adsStale, uncertain, reputationError } = store;
 const shopOpen = ref(false);
 const journalOpen = ref(false);
+
+watch(() => phase.value === 'active' ? game.value?.gameId : null, (gameId, previousGameId, onCleanup) => {
+  if (gameId) onCleanup(manageInactivityReload(() => window.location.reload()));
+}, { immediate: true });
 
 function closePanels() {
   shopOpen.value = false;

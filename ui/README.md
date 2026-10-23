@@ -45,6 +45,8 @@ Open **Potion Shop** on the left to load its current inventory. Refresh fetches 
 
 Open **Adventure Journal** on the right to see quest attempts, purchases, and reputation investigations in one chronology, including failures, source quest/item, result, and changes in lives, gold, score, and level. It begins closed. Each new outcome appears in a centered info popup that closes automatically after 3 seconds and can also be dismissed immediately. The popup has no journal link; its entry remains available in Adventure Journal. Each entry retains independent before/after snapshots. All game state and history are **in memory**: reloading the page or choosing **New adventure** starts fresh. A game-over summary allows another adventure while keeping the completed journal readable until then.
 
+During an adventure, five minutes since the last mouse, keyboard, scrolling, or touch interaction reloads the page and clears the in-memory adventure. Returning to a suspended tab checks the elapsed time; it does not restart the idle period. A new adventure gets a fresh timer. The intro page has no inactivity timer, and expiry makes no stop-game API request.
+
 The Reputation banner uses a person-and-star icon and shows the last investigated People/State values as `0.3/4.5`, on one line within a fixed-width banner. All reputation scores are rounded for display to exactly one decimal place everywhere: banner, popup, tooltips, accessible labels, action feedback, and journal. The full popup includes a leading `+` on positive scores; zero appears as `0.0`. The original API values remain unchanged in game state and event snapshots. The banner sits beside Turn on mobile and at the right of the header on desktop. Select it to open the full Reputation popup, including People, State, and Underworld. Opening the popup is free; its refresh button investigates all three factions, and its close button or Escape returns to the board. Each investigation uses one turn, refreshes the bounty board, and records a journal entry. Values remain the last investigated snapshot until refreshed; no investigation runs automatically.
 
 Panels support Escape and focus restoration. Overlay panels contain keyboard focus. CSS animations respect `prefers-reduced-motion`. Buttons and status changes have accessible labels, and quest risk is communicated with text as well as colour.
@@ -98,9 +100,9 @@ As recorded in the repository findings and verified live, listings are arrays, r
 npm run check
 ```
 
-This checks generated definitions against the sibling Java sources, runs 46 Node regression tests, and builds the production bundle. The Java source parity check needs this repository's sibling `gateway-commons` directory; `npm test` and `npm run build` also work on an isolated UI checkout.
+This checks generated definitions against the sibling Java sources, runs 51 Node regression tests, and builds the production bundle. The Java source parity check needs this repository's sibling `gateway-commons` directory; `npm test` and `npm run build` also work on an isolated UI checkout.
 
-Tests cover the findings' actual Base64/Unicode and ROT13 examples; unknown encodings/labels; expected value, ranking ties and expired ads; all 11 item effects; partial result fields; action snapshots/deltas; failed purchases/quests; duplicate clicks; stale reads across turns/games; malformed responses; timeouts; network uncertainty; reputation validation, turn advancement, failures, and one-decimal feedback/journal formatting; and game-over/restart behavior. Test fixtures are used only by tests, never by the application.
+Tests cover the findings' actual Base64/Unicode and ROT13 examples; unknown encodings/labels; expected value, ranking ties and expired ads; all 11 item effects; partial result fields; action snapshots/deltas; failed purchases/quests; duplicate clicks; stale reads across turns/games; malformed responses; timeouts; network uncertainty; reputation validation, turn advancement, failures, and one-decimal feedback/journal formatting; game-over/restart behavior; and the five-minute inactivity deadline, input resets, suspended tabs, and timer cleanup. Test fixtures are used only by tests, never by the application.
 
 An opt-in check creates a new real game and spends its game gold:
 
@@ -112,7 +114,7 @@ It verifies the five original live endpoints (reputation investigation is not in
 
 Initial validation on 22 October 2026 included the production build; the then-current 26 regression tests; npm dependency audit; a live API smoke game with seven recorded actions; and Chrome desktop/mobile UI gameplay. Browser checks verified original intro text, default-closed journal, ten live notices, 11 shop images, actual solve and healing responses, journal deltas, keyboard navigation, reduced motion, no console warnings/errors, and no horizontal overflow at 320, 390, 768, 1024, and 1440 pixels.
 
-Latest verification on 23 October 2026: all 46 regression tests and production builds passed. Browser checks covered the guide scroll and close controls on desktop/mobile, and reputation rounding in the banner, popup, tooltips, feedback, and journal for npm and both portable pages. Deployment dry runs confirmed the current bundle pair and guide/shop assets. These checks did not publish the site.
+Latest verification on 23 October 2026: all 51 regression tests and production builds passed. Browser checks covered the guide scroll and close controls on desktop/mobile, and reputation rounding in the banner, popup, tooltips, feedback, and journal for npm and both portable pages. Inactivity checks confirmed the intro stays open, user activity extends the deadline, and five idle minutes trigger one reload back to the intro without a stop-game request. Deployment dry runs confirmed the current bundle pair and guide/shop assets. These checks did not publish the site.
 
 ## Content and assets
 
