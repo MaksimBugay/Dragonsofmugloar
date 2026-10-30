@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 public class GatewayCommandmentExecutor extends HttpBasedCommandmentExecutor {
 
   public GatewayCommandmentExecutor(DiscoveryService discoveryService,
-                                    @Value("${rdm.internal-api.port-mode:HTTP1}") InternalApiPortMode internalApiPortMode,
+                                    @Value("${bmv.internal-api.port-mode:HTTP1}") InternalApiPortMode internalApiPortMode,
                                     GatewayHttpWebClientConfig httpWebClientConfig) {
     super(discoveryService, internalApiPortMode, httpWebClientConfig.getHttpWebClientConfig());
   }

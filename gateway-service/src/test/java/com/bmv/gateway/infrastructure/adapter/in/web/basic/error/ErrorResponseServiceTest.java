@@ -127,16 +127,16 @@ class ErrorResponseServiceTest {
   }
 
   @Test
-  void createRdmErrorResponse_ShouldReturnConsistentErrorFormat() {
+  void createBmvErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildRdmErrorUri("REF_TABLE_NOT_FOUND")).thenReturn(
+    when(errorUriBuilder.buildBmvErrorUri("REF_TABLE_NOT_FOUND")).thenReturn(
         "http://test.example.com/rdm/errors#rdm-ref_table_not_found");
     String errorCode = "REF_TABLE_NOT_FOUND";
     String message = "Reference table not found";
     HttpStatus status = HttpStatus.NOT_FOUND;
 
     // When
-    ErrorResponse response = errorResponseService.createRdmErrorResponse(errorCode, message, status);
+    ErrorResponse response = errorResponseService.createBmvErrorResponse(errorCode, message, status);
 
     // Then
     assertValidErrorResponse(response, status, "rdm-ref_table_not_found");

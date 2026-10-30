@@ -20,10 +20,10 @@ public class WebFluxConfig extends WebFluxConfigurerWithCustomSerializer {
     @Value("${spring.application.name:gateway-service}")
     private String serverName;
 
-    @Value("#{environment['RDM_GATEWAY_FLUX_SELECTORS_POOL_SIZE'] ?: ${webflux.http.server.selectors:2}}")
+    @Value("#{environment['BMV_GATEWAY_FLUX_SELECTORS_POOL_SIZE'] ?: ${webflux.http.server.selectors:2}}")
     private int numberOfSelectors;
 
-    @Value("#{environment['RDM_GATEWAY_FLUX_WORKERS_POOL_SIZE'] ?: ${webflux.http.server.workers:20}}")
+    @Value("#{environment['BMV_GATEWAY_FLUX_WORKERS_POOL_SIZE'] ?: ${webflux.http.server.workers:20}}")
     private int numberOfWorkers;
 
     @Value("${webflux.http.server.prefer-native:true}")
@@ -46,7 +46,7 @@ public class WebFluxConfig extends WebFluxConfigurerWithCustomSerializer {
         );
     }
 
-    private CorsWebFilter createCorsWebFilter(String... allowedOrigins) {
+    private CorsWebFilter createCorsWebFilter(@SuppressWarnings("SameParameterValue") String... allowedOrigins) {
         CorsConfiguration corsConfig = new CorsConfiguration();
         for (String origin : allowedOrigins) {
             corsConfig.addAllowedOrigin(origin);

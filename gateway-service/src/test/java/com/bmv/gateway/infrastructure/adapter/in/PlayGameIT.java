@@ -14,8 +14,8 @@ import com.bmv.flow.foundry.application.service.BmvServiceContext;
 import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
 import com.bmv.permission.config.PermitBmvConfig;
 import com.bmv.gateway.config.DragonsofmugloarGameConfig;
-import com.bmv.gateway.config.RdmCacheConfig;
-import com.bmv.gateway.config.RdmConfig;
+import com.bmv.gateway.config.BmvCacheConfig;
+import com.bmv.gateway.config.BmvConfig;
 import com.bmv.dragonsofmugloar.application.commandment.command.PlayDragonsofmugloarGameCommand;
 import com.bmv.dragonsofmugloar.application.commandment.command.PlayGameTurnCommand;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
@@ -63,7 +63,7 @@ class PlayGameIT {
         ServiceContextSupplier.resetServiceContext();
         ServiceContextSupplier.setServiceContext(new BmvServiceContext(context));
 
-        var config = new RdmConfig();
+        var config = new BmvConfig();
         ReflectionTestUtils.setField(config, "commandmentExecutionTimeoutSec", GAME_TIME_LIMIT.toSeconds());
         router = new GatewayCommandmentRouter(
                 null,
@@ -71,7 +71,7 @@ class PlayGameIT {
                 null,
                 null,
                 null,
-                new RdmCacheConfig(),
+                new BmvCacheConfig(),
                 config,
                 "TEST_SECRET",
                 null

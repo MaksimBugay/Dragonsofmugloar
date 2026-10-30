@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import com.bmv.flow.foundry.domain.model.api.error.BmvError;
 import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
-import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.RdmExceptionWithDetails;
+import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.BmvExceptionWithDetails;
 import jakarta.validation.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,7 +30,7 @@ public class GlobalExceptionHandler {
   }
 
   /**
-   * Resolve HTTP status for RDM errors (existing logic preserved)
+   * Resolve HTTP status for BMV errors (existing logic preserved)
    */
   public static HttpStatus resolveHttpStatus(BmvError error) {
     return switch (error) {
@@ -128,16 +128,16 @@ public class GlobalExceptionHandler {
   }
 
   /**
-   * Handle RDM exceptions
+   * Handle BMV exceptions
    */
-  @ExceptionHandler(RdmExceptionWithDetails.class)
-  public Mono<ResponseEntity<ErrorResponse>> handleRdmException(RdmExceptionWithDetails ex) {
+  @ExceptionHandler(BmvExceptionWithDetails.class)
+  public Mono<ResponseEntity<ErrorResponse>> handleBmvException(BmvExceptionWithDetails ex) {
     BmvError error = BmvError.fromCode(ex.getErrorDetails().code());
     HttpStatus status = error != null ? resolveHttpStatus(error) : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    LOGGER.warn("RDM error: {} - {}", error != null ? error.name() : "UNKNOWN", ex.getErrorDetails().message());
+    LOGGER.warn("BMV error: {} - {}", error != null ? error.name() : "UNKNOWN", ex.getErrorDetails().message());
 
-    ErrorResponse errorResponse = errorResponseService.createRdmErrorResponse(
+    ErrorResponse errorResponse = errorResponseService.createBmvErrorResponse(
         error != null ? error.name() : "unknown",
         ex.getErrorDetails().message(),
         status

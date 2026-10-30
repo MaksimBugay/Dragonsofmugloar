@@ -19,8 +19,8 @@ import com.bmv.flow.foundry.domain.model.api.error.WithErrorDetails;
 import com.bmv.flow.foundry.domain.model.api.exception.BmvExceptionBase;
 import com.bmv.flow.foundry.domain.model.auth.ClientAuthorization;
 import com.bmv.flow.foundry.domain.model.cluster.BmvService;
-import com.bmv.gateway.config.RdmCacheConfig;
-import com.bmv.gateway.config.RdmConfig;
+import com.bmv.gateway.config.BmvCacheConfig;
+import com.bmv.gateway.config.BmvConfig;
 import com.bmv.flow.foundry.infrastructure.adapter.in.CommandmentRouter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -45,9 +45,9 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
       @Qualifier(value = "GatewayCommandmentExecutor") InternalApiOutboundPort internalApiOutboundPort,
       AsyncCommandmentExecutionAdapter asyncCommandmentExecutionAdapter,
       @Qualifier(value = "GatewayConditionalCommandmentExecutionCache") CommandmentExecutionCache commandmentExecutionCache,
-      RdmCacheConfig rdmCacheConfig,
-      RdmConfig rdmConfig,
-      @Value("${rdm.cluster.secret}") String rdmClusterSecret,
+      BmvCacheConfig bmvCacheConfig,
+      BmvConfig bmvConfig,
+      @Value("${bmv.cluster.secret}") String bmvClusterSecret,
       LockService lockService) {
     super(
         BmvService.GATEWAY,
@@ -55,13 +55,13 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
         null,
         asyncCommandmentExecutionAdapter,
         commandmentExecutionCache,
-        (long) rdmCacheConfig.getExpireAfterSec(),
+        (long) bmvCacheConfig.getExpireAfterSec(),
         null,
-        rdmConfig.getCommandmentExecutionTimeout(),
+        bmvConfig.getCommandmentExecutionTimeout(),
         null,
         null,
         lockService,
-        rdmClusterSecret.getBytes(StandardCharsets.UTF_8),
+        bmvClusterSecret.getBytes(StandardCharsets.UTF_8),
         true
     );
 

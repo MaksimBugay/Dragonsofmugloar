@@ -25,14 +25,14 @@ public class GatewayCommandmentTestExecutor extends GatewayCommandmentExecutor {
   private final InternalAuthorizationService internalAuthorizationService;
 
   public GatewayCommandmentTestExecutor(DiscoveryService simpleDiscoveryService,
-                                        @Value("${rdm.internal-api.port-mode:HTTP1}") InternalApiPortMode internalApiPortMode,
+                                        @Value("${bmv.internal-api.port-mode:HTTP1}") InternalApiPortMode internalApiPortMode,
                                         GatewayHttpWebClientConfig httpWebClientConfig,
-                                        @Value("${rdm.application.commandment-execution-timeout-sec:600}") long commandmentExecutionTimeout,
-                                        @Value("${rdm.cluster.secret}") String rdmClusterSecret) {
+                                        @Value("${bmv.application.commandment-execution-timeout-sec:600}") long commandmentExecutionTimeout,
+                                        @Value("${bmv.cluster.secret}") String bmvClusterSecret) {
     super(simpleDiscoveryService, internalApiPortMode, httpWebClientConfig);
     this.internalAuthorizationService = new InternalAuthorizationBasicService(
         commandmentExecutionTimeout,
-        rdmClusterSecret.getBytes(StandardCharsets.UTF_8)
+        bmvClusterSecret.getBytes(StandardCharsets.UTF_8)
     );
   }
 
@@ -40,7 +40,7 @@ public class GatewayCommandmentTestExecutor extends GatewayCommandmentExecutor {
   public <A extends ClientAuthorization, P, R extends WithErrorDetails, C extends Commandment<A, P, R>> Mono<R> executeNoCache(
       CommandmentWithDefinition<A, P, R, C> commandment) {
 
-    //check that every commandment has an internal token before forwarding to another rdm service
+    //check that every commandment has an internal token before forwarding to another bmv service
     return internalAuthorizationService.authorize(commandment)
         .then(
             super.executeNoCache(commandment)

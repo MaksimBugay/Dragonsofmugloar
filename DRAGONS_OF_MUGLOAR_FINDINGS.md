@@ -385,13 +385,13 @@ an observed heuristic.
 
 `PlayDragonsofmugloarGameCommand<PlayGameRequest, PlayGameResponse>` is named
 `PLAY_DRAGONSOFMUGLOAR_GAME`. It uses `AnonymousAuthorization`, accepts the
-`ANONYMOUS_USER` role, and orchestrates its two stages on `RdmService.GATEWAY`.
+`ANONYMOUS_USER` role, and orchestrates its two stages on `BmvService.GATEWAY`.
 Its buffer is `Buffer(GameState gameState, GameConfig gameConfig)`.
 
 | Stage | Execution and buffer behavior |
 |---|---|
 | `1: START_GAME` | A linked-service rule calls `PlayDragonsofmugloarGameService.startGame`, starts the game through the port, creates state from the returned game, derives configuration from the request, stores both in the buffer, and returns an initial summary. |
-| `2: PLAY_TURNS` | `ExecutionRuleWithLinkedServiceAndConditionalLoop` wraps `ExecutionRuleWithSubCommandmentAndStaticMappers` for `PlayGameTurnCommand`, with `propagateErrors = false`, `RdmService.CURRENT`, a ceiling of `Integer.MAX_VALUE` iterations, and no configured delay. |
+| `2: PLAY_TURNS` | `ExecutionRuleWithLinkedServiceAndConditionalLoop` wraps `ExecutionRuleWithSubCommandmentAndStaticMappers` for `PlayGameTurnCommand`, with `propagateErrors = false`, `BmvService.CURRENT`, a ceiling of `Integer.MAX_VALUE` iterations, and no configured delay. |
 
 Initial state preserves the returned game ID, gold, lives, level, turn, score and
 high score. It starts with neutral reputation, the returned turn as the last
@@ -440,7 +440,7 @@ serialization.
 ### One-turn stages
 
 `PlayGameTurnCommand` is named `PLAY_GAME_TURN`. It uses
-`RdmServiceAuthorization`, requires `RDM_CLUSTER_SERVICE`, and runs on the
+`BmvServiceAuthorization`, requires `BMV_CLUSTER_SERVICE`, and runs on the
 gateway. Its request requires non-null, validated game state and configuration.
 Its buffer carries copied shop/ad lists and the selected execution context.
 

@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import com.github.benmanes.caffeine.cache.AsyncCache;
 import com.github.benmanes.caffeine.cache.Caffeine;
 import com.bmv.flow.foundry.application.port.cache.CommandmentExecutionCacheProvider;
-import com.bmv.gateway.config.RdmCacheConfig;
+import com.bmv.gateway.config.BmvCacheConfig;
 import jakarta.validation.constraints.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -32,8 +32,8 @@ public class CaffeineCommandmentExecutionCache extends CommandmentExecutionCache
   }
 
   @Autowired
-  public CaffeineCommandmentExecutionCache(RdmCacheConfig rdmCacheConfig) {
-    this(rdmCacheConfig.getExpireAfterSec(), rdmCacheConfig.getMaximumSize());
+  public CaffeineCommandmentExecutionCache(BmvCacheConfig bmvCacheConfig) {
+    this(bmvCacheConfig.getExpireAfterSec(), bmvCacheConfig.getMaximumSize());
   }
 
   @Override

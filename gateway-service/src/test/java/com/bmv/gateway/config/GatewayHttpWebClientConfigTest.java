@@ -11,11 +11,11 @@ import org.springframework.test.context.TestPropertySource;
 
 @SpringBootTest
 @TestPropertySource(properties = {
-    "rdm.service.internal-api.http-web-client.poolSize=15",
-    "rdm.service.internal-api.http-web-client.maxQueueSize=95",
-    "rdm.service.internal-api.http-web-client.connectionTimeoutMs=100",
-    "rdm.service.internal-api.http-web-client.readTimeoutMs=200",
-    "rdm.cluster.secret=TEST_SECRET"
+    "bmv.service.internal-api.http-web-client.poolSize=15",
+    "bmv.service.internal-api.http-web-client.maxQueueSize=95",
+    "bmv.service.internal-api.http-web-client.connectionTimeoutMs=100",
+    "bmv.service.internal-api.http-web-client.readTimeoutMs=200",
+    "bmv.cluster.secret=TEST_SECRET"
 })
 @ActiveProfiles("test")
 public class GatewayHttpWebClientConfigTest {

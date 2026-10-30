@@ -1,6 +1,6 @@
 package com.bmv.gateway.infrastructure.adapter.in.web.basic.error;
 
-import com.bmv.gateway.config.RdmConfig;
+import com.bmv.gateway.config.BmvConfig;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,8 +11,8 @@ public class ErrorUriBuilder {
 
   private final String baseUri;
 
-  public ErrorUriBuilder(RdmConfig rdmConfig) {
-    this.baseUri = rdmConfig.getErrorResponseBaseUri();
+  public ErrorUriBuilder(BmvConfig bmvConfig) {
+    this.baseUri = bmvConfig.getErrorResponseBaseUri();
   }
 
   /**
@@ -51,9 +51,9 @@ public class ErrorUriBuilder {
   }
 
   /**
-   * Builds URI for RDM errors
+   * Builds URI for BMV errors
    */
-  public String buildRdmErrorUri(String errorCode) {
+  public String buildBmvErrorUri(String errorCode) {
     return baseUri + "#rdm-" + errorCode.toLowerCase();
   }
 

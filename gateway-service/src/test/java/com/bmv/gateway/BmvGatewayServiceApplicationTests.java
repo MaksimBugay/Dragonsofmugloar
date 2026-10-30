@@ -14,13 +14,13 @@ import org.springframework.test.context.DynamicPropertySource;
 
 @SpringBootTest
 @ActiveProfiles("integration-test")
-class RdmGatewayServiceApplicationTests {
+class BmvGatewayServiceApplicationTests {
 
   @DynamicPropertySource
   static void configureProperties(DynamicPropertyRegistry registry) {
-    registry.add("rdm.cache.expire-after-sec", () -> 3);
-    registry.add("rdm.service.internal-api.http-web-client.poolSize", () -> 30);
-    registry.add("rdm.authorization.data-sync-agent-ids", () -> "%s;%s".formatted(UUID.randomUUID(), UUID.randomUUID()));
+    registry.add("bmv.cache.expire-after-sec", () -> 3);
+    registry.add("bmv.service.internal-api.http-web-client.poolSize", () -> 30);
+    registry.add("bmv.authorization.data-sync-agent-ids", () -> "%s;%s".formatted(UUID.randomUUID(), UUID.randomUUID()));
   }
 
   @Autowired

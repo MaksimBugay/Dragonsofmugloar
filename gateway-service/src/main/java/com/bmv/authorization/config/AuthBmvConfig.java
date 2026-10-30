@@ -23,14 +23,14 @@ public class AuthBmvConfig {
     }
 
     @Bean
-    @ConditionalOnProperty(prefix = "rdm.authz-integration", name = "enabled", havingValue = "false", matchIfMissing = true)
+    @ConditionalOnProperty(prefix = "bmv.authz-integration", name = "enabled", havingValue = "false", matchIfMissing = true)
     public UserAuthorizationProvider defaultUserAuthorizationProvider() {
         return new PushcaUserAuthorizationExtractor();
     }
 
     @Bean
     public AuthorizationService authorizationService(UserAuthorizationProvider userAuthorizationProvider,
-                                                     @Value("${rdm.authorization.data-sync-agent-ids:}") String dataSyncAgentIds) {
+                                                     @Value("${bmv.authorization.data-sync-agent-ids:}") String dataSyncAgentIds) {
         Set<String> agentIds = StringUtils.isBlank(dataSyncAgentIds)
                 ? null
                 : Arrays.stream(dataSyncAgentIds.split(";"))

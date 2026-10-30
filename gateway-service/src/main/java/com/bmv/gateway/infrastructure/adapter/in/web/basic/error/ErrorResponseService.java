@@ -104,13 +104,13 @@ public class ErrorResponseService {
   }
 
   /**
-   * Creates an ErrorResponse for RDM errors
+   * Creates an ErrorResponse for BMV errors
    */
-  public ErrorResponse createRdmErrorResponse(String errorCode, String message, HttpStatus status) {
-    LOGGER.debug("Creating RDM error response: {} - {}", errorCode, message);
+  public ErrorResponse createBmvErrorResponse(String errorCode, String message, HttpStatus status) {
+    LOGGER.debug("Creating BMV error response: {} - {}", errorCode, message);
 
     return new ErrorResponse(
-        errorUriBuilder.buildRdmErrorUri(errorCode),
+        errorUriBuilder.buildBmvErrorUri(errorCode),
         message,
         status.value(),
         null

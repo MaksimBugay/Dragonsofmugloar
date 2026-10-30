@@ -16,8 +16,8 @@ import com.bmv.permission.config.PermitBmvConfig;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;
 import com.bmv.gateway.config.DragonsofmugloarGameConfig;
-import com.bmv.gateway.config.RdmCacheConfig;
-import com.bmv.gateway.config.RdmConfig;
+import com.bmv.gateway.config.BmvCacheConfig;
+import com.bmv.gateway.config.BmvConfig;
 import com.bmv.gateway.infrastructure.adapter.in.GatewayCommandmentRouter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Timeout;
@@ -51,7 +51,7 @@ class DragonsofmugloarGameControllerIT {
     @Test
     void playsGameWithDefaultsAndOneMinuteLimitThroughHttpAndPrintsResults() throws Exception {
         var request = new PlayGameRequest(null, null, null, null, null, null, GAME_TIME_LIMIT.toMillis(), null);
-        var config = new RdmConfig();
+        var config = new BmvConfig();
         ReflectionTestUtils.setField(config, "commandmentExecutionTimeoutSec", REQUEST_TIMEOUT.toSeconds());
         var router = new GatewayCommandmentRouter(
                 null,
@@ -59,7 +59,7 @@ class DragonsofmugloarGameControllerIT {
                 null,
                 null,
                 null,
-                new RdmCacheConfig(),
+                new BmvCacheConfig(),
                 config,
                 "TEST_SECRET",
                 null

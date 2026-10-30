@@ -14,7 +14,7 @@ import java.util.Set;
 import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
 import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
-import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.RdmExceptionWithDetails;
+import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.BmvExceptionWithDetails;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Path;
@@ -208,10 +208,10 @@ class GlobalExceptionHandlerTest {
   }
 
   @Test
-  void handleRdmException_ShouldReturnErrorResponseForRdmErrors() {
+  void handleBmvException_ShouldReturnErrorResponseForBmvErrors() {
     // Given
     ErrorDetails errorDetails = new ErrorDetails(1001, "Reference table not found", false, null);
-    RdmExceptionWithDetails exception = new RdmExceptionWithDetails(errorDetails);
+    BmvExceptionWithDetails exception = new BmvExceptionWithDetails(errorDetails);
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
         "http://test.example.com/rdm/errors#rdm-unknown",
@@ -220,10 +220,10 @@ class GlobalExceptionHandlerTest {
         null
     );
 
-    when(errorResponseService.createRdmErrorResponse(anyString(), anyString(), any(HttpStatus.class))).thenReturn(mockErrorResponse);
+    when(errorResponseService.createBmvErrorResponse(anyString(), anyString(), any(HttpStatus.class))).thenReturn(mockErrorResponse);
 
     // When
-    Mono<ResponseEntity<ErrorResponse>> result = globalExceptionHandler.handleRdmException(exception);
+    Mono<ResponseEntity<ErrorResponse>> result = globalExceptionHandler.handleBmvException(exception);
 
     // Then
     StepVerifier.create(result)

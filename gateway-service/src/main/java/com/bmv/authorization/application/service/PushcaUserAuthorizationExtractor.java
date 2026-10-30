@@ -85,13 +85,13 @@ public class PushcaUserAuthorizationExtractor implements UserAuthorizationExtrac
     return Optional.ofNullable(payloadMap.get(ROLES_CLAIM_NAME))
         .map(claim -> JsonUtility.fromJsonToList(JsonUtility.toJson(claim), String.class))
         .map(roleList -> roleList.stream()
-            .map(this::mapToRdmRole)
+            .map(this::mapToBmvRole)
             .filter(Objects::nonNull)
             .collect(Collectors.toSet()))
         .orElse(Set.of());
   }
 
-  private BmvRole mapToRdmRole(String role) {
+  private BmvRole mapToBmvRole(String role) {
     try {
       return BmvRole.fromExternalIdentifier(role);
     } catch (IllegalArgumentException _) {

@@ -5,7 +5,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@ConfigurationProperties(prefix = "rdm.service.internal-api.http-web-client")
+@ConfigurationProperties(prefix = "bmv.service.internal-api.http-web-client")
 public class GatewayHttpWebClientConfig {
 
   private Integer poolSize;
