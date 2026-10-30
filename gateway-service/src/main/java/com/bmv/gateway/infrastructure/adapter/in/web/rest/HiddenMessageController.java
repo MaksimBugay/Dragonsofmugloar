@@ -1,6 +1,6 @@
 package com.bmv.gateway.infrastructure.adapter.in.web.rest;
 
-import com.bmv.dragonsofmugloar.application.commandment.BuildHiddenMessageAiTool;
+import com.bmv.dragonsofmugloar.application.commandment.GenerateHiddenMessageQuery;
 import com.bmv.dragonsofmugloar.application.commandment.request.BuildHiddenMessageRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.HiddenMessageResponse;
 import com.bmv.gateway.infrastructure.adapter.in.GatewayCommandmentRouter;
@@ -27,13 +27,9 @@ public class HiddenMessageController {
     public Mono<HiddenMessageResponse> generateHiddenMessage(@Valid @RequestBody Mono<BuildHiddenMessageRequest> requestMono) {
         return requestMono
                 .flatMap(
-                        playGameRequest -> {
-                            BuildHiddenMessageAiTool buildHiddenMessageAiTool = new BuildHiddenMessageAiTool(playGameRequest);
-                            commandmentRouter.getInternalAuthorizationService().assignInternalToken(buildHiddenMessageAiTool);
-                            return commandmentRouter.execute(
-                                    buildHiddenMessageAiTool
-                            );
-                        }
+                        buildHiddenMessageRequest -> commandmentRouter.execute(
+                                new GenerateHiddenMessageQuery(buildHiddenMessageRequest)
+                        )
                 )
                 .doOnNext(
                         playGameResponse -> LOGGER.info(
