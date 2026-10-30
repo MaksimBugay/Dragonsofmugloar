@@ -49,7 +49,7 @@ if curl --noproxy '*' --silent --output /dev/null --connect-timeout 1 --max-time
 fi
 
 LIB_DIR="$ROOT_DIR/lib"
-LIB_GROUP_ID=com.trimble.transportation.reference.data.management
+LIB_GROUP_ID=com.bmv
 MAVEN_REPO=${MAVEN_REPO:-"$HOME/.m2/repository"}
 # Installs lib/<artifact>-<version>[-<classifier>].jar with its lib/<artifact>-<version>.pom unless already in MAVEN_REPO.
 install_lib() {
@@ -65,9 +65,9 @@ install_lib() {
         -DpomFile="$LIB_DIR/$artifact-$version.pom" \
         ${classifier:+-Dclassifier="$classifier"}
 }
-install_lib ttc-rdm-common 3.3.35
-install_lib ttc-rdm-common 3.3.35 tests
-install_lib rdm-spring-boot-data-redis-starter 1.7.0
+install_lib flow-foundry 1.0.0
+install_lib flow-foundry 1.0.0 tests
+install_lib bmv-data-redis-starter 1.0.0
 
 printf '%s\n' 'Building the executable fat JAR...'
 mvn -B -ntp -Dmaven.repo.local="$MAVEN_REPO" -pl gateway-service -am -DskipTests package

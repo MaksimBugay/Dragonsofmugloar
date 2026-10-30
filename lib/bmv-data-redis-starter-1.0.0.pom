@@ -5,13 +5,13 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.trimble.transportation.reference.data.management</groupId>
-    <artifactId>rdm-spring-boot-data-redis-starter</artifactId>
-    <version>1.7.0</version>
+    <groupId>com.bmv</groupId>
+    <artifactId>bmv-data-redis-starter</artifactId>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>RDM Spring Boot Data Redis Starter</name>
-    <description>Custom Spring Boot starter for RDM Redis-based service discovery</description>
+    <name>BMV Spring Boot Data Redis Starter</name>
+    <description>Custom Spring Boot starter for flow foundry project</description>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
@@ -22,20 +22,17 @@
         <maven-surefire-plugin.version>3.6.0</maven-surefire-plugin.version>
         <maven-source-plugin.version>3.4.0</maven-source-plugin.version>
         <maven-javadoc-plugin.version>3.12.0</maven-javadoc-plugin.version>
-        <checkstyle-maven-plugin.version>3.6.0</checkstyle-maven-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
 
         <spring.boot.version>4.1.1</spring.boot.version>
         <logback.version>1.6.5</logback.version>
         <lettuce-core.version>7.9.0.RELEASE</lettuce-core.version>
-        <ttc-rdm-common.version>3.3.33</ttc-rdm-common.version>
+        <bmv-flow-foundry.version>1.0.0</bmv-flow-foundry.version>
         <resilience4j-circuitbreaker.version>2.4.0</resilience4j-circuitbreaker.version>
         <commons-lang3.version>3.21.0</commons-lang3.version>
         <commons-compress.version>1.28.0</commons-compress.version>
-        <jackson.version>3.2.3</jackson.version>
-        <asm.version>9.11</asm.version>
-        <!-- Keep the Protobuf runtime aligned with ttc-rdm-common 3.3.33. -->
-        <protobuf.version>4.36.2</protobuf.version>
+        <jackson.version>3.2.4</jackson.version>
+        <asm.version>9.11.1</asm.version>
         <testcontainers.version>2.0.5</testcontainers.version>
         <testcontainers-redis.version>3.0.0</testcontainers-redis.version>
     </properties>
@@ -51,17 +48,6 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
-            </dependency>
-            <!--
-              Import before spring-boot-dependencies so ttc-rdm-common's Protobuf runtime version wins.
-              Properties cannot override versions inside an imported BOM.
-            -->
-            <dependency>
-                <groupId>com.google.protobuf</groupId>
-                <artifactId>protobuf-bom</artifactId>
-                <version>${protobuf.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>org.testcontainers</groupId>
@@ -152,9 +138,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.trimble.transportation.reference.data.management</groupId>
-            <artifactId>ttc-rdm-common</artifactId>
-            <version>${ttc-rdm-common.version}</version>
+            <groupId>com.bmv</groupId>
+            <artifactId>flow-foundry</artifactId>
+            <version>${bmv-flow-foundry.version}</version>
             <scope>compile</scope>
             <optional>true</optional>
         </dependency>
@@ -168,9 +154,9 @@
         <!-- Test Dependencies -->
 
         <dependency>
-            <groupId>com.trimble.transportation.reference.data.management</groupId>
-            <artifactId>ttc-rdm-common</artifactId>
-            <version>${ttc-rdm-common.version}</version>
+            <groupId>com.bmv</groupId>
+            <artifactId>flow-foundry</artifactId>
+            <version>${bmv-flow-foundry.version}</version>
             <classifier>tests</classifier>
             <scope>test</scope>
         </dependency>
@@ -179,6 +165,21 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <!-- Unused JSON test utilities bring in vulnerable JSON parsers. -->
+            <exclusions>
+                <exclusion>
+                    <groupId>com.jayway.jsonpath</groupId>
+                    <artifactId>json-path</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>net.minidev</groupId>
+                    <artifactId>json-smart</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.skyscreamer</groupId>
+                    <artifactId>jsonassert</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
@@ -222,22 +223,6 @@
 
     <build>
         <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${checkstyle-maven-plugin.version}</version>
-                <configuration>
-                    <configLocation>../.config/checkstyle/checkstyle.xml</configLocation>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
