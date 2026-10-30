@@ -16,7 +16,7 @@
         <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
         <jacoco-maven-plugin.version>0.8.15</jacoco-maven-plugin.version>
 
-        <ttc-rdm-common.version>3.3.35</ttc-rdm-common.version>
+        <bmv-flow-foundry.version>1.0.0</bmv-flow-foundry.version>
         <spring-framework.version>7.0.9</spring-framework.version>
         <reactor-bom.version>2025.0.7</reactor-bom.version>
         <netty.version>4.2.19.Final</netty.version>
@@ -72,9 +72,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.trimble.transportation.reference.data.management</groupId>
-            <artifactId>ttc-rdm-common</artifactId>
-            <version>${ttc-rdm-common.version}</version>
+            <groupId>com.bmv</groupId>
+            <artifactId>flow-foundry</artifactId>
+            <version>${bmv-flow-foundry.version}</version>
         </dependency>
 
         <dependency>

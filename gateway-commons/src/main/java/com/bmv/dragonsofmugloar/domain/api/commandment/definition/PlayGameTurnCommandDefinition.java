@@ -1,25 +1,25 @@
 package com.bmv.dragonsofmugloar.domain.api.commandment.definition;
 
-import static com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole.RDM_CLUSTER_SERVICE;
+import static com.bmv.flow.foundry.domain.model.auth.BmvRole.BMV_CLUSTER_SERVICE;
 
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 
-import com.trimble.transportation.reference.data.management.application.port.in.InternalApiInboundPort;
-import com.trimble.transportation.reference.data.management.application.service.ServiceContextSupplier;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStageCompletedListener;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStateWithMutableBuffer;
-import com.trimble.transportation.reference.data.management.domain.cflow.CommandmentStageExecutor;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithMultipleStagesAndMutableBufferTypeDefinitionBase;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithMutableBufferTypeData;
-import com.trimble.transportation.reference.data.management.domain.model.api.CustomRunTimeAttributes;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedService;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedServiceAndConditionalStage;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmServiceAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.application.port.in.InternalApiInboundPort;
+import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStageCompletedListener;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStateWithMutableBuffer;
+import com.bmv.flow.foundry.application.core.cflow.CommandmentStageExecutor;
+import com.bmv.flow.foundry.application.core.CommandmentWithMultipleStagesAndMutableBufferDefinitionBase;
+import com.bmv.flow.foundry.application.core.CommandmentWithMutableBufferTypeData;
+import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedService;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedServiceAndConditionalStage;
+import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
+import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.dragonsofmugloar.application.service.ChooseGameActionService;
 import com.bmv.dragonsofmugloar.application.service.PlayGameTurnService;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayGameTurnCommand;
@@ -27,8 +27,8 @@ import com.bmv.dragonsofmugloar.domain.api.commandment.PlayGameTurnCommand.Buffe
 import com.bmv.dragonsofmugloar.domain.api.request.PlayGameTurnRequest;
 import com.bmv.dragonsofmugloar.domain.api.response.PlayGameTurnResponse;
 
-public class PlayGameTurnCommandDefinition extends CommandmentWithMultipleStagesAndMutableBufferTypeDefinitionBase<
-    RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, Buffer> {
+public class PlayGameTurnCommandDefinition extends CommandmentWithMultipleStagesAndMutableBufferDefinitionBase<
+    BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, Buffer> {
 
   public static final int FETCH_SHOP_ITEMS = 1;
   public static final int CHOOSE_CRITICAL_HEALING = 2;
@@ -38,10 +38,10 @@ public class PlayGameTurnCommandDefinition extends CommandmentWithMultipleStages
 
   public PlayGameTurnCommandDefinition() {
     super(
-        Set.of(RDM_CLUSTER_SERVICE),
+        Set.of(BMV_CLUSTER_SERVICE),
         new CommandmentWithMutableBufferTypeData<>(PlayGameTurnCommand.NAME, PlayGameTurnCommand.class,
-            RdmServiceAuthorization.class, PlayGameTurnRequest.class, PlayGameTurnResponse.class, Buffer.class, State.class),
-        RdmService.GATEWAY,
+            BmvServiceAuthorization.class, PlayGameTurnRequest.class, PlayGameTurnResponse.class, Buffer.class, State.class),
+        BmvService.GATEWAY,
         Map.of(
             FETCH_SHOP_ITEMS, ExecutionRuleWithLinkedService.of(PlayGameTurnService.class, PlayGameTurnService::fetchShopItems),
             CHOOSE_CRITICAL_HEALING, ExecutionRuleWithLinkedServiceAndConditionalStage.of(
@@ -62,7 +62,7 @@ public class PlayGameTurnCommandDefinition extends CommandmentWithMultipleStages
   }
 
   @Override
-  public PlayGameTurnCommand createInstance(UUID id, RdmServiceAuthorization authorization, PlayGameTurnRequest request,
+  public PlayGameTurnCommand createInstance(UUID id, BmvServiceAuthorization authorization, PlayGameTurnRequest request,
                                             PlayGameTurnResponse response, CustomRunTimeAttributes attributes,
                                             int stageNumber, Buffer buffer) {
     return new PlayGameTurnCommand(id, authorization, request, response, attributes, stageNumber, buffer);
@@ -75,19 +75,19 @@ public class PlayGameTurnCommandDefinition extends CommandmentWithMultipleStages
 
   @Override
   public State createState(PlayGameTurnCommand commandment, Map<Object, Object> commandmentContext,
-                           List<CFlowStageCompletedListener<RdmServiceAuthorization, PlayGameTurnRequest,
+                           List<CFlowStageCompletedListener<BmvServiceAuthorization, PlayGameTurnRequest,
                                PlayGameTurnResponse, PlayGameTurnCommand>> listeners,
                            InternalApiInboundPort internalApiInboundPort, CommandmentStageExecutor stageExecutor) {
     return new State(commandment, commandmentContext, listeners, internalApiInboundPort, stageExecutor);
   }
 
   public static class State extends CFlowStateWithMutableBuffer<
-      RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, Buffer> {
+      BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, Buffer> {
 
     private Buffer buffer;
 
     public State(PlayGameTurnCommand commandment, Map<Object, Object> commandmentContext,
-                 List<CFlowStageCompletedListener<RdmServiceAuthorization, PlayGameTurnRequest,
+                 List<CFlowStageCompletedListener<BmvServiceAuthorization, PlayGameTurnRequest,
                      PlayGameTurnResponse, PlayGameTurnCommand>> listeners,
                  InternalApiInboundPort internalApiInboundPort, CommandmentStageExecutor stageExecutor) {
       super(commandment, commandmentContext, listeners, internalApiInboundPort, stageExecutor);

@@ -2,9 +2,9 @@ package com.bmv.dragonsofmugloar.application.service;
 
 import java.util.Objects;
 
-import com.trimble.transportation.reference.data.management.application.service.ServiceContextSupplier;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowState;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmServiceAuthorization;
+import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
+import com.bmv.flow.foundry.application.core.cflow.CFlowState;
+import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayGameTurnCommand;
 import com.bmv.dragonsofmugloar.domain.api.commandment.definition.PlayGameTurnCommandDefinition.State;
 import com.bmv.dragonsofmugloar.domain.api.request.PlayGameTurnRequest;
@@ -33,7 +33,7 @@ public class PlayGameTurnService {
   }
 
   public Mono<PlayGameTurnResponse> fetchShopItems(
-      CFlowState<RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
+      CFlowState<BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
     State state = (State) flowState;
     return port.getShopItems(state.getRequestObject().gameState().gameId())
         .doOnNext(items -> state.setBuffer(state.getMutableBuffer().withShopItems(items)))
@@ -41,7 +41,7 @@ public class PlayGameTurnService {
   }
 
   public Mono<PlayGameTurnResponse> chooseCriticalHealing(
-      CFlowState<RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
+      CFlowState<BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
     State state = (State) flowState;
     return Mono.fromRunnable(() -> {
       PlayGameTurnRequest request = state.getRequestObject();
@@ -52,7 +52,7 @@ public class PlayGameTurnService {
   }
 
   public Mono<PlayGameTurnResponse> fetchAds(
-      CFlowState<RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
+      CFlowState<BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
     State state = (State) flowState;
     return port.getAds(state.getRequestObject().gameState().gameId())
         .map(ads -> ads.stream().filter(ad -> ad.expiresIn() > 0).toList())
@@ -61,7 +61,7 @@ public class PlayGameTurnService {
   }
 
   public Mono<PlayGameTurnResponse> chooseAction(
-      CFlowState<RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
+      CFlowState<BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
     State state = (State) flowState;
     return Mono.fromRunnable(() -> {
       PlayGameTurnRequest request = state.getRequestObject();
@@ -72,7 +72,7 @@ public class PlayGameTurnService {
   }
 
   public Mono<PlayGameTurnResponse> executeAction(
-      CFlowState<RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
+      CFlowState<BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> flowState) {
     State state = (State) flowState;
     return performer.performGameAction(state.getRequestObject().gameState(), state.getMutableBuffer().executionContext())
         .map(gameState -> new PlayGameTurnResponse(gameState, null));

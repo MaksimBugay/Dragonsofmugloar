@@ -7,7 +7,7 @@ import java.util.Set;
 
 import com.bmv.dragonsofmugloar.domain.model.GameConfig;
 import com.bmv.dragonsofmugloar.domain.model.GameConfig.UpgradeMode;
-import com.trimble.transportation.reference.data.management.serialization.json.JsonUtility;
+import com.bmv.flow.foundry.serialization.json.JsonUtility;
 import org.junit.jupiter.api.Test;
 
 class PlayGameRequestTest {

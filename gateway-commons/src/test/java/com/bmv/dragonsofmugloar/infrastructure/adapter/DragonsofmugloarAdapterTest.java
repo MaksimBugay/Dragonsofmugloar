@@ -27,7 +27,7 @@ import com.bmv.dragonsofmugloar.domain.model.Reputation;
 import com.bmv.dragonsofmugloar.domain.model.ShopItem;
 import com.bmv.dragonsofmugloar.domain.model.ShopItemId;
 import com.bmv.dragonsofmugloar.domain.model.SolveAdResult;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.out.http.WebClientWithPool;
+import com.bmv.flow.foundry.infrastructure.adapter.out.http.WebClientWithPool;
 import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;

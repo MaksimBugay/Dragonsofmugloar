@@ -1,5 +1,7 @@
 package com.bmv.dragonsofmugloar.domain.api.commandment;
 
+import static com.bmv.flow.foundry.application.core.GlobalCommandmentDefinitionRegistry.registerCommandmentDefinition;
+
 import java.util.List;
 import java.util.UUID;
 
@@ -7,10 +9,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.trimble.transportation.reference.data.management.domain.model.api.Command;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithMultipleStagesAndMutableBufferImpl;
-import com.trimble.transportation.reference.data.management.domain.model.api.CustomRunTimeAttributes;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmServiceAuthorization;
+import com.bmv.flow.foundry.application.core.Command;
+import com.bmv.flow.foundry.application.core.CommandmentWithMultipleStagesAndMutableBufferImpl;
+import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
+import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
 import com.bmv.dragonsofmugloar.domain.api.commandment.definition.PlayGameTurnCommandDefinition;
 import com.bmv.dragonsofmugloar.domain.api.request.PlayGameTurnRequest;
 import com.bmv.dragonsofmugloar.domain.api.response.PlayGameTurnResponse;
@@ -20,16 +22,16 @@ import com.bmv.dragonsofmugloar.domain.model.GameActionWithExecutionContext;
 
 @JsonTypeName(PlayGameTurnCommand.NAME)
 public class PlayGameTurnCommand extends CommandmentWithMultipleStagesAndMutableBufferImpl<
-    RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, PlayGameTurnCommand.Buffer>
-    implements Command<RdmServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> {
+    BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, PlayGameTurnCommand.Buffer>
+    implements Command<BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand> {
 
   public static final String NAME = "PLAY_GAME_TURN";
-  public static final PlayGameTurnCommandDefinition TYPE_DEFINITION = new PlayGameTurnCommandDefinition();
+  public static final PlayGameTurnCommandDefinition TYPE_DEFINITION = registerCommandmentDefinition(new PlayGameTurnCommandDefinition());
 
   @JsonCreator
   public PlayGameTurnCommand(
       @JsonProperty("id") UUID id,
-      @JsonProperty("authorization") RdmServiceAuthorization authorization,
+      @JsonProperty("authorization") BmvServiceAuthorization authorization,
       @JsonProperty("requestObject") PlayGameTurnRequest requestObject,
       @JsonProperty("responseObject") PlayGameTurnResponse responseObject,
       @JsonProperty("customRunTimeAttributes") CustomRunTimeAttributes customRunTimeAttributes,
@@ -40,12 +42,12 @@ public class PlayGameTurnCommand extends CommandmentWithMultipleStagesAndMutable
   }
 
   public PlayGameTurnCommand(PlayGameTurnRequest request) {
-    this(null, new RdmServiceAuthorization(), request, null, null, 0, Buffer.empty());
+    this(null, new BmvServiceAuthorization(), request, null, null, 0, Buffer.empty());
   }
 
   @JsonIgnore
   @Override
-  public PlayGameTurnCommandDefinition getCommandmentWithMultipleStagesAndMutableBufferTypeDefinition() {
+  public PlayGameTurnCommandDefinition getCommandmentWithMultipleStagesAndMutableBufferDefinition() {
     return TYPE_DEFINITION;
   }
 

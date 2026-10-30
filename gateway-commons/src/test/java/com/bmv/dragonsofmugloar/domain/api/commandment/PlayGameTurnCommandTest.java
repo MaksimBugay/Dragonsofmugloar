@@ -22,15 +22,15 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import com.trimble.transportation.reference.data.management.application.port.in.InternalApiInboundPort;
-import com.trimble.transportation.reference.data.management.application.service.RdmServiceContext;
-import com.trimble.transportation.reference.data.management.application.service.ServiceContextSupplier;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStageCompletedListener;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedService;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedServiceAndConditionalStage;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmServiceAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.application.port.in.InternalApiInboundPort;
+import com.bmv.flow.foundry.application.service.BmvServiceContext;
+import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStageCompletedListener;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedService;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedServiceAndConditionalStage;
+import com.bmv.flow.foundry.domain.model.auth.BmvRole;
+import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.dragonsofmugloar.application.service.ChooseGameActionService;
 import com.bmv.dragonsofmugloar.application.service.PerformGameActionService;
 import com.bmv.dragonsofmugloar.application.service.PlayGameTurnService;
@@ -48,9 +48,9 @@ import com.bmv.dragonsofmugloar.domain.model.ShopItem;
 import com.bmv.dragonsofmugloar.domain.model.ShopItemId;
 import com.bmv.dragonsofmugloar.domain.model.SolveAdResult;
 import com.bmv.dragonsofmugloar.domain.model.GameAction;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.in.CFlowStageCommandmentExecutor;
+import com.bmv.flow.foundry.infrastructure.adapter.in.CFlowStageCommandmentExecutor;
 import com.bmv.dragonsofmugloar.port.out.DragonsofmugloarPort;
-import com.trimble.transportation.reference.data.management.serialization.json.JsonUtility;
+import com.bmv.flow.foundry.serialization.json.JsonUtility;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -79,10 +79,10 @@ class PlayGameTurnCommandTest {
         () -> new PlayGameTurnService(port, chooser, new PerformGameActionService(port)));
     serviceContext.refresh();
     ServiceContextSupplier.resetServiceContext();
-    ServiceContextSupplier.setServiceContext(new RdmServiceContext(serviceContext));
-    when(inboundPort.getRdmService()).thenReturn(RdmService.GATEWAY);
+    ServiceContextSupplier.setServiceContext(new BmvServiceContext(serviceContext));
+    when(inboundPort.getBmvService()).thenReturn(BmvService.GATEWAY);
     when(inboundPort.getCommandmentExecutionTimeout()).thenReturn(Duration.ofSeconds(5));
-    stageExecutor = new CFlowStageCommandmentExecutor(RdmService.GATEWAY, null, null);
+    stageExecutor = new CFlowStageCommandmentExecutor(BmvService.GATEWAY, null);
   }
 
   @AfterEach
@@ -97,7 +97,7 @@ class PlayGameTurnCommandTest {
     when(port.getShopItems("game")).thenReturn(Mono.just(List.of(HEALING)));
     when(port.buyItem("game", ShopItemId.HEALING_POTION)).thenReturn(Mono.just(new PurchaseResult(true, 0, 2, 4, 21)));
 
-    var listener = new CFlowStageCompletedListener<RdmServiceAuthorization, PlayGameTurnRequest,
+    var listener = new CFlowStageCompletedListener<BmvServiceAuthorization, PlayGameTurnRequest,
         PlayGameTurnResponse, PlayGameTurnCommand>(PlayGameTurnCommandDefinition.CHOOSE_CRITICAL_HEALING, state -> {
           assertNull(state.getResponseObject());
           assertEquals(PlayGameTurnCommandDefinition.EXECUTE_ACTION, state.getStageNumber());
@@ -124,7 +124,7 @@ class PlayGameTurnCommandTest {
     when(port.solveAd("game", "live")).thenReturn(Mono.just(new SolveAdResult(true, 3, 220, 600, 900, 21, "done")));
 
     var snapshots = new ArrayList<Buffer>();
-    var listener = new CFlowStageCompletedListener<RdmServiceAuthorization, PlayGameTurnRequest,
+    var listener = new CFlowStageCompletedListener<BmvServiceAuthorization, PlayGameTurnRequest,
         PlayGameTurnResponse, PlayGameTurnCommand>(PlayGameTurnCommandDefinition.CHOOSE_ACTION,
         state -> snapshots.add(((PlayGameTurnCommandDefinition.State) state).getMutableBuffer()));
     var response = execute(gameState(3, 120, null), List.of(listener));
@@ -230,13 +230,13 @@ class PlayGameTurnCommandTest {
     assertThrows(UnsupportedOperationException.class, () -> withAds.ads().clear());
     assertEquals(command.getId(), restored.getId());
     assertEquals(command.getRequestObject(), restored.getRequestObject());
-    assertInstanceOf(RdmServiceAuthorization.class, restored.getAuthorization());
+    assertInstanceOf(BmvServiceAuthorization.class, restored.getAuthorization());
     assertEquals(command.getAuthorization().getId(), restored.getAuthorization().getId());
-    assertEquals(Set.of(RdmRole.RDM_CLUSTER_SERVICE), restored.getAuthorization().getRoles());
+    assertEquals(Set.of(BmvRole.BMV_CLUSTER_SERVICE), restored.getAuthorization().getRoles());
     assertEquals(state.getMutableBuffer(), restored.getMutableBuffer());
     assertEquals(PlayGameTurnCommandDefinition.EXECUTE_ACTION, restored.getStageNumber());
     assertEquals(Buffer.empty(), command.getMutableBuffer());
-    assertSame(PlayGameTurnCommand.TYPE_DEFINITION, restored.getCommandmentTypeDefinition());
+    assertSame(PlayGameTurnCommand.TYPE_DEFINITION, restored.getCommandmentDefinition());
   }
 
   @Test
@@ -244,8 +244,8 @@ class PlayGameTurnCommandTest {
     var definition = PlayGameTurnCommand.TYPE_DEFINITION;
 
     assertEquals(5, definition.getTotalNumberOfStages());
-    assertEquals(RdmServiceAuthorization.class, definition.getAuthorizationClass());
-    assertEquals(Set.of(RdmRole.RDM_CLUSTER_SERVICE), definition.getAcceptedRoles());
+    assertEquals(BmvServiceAuthorization.class, definition.getAuthorizationClass());
+    assertEquals(Set.of(BmvRole.BMV_CLUSTER_SERVICE), definition.getAcceptedRoles());
     for (int stage = 1; stage <= 5; stage++) {
       assertInstanceOf(ExecutionRuleWithLinkedService.class, definition.getExecutionRuleByStageNumber(stage));
     }
@@ -258,7 +258,7 @@ class PlayGameTurnCommandTest {
   }
 
   private PlayGameTurnResponse execute(GameState gameState,
-                                       List<CFlowStageCompletedListener<RdmServiceAuthorization, PlayGameTurnRequest,
+                                       List<CFlowStageCompletedListener<BmvServiceAuthorization, PlayGameTurnRequest,
                                            PlayGameTurnResponse, PlayGameTurnCommand>> listeners) {
     var command = new PlayGameTurnCommand(new PlayGameTurnRequest(gameState, CONFIG));
     var response = PlayGameTurnCommand.TYPE_DEFINITION.getStartExecutionRule().getFlow()

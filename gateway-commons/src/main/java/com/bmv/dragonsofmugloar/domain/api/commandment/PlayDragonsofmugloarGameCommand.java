@@ -1,16 +1,18 @@
 package com.bmv.dragonsofmugloar.domain.api.commandment;
 
+import static com.bmv.flow.foundry.application.core.GlobalCommandmentDefinitionRegistry.registerCommandmentDefinition;
+
 import java.util.UUID;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.trimble.transportation.reference.data.management.domain.model.api.Command;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithMultipleStagesAndMutableBufferImpl;
-import com.trimble.transportation.reference.data.management.domain.model.api.CustomRunTimeAttributes;
-import com.trimble.transportation.reference.data.management.domain.model.api.PublicCommandment;
-import com.trimble.transportation.reference.data.management.domain.model.auth.AnonymousAuthorization;
+import com.bmv.flow.foundry.application.core.Command;
+import com.bmv.flow.foundry.application.core.CommandmentWithMultipleStagesAndMutableBufferImpl;
+import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
+import com.bmv.flow.foundry.application.core.PublicCommandment;
+import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
 import com.bmv.dragonsofmugloar.domain.api.commandment.definition.PlayDragonsofmugloarGameCommandDefinition;
 import com.bmv.dragonsofmugloar.domain.api.request.PlayGameRequest;
 import com.bmv.dragonsofmugloar.domain.api.response.PlayGameResponse;
@@ -26,7 +28,7 @@ public class PlayDragonsofmugloarGameCommand extends CommandmentWithMultipleStag
 
   public static final String NAME = "PLAY_DRAGONSOFMUGLOAR_GAME";
   public static final PlayDragonsofmugloarGameCommandDefinition TYPE_DEFINITION =
-      new PlayDragonsofmugloarGameCommandDefinition();
+      registerCommandmentDefinition(new PlayDragonsofmugloarGameCommandDefinition());
 
   @JsonCreator
   public PlayDragonsofmugloarGameCommand(
@@ -47,7 +49,7 @@ public class PlayDragonsofmugloarGameCommand extends CommandmentWithMultipleStag
 
   @JsonIgnore
   @Override
-  public PlayDragonsofmugloarGameCommandDefinition getCommandmentWithMultipleStagesAndMutableBufferTypeDefinition() {
+  public PlayDragonsofmugloarGameCommandDefinition getCommandmentWithMultipleStagesAndMutableBufferDefinition() {
     return TYPE_DEFINITION;
   }
 

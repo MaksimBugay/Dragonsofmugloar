@@ -1,6 +1,6 @@
 package com.bmv.dragonsofmugloar.domain.api.commandment.definition;
 
-import static com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole.ANONYMOUS_USER;
+import static com.bmv.flow.foundry.domain.model.auth.BmvRole.ANONYMOUS_USER;
 
 import java.util.List;
 import java.util.Map;
@@ -8,20 +8,20 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.function.BiFunction;
 
-import com.trimble.transportation.reference.data.management.application.port.in.InternalApiInboundPort;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStageCompletedListener;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStateWithMutableBuffer;
-import com.trimble.transportation.reference.data.management.domain.cflow.CommandmentStageExecutor;
-import com.trimble.transportation.reference.data.management.domain.cflow.ConditionalLoopAttributes;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithMultipleStagesAndMutableBufferTypeDefinitionBase;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithMutableBufferTypeData;
-import com.trimble.transportation.reference.data.management.domain.model.api.CustomRunTimeAttributes;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedService;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedServiceAndConditionalLoop;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithSubCommandmentAndStaticMappers;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.auth.AnonymousAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.application.port.in.InternalApiInboundPort;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStageCompletedListener;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStateWithMutableBuffer;
+import com.bmv.flow.foundry.application.core.cflow.CommandmentStageExecutor;
+import com.bmv.flow.foundry.application.core.cflow.ConditionalLoopAttributes;
+import com.bmv.flow.foundry.application.core.CommandmentWithMultipleStagesAndMutableBufferDefinitionBase;
+import com.bmv.flow.foundry.application.core.CommandmentWithMutableBufferTypeData;
+import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedService;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedServiceAndConditionalLoop;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithSubCommandmentAndStaticMappers;
+import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
+import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.dragonsofmugloar.application.service.PlayDragonsofmugloarGameService;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayDragonsofmugloarGameCommand;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayDragonsofmugloarGameCommand.Buffer;
@@ -29,7 +29,7 @@ import com.bmv.dragonsofmugloar.domain.api.commandment.PlayGameTurnCommand;
 import com.bmv.dragonsofmugloar.domain.api.request.PlayGameRequest;
 import com.bmv.dragonsofmugloar.domain.api.response.PlayGameResponse;
 
-public class PlayDragonsofmugloarGameCommandDefinition extends CommandmentWithMultipleStagesAndMutableBufferTypeDefinitionBase<
+public class PlayDragonsofmugloarGameCommandDefinition extends CommandmentWithMultipleStagesAndMutableBufferDefinitionBase<
     AnonymousAuthorization, PlayGameRequest, PlayGameResponse, PlayDragonsofmugloarGameCommand, Buffer> {
 
   public static final int START_GAME = 1;
@@ -41,13 +41,13 @@ public class PlayDragonsofmugloarGameCommandDefinition extends CommandmentWithMu
         new CommandmentWithMutableBufferTypeData<>(PlayDragonsofmugloarGameCommand.NAME,
             PlayDragonsofmugloarGameCommand.class, AnonymousAuthorization.class, PlayGameRequest.class,
             PlayGameResponse.class, Buffer.class, State.class),
-        RdmService.GATEWAY,
+        BmvService.GATEWAY,
         Map.of(
             START_GAME, ExecutionRuleWithLinkedService.of(
                 PlayDragonsofmugloarGameService.class, PlayDragonsofmugloarGameService::startGame),
             PLAY_TURNS, ExecutionRuleWithLinkedServiceAndConditionalLoop.of(
                 ExecutionRuleWithSubCommandmentAndStaticMappers.of(
-                    RdmService.CURRENT, null, PlayGameTurnCommand.TYPE_DEFINITION,
+                    BmvService.CURRENT, null, PlayGameTurnCommand.TYPE_DEFINITION,
                     PlayDragonsofmugloarGameService::mapTurnRequest,
                     PlayDragonsofmugloarGameService::mapTurnResponse,
                     false),

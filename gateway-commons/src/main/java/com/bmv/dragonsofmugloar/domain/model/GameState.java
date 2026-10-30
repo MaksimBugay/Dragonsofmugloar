@@ -1,6 +1,6 @@
 package com.bmv.dragonsofmugloar.domain.model;
 
-import com.trimble.transportation.reference.data.management.util.RdmObjectUtils;
+import com.bmv.flow.foundry.util.BmvObjectUtils;
 import jakarta.annotation.Nullable;
 import jakarta.validation.constraints.NotBlank;
 
@@ -28,7 +28,7 @@ public record GameState(
                 highScore,
                 Reputation.NEUTRAL,
                 turn,
-                RdmObjectUtils.getCurrentTimeMillis(),
+                BmvObjectUtils.getCurrentTimeMillis(),
                 null
         );
     }

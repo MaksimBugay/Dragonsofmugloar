@@ -1,9 +1,9 @@
 package com.bmv.dragonsofmugloar.application.service;
 
-import com.trimble.transportation.reference.data.management.application.service.ServiceContextSupplier;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowState;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.auth.AnonymousAuthorization;
+import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
+import com.bmv.flow.foundry.application.core.cflow.CFlowState;
+import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
+import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayDragonsofmugloarGameCommand;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayDragonsofmugloarGameCommand.Buffer;
 import com.bmv.dragonsofmugloar.domain.api.commandment.definition.PlayDragonsofmugloarGameCommandDefinition.State;
@@ -14,7 +14,7 @@ import com.bmv.dragonsofmugloar.domain.api.response.PlayGameTurnResponse;
 import com.bmv.dragonsofmugloar.domain.model.GameConfig;
 import com.bmv.dragonsofmugloar.domain.model.GameState;
 import com.bmv.dragonsofmugloar.port.out.DragonsofmugloarPort;
-import com.trimble.transportation.reference.data.management.util.RdmObjectUtils;
+import com.bmv.flow.foundry.util.BmvObjectUtils;
 import reactor.core.publisher.Mono;
 
 public class PlayDragonsofmugloarGameService {
@@ -72,7 +72,7 @@ public class PlayDragonsofmugloarGameService {
         GameState gameState = buffer.gameState();
         GameConfig config = buffer.gameConfig();
         return gameState.turn() >= config.turnsLimit()
-                || RdmObjectUtils.getCurrentTimeMillis() - gameState.startedAt() >= config.timeLimitMillis()
+                || BmvObjectUtils.getCurrentTimeMillis() - gameState.startedAt() >= config.timeLimitMillis()
                 || gameState.score() >= config.scoreGoal()
                 || gameState.lives() == 0;
     }
@@ -80,6 +80,6 @@ public class PlayDragonsofmugloarGameService {
     private static PlayGameResponse toResponse(GameState state, ErrorDetails errorDetails) {
         return new PlayGameResponse(state.gameId(), state.gold(), state.lives(), state.level(), state.turn(), state.score(),
                 state.highScore(),
-                state.lastInvestigatedReputation(), RdmObjectUtils.getCurrentTimeMillis() - state.startedAt(), errorDetails);
+                state.lastInvestigatedReputation(), BmvObjectUtils.getCurrentTimeMillis() - state.startedAt(), errorDetails);
     }
 }

@@ -20,16 +20,16 @@ import java.util.Map;
 import java.util.Set;
 import java.util.function.Function;
 
-import com.trimble.transportation.reference.data.management.application.port.in.InternalApiInboundPort;
-import com.trimble.transportation.reference.data.management.application.service.RdmServiceContext;
-import com.trimble.transportation.reference.data.management.application.service.ServiceContextSupplier;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStageCompletedListener;
-import com.trimble.transportation.reference.data.management.domain.model.api.ExecutionRuleWithLinkedServiceAndConditionalLoop;
-import com.trimble.transportation.reference.data.management.domain.model.api.PublicCommandment;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.auth.AnonymousAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole;
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.application.port.in.InternalApiInboundPort;
+import com.bmv.flow.foundry.application.service.BmvServiceContext;
+import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStageCompletedListener;
+import com.bmv.flow.foundry.application.core.ExecutionRuleWithLinkedServiceAndConditionalLoop;
+import com.bmv.flow.foundry.application.core.PublicCommandment;
+import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
+import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
+import com.bmv.flow.foundry.domain.model.auth.BmvRole;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.dragonsofmugloar.application.service.PlayDragonsofmugloarGameService;
 import com.bmv.dragonsofmugloar.domain.api.commandment.PlayDragonsofmugloarGameCommand.Buffer;
 import com.bmv.dragonsofmugloar.domain.api.commandment.definition.PlayDragonsofmugloarGameCommandDefinition;
@@ -42,9 +42,9 @@ import com.bmv.dragonsofmugloar.domain.exception.DragonsofmugloarServerException
 import com.bmv.dragonsofmugloar.domain.model.Game;
 import com.bmv.dragonsofmugloar.domain.model.GameState;
 import com.bmv.dragonsofmugloar.port.out.DragonsofmugloarPort;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.in.CFlowStageCommandmentExecutor;
-import com.trimble.transportation.reference.data.management.serialization.json.JsonUtility;
-import com.trimble.transportation.reference.data.management.util.RdmObjectUtils;
+import com.bmv.flow.foundry.infrastructure.adapter.in.CFlowStageCommandmentExecutor;
+import com.bmv.flow.foundry.serialization.json.JsonUtility;
+import com.bmv.flow.foundry.util.BmvObjectUtils;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -56,7 +56,7 @@ class PlayDragonsofmugloarGameCommandTest {
   private final DragonsofmugloarPort port = mock(DragonsofmugloarPort.class);
   private final InternalApiInboundPort inboundPort = mock(InternalApiInboundPort.class);
   private final List<PlayGameTurnRequest> turnRequests = new ArrayList<>();
-  private final CFlowStageCommandmentExecutor executor = new CFlowStageCommandmentExecutor(RdmService.GATEWAY, null, null);
+  private final CFlowStageCommandmentExecutor executor = new CFlowStageCommandmentExecutor(BmvService.GATEWAY, null);
   private GenericApplicationContext serviceContext;
   private Function<PlayGameTurnRequest, PlayGameTurnResponse> turnRunner = request -> new PlayGameTurnResponse(
       advance(request.gameState(), request.gameState().turn() + 1, request.gameState().score() + 100), null);
@@ -67,15 +67,15 @@ class PlayDragonsofmugloarGameCommandTest {
     serviceContext.registerBean(PlayDragonsofmugloarGameService.class, () -> new PlayDragonsofmugloarGameService(port));
     serviceContext.refresh();
     ServiceContextSupplier.resetServiceContext();
-    ServiceContextSupplier.setServiceContext(new RdmServiceContext(serviceContext));
-    when(inboundPort.getRdmService()).thenReturn(RdmService.GATEWAY);
+    ServiceContextSupplier.setServiceContext(new BmvServiceContext(serviceContext));
+    when(inboundPort.getBmvService()).thenReturn(BmvService.GATEWAY);
     when(inboundPort.getCommandmentExecutionTimeout()).thenReturn(Duration.ofSeconds(5));
     when(port.startGame()).thenReturn(Mono.just(new Game("game", 3, 10, 1, 0, 900, 0)));
     doAnswer(invocation -> {
       PlayGameTurnCommand command = invocation.getArgument(0);
       Function<PlayGameTurnResponse, Mono<PlayGameResponse>> mapper = invocation.getArgument(1);
       turnRequests.add(command.getRequestObject());
-      assertSame(PlayGameTurnCommand.TYPE_DEFINITION, command.getCommandmentTypeDefinition());
+      assertSame(PlayGameTurnCommand.TYPE_DEFINITION, command.getCommandmentDefinition());
       return mapper.apply(turnRunner.apply(command.getRequestObject()));
     }).when(inboundPort).executeSubCommandment(any(), any(), eq(false));
   }
@@ -158,7 +158,7 @@ class PlayDragonsofmugloarGameCommandTest {
       GameState state = request.gameState();
       return new PlayGameTurnResponse(new GameState(state.gameId(), state.gold(), state.lives(), state.level(),
           1, 100, state.highScore(), state.lastInvestigatedReputation(), state.lastReputationInvestigationTurn(),
-          RdmObjectUtils.getCurrentTimeMillis() - 10_000, state.lastAction()), null);
+          BmvObjectUtils.getCurrentTimeMillis() - 10_000, state.lastAction()), null);
     };
     var response = execute(request(100, 5_000L, 10_000L));
 
@@ -221,7 +221,7 @@ class PlayDragonsofmugloarGameCommandTest {
     state.setBuffer(state.getMutableBuffer().withGameState(new GameState(initial.gameId(), initial.gold(),
         initial.lives(), initial.level(), initial.turn(), initial.score(), initial.highScore(),
         initial.lastInvestigatedReputation(), initial.lastReputationInvestigationTurn(),
-        RdmObjectUtils.getCurrentTimeMillis() - 10_000, null)));
+        BmvObjectUtils.getCurrentTimeMillis() - 10_000, null)));
     state.setResponse(PlayDragonsofmugloarGameService.mapTurnResponse(new PlayGameTurnResponse(null, error), state));
 
     assertTrue(PlayDragonsofmugloarGameService.shouldStop(state));
@@ -245,7 +245,7 @@ class PlayDragonsofmugloarGameCommandTest {
           state.setBuffer(state.getMutableBuffer().withGameState(new GameState(initial.gameId(), initial.gold(),
               initial.lives(), initial.level(), initial.turn(), initial.score(), initial.highScore(),
               initial.lastInvestigatedReputation(), initial.lastReputationInvestigationTurn(),
-              RdmObjectUtils.getCurrentTimeMillis() - 10_000, null)));
+              BmvObjectUtils.getCurrentTimeMillis() - 10_000, null)));
         });
 
     execute(request(100, 5_000L, 10_000L), List.of(listener));
@@ -277,8 +277,8 @@ class PlayDragonsofmugloarGameCommandTest {
     assertInstanceOf(PublicCommandment.class, restored);
     assertInstanceOf(AnonymousAuthorization.class, restored.getAuthorization());
     assertEquals(Buffer.empty(), command.getMutableBuffer());
-    assertSame(PlayDragonsofmugloarGameCommand.TYPE_DEFINITION, restored.getCommandmentTypeDefinition());
-    assertEquals(Set.of(RdmRole.ANONYMOUS_USER), PlayDragonsofmugloarGameCommand.TYPE_DEFINITION.getAcceptedRoles());
+    assertSame(PlayDragonsofmugloarGameCommand.TYPE_DEFINITION, restored.getCommandmentDefinition());
+    assertEquals(Set.of(BmvRole.ANONYMOUS_USER), PlayDragonsofmugloarGameCommand.TYPE_DEFINITION.getAcceptedRoles());
     assertEquals(2, PlayDragonsofmugloarGameCommand.TYPE_DEFINITION.getTotalNumberOfStages());
     assertInstanceOf(ExecutionRuleWithLinkedServiceAndConditionalLoop.class,
         PlayDragonsofmugloarGameCommand.TYPE_DEFINITION.getExecutionRuleByStageNumber(
