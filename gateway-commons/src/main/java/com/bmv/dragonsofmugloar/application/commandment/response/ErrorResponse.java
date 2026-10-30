@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.commons.api.dto.common.error;
+package com.bmv.dragonsofmugloar.application.commandment.response;
 
 import java.util.List;
 

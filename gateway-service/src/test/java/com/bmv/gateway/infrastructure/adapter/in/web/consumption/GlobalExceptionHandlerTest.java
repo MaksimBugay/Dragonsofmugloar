@@ -12,7 +12,7 @@ import static org.mockito.Mockito.when;
 import java.util.Set;
 
 import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.bmv.dragonsofmugloar.commons.api.dto.common.error.ErrorResponse;
+import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
 import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.RdmExceptionWithDetails;
 import jakarta.validation.ConstraintViolation;

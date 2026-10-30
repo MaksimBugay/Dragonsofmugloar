@@ -3,7 +3,7 @@ package com.bmv.gateway.infrastructure.adapter.in.web.basic.error;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import com.bmv.dragonsofmugloar.commons.api.dto.common.error.ErrorResponse;
+import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import jakarta.validation.ConstraintViolation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

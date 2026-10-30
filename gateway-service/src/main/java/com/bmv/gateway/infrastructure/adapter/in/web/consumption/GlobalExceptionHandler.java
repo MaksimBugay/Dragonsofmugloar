@@ -3,7 +3,7 @@ package com.bmv.gateway.infrastructure.adapter.in.web.consumption;
 import java.util.ArrayList;
 
 import com.trimble.transportation.reference.data.management.domain.model.api.error.RdmError;
-import com.bmv.dragonsofmugloar.commons.api.dto.common.error.ErrorResponse;
+import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
 import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.RdmExceptionWithDetails;
 import jakarta.validation.ConstraintViolationException;

@@ -8,7 +8,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.List;
 
-import com.bmv.dragonsofmugloar.commons.api.dto.common.error.ErrorResponse;
+import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Path;
 import org.junit.jupiter.api.BeforeEach;
