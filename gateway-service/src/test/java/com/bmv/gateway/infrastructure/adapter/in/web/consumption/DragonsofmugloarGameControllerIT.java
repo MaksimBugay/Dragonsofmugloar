@@ -12,6 +12,7 @@ import java.util.concurrent.TimeUnit;
 import com.bmv.authorization.config.AuthBmvConfig;
 import com.bmv.flow.foundry.application.service.BmvServiceContext;
 import com.bmv.flow.foundry.application.service.ServiceContextSupplier;
+import com.bmv.gateway.infrastructure.adapter.in.web.rest.DragonsofmugloarGameController;
 import com.bmv.permission.config.PermitBmvConfig;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;

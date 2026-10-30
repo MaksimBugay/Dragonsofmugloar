@@ -13,8 +13,9 @@ import java.util.Set;
 
 import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
 import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
-import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
-import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.BmvExceptionWithDetails;
+import com.bmv.gateway.infrastructure.adapter.in.web.error.ErrorResponseService;
+import com.bmv.gateway.infrastructure.adapter.in.web.error.GlobalExceptionHandler;
+import com.bmv.gateway.infrastructure.adapter.in.web.error.BmvExceptionWithDetails;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import jakarta.validation.Path;

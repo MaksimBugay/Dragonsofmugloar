@@ -1,4 +1,4 @@
-package com.bmv.gateway.infrastructure.adapter.in.web.basic.error;
+package com.bmv.gateway.infrastructure.adapter.in.web.error;
 
 import java.util.List;
 import java.util.stream.Collectors;

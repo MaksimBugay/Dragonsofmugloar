@@ -1,4 +1,4 @@
-package com.bmv.gateway.infrastructure.adapter.in.web.basic.error;
+package com.bmv.gateway.infrastructure.adapter.in.web.error;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

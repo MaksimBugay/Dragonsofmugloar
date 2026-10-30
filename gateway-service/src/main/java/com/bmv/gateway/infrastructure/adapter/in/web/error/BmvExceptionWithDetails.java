@@ -1,4 +1,4 @@
-package com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception;
+package com.bmv.gateway.infrastructure.adapter.in.web.error;
 
 import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
 import com.bmv.flow.foundry.serialization.json.JsonUtility;

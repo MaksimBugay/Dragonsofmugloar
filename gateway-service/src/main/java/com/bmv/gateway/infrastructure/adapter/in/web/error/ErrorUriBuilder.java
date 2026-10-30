@@ -1,4 +1,4 @@
-package com.bmv.gateway.infrastructure.adapter.in.web.basic.error;
+package com.bmv.gateway.infrastructure.adapter.in.web.error;
 
 import com.bmv.gateway.config.BmvConfig;
 import org.springframework.stereotype.Component;

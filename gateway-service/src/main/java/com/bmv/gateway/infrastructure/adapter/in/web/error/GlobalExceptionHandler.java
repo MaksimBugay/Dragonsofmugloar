@@ -1,11 +1,9 @@
-package com.bmv.gateway.infrastructure.adapter.in.web.consumption;
+package com.bmv.gateway.infrastructure.adapter.in.web.error;
 
 import java.util.ArrayList;
 
 import com.bmv.flow.foundry.domain.model.api.error.BmvError;
 import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
-import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
-import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.BmvExceptionWithDetails;
 import jakarta.validation.ConstraintViolationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
