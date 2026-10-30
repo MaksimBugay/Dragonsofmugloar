@@ -45,186 +45,186 @@ import org.springframework.context.event.EventListener;
 @Configuration
 public class RdmConfig {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(RdmConfig.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(RdmConfig.class);
 
-  @Value("${rdm.application.default-locale:en}")
-  private String defaultLocale;
+    @Value("${rdm.application.default-locale:en}")
+    private String defaultLocale;
 
-  @Value("${rdm.application.commandment-execution-timeout-sec:600}")
-  private long commandmentExecutionTimeoutSec;
+    @Value("${rdm.application.commandment-execution-timeout-sec:600}")
+    private long commandmentExecutionTimeoutSec;
 
-  @Value("${rdm.error.base-uri:https://developers.dev.trimble-transportation.com/Data_Governance_RDM/Reference_Data_Management_Service/how-tos}")
-  private String errorResponseBaseUri;
+    @Value("${rdm.error.base-uri:https://secure.fileshare.ovh/how-tos}")
+    private String errorResponseBaseUri;
 
-  @Value("${rdm.ai.cloud.azure.gpt-54.url:}")
-  private String azureAiCloudGpt54Url;
+    @Value("${rdm.ai.cloud.azure.gpt-54.url:}")
+    private String azureAiCloudGpt54Url;
 
-  @Value("${rdm.ai.cloud.azure.gpt-54.access-key:}")
-  private String azureAiCloudGpt54AccessKey;
+    @Value("${rdm.ai.cloud.azure.gpt-54.access-key:}")
+    private String azureAiCloudGpt54AccessKey;
 
-  @EventListener(ApplicationReadyEvent.class)
-  public void initializeDefaultLocaleAndServiceContextSupplier(ApplicationReadyEvent applicationReadyEvent) {
-    DefaultLocaleSupplier.resetDefaultLocale();
-    DefaultLocaleSupplier.setDefaultLocale(
-        new Locale.Builder()
-            .setLanguage(defaultLocale)
-            .build()
-    );
+    @EventListener(ApplicationReadyEvent.class)
+    public void initializeDefaultLocaleAndServiceContextSupplier(ApplicationReadyEvent applicationReadyEvent) {
+        DefaultLocaleSupplier.resetDefaultLocale();
+        DefaultLocaleSupplier.setDefaultLocale(
+                new Locale.Builder()
+                        .setLanguage(defaultLocale)
+                        .build()
+        );
 
-    ServiceContextSupplier.setServiceContext(
-        new BmvServiceContext(applicationReadyEvent.getApplicationContext())
-    );
-  }
+        ServiceContextSupplier.setServiceContext(
+                new BmvServiceContext(applicationReadyEvent.getApplicationContext())
+        );
+    }
 
-  // ----------------------------------------------------------------------------
-  // Ports
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Ports
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  public AiAgentToolAzureGpt54OutboundPort aiAgentToolAzureGpt54OutboundPort() {
-    return new AiAgentToolAzureGpt54OutboundPort(
-        new AzureAiGpt54Config() {
-          @Override
-          public String accessToken() {
-            return azureAiCloudGpt54AccessKey;
-          }
+    @Bean
+    public AiAgentToolAzureGpt54OutboundPort aiAgentToolAzureGpt54OutboundPort() {
+        return new AiAgentToolAzureGpt54OutboundPort(
+                new AzureAiGpt54Config() {
+                    @Override
+                    public String accessToken() {
+                        return azureAiCloudGpt54AccessKey;
+                    }
 
-          @Override
-          public String apiUrl() {
-            return azureAiCloudGpt54Url;
-          }
-        }
-    );
-  }
+                    @Override
+                    public String apiUrl() {
+                        return azureAiCloudGpt54Url;
+                    }
+                }
+        );
+    }
 
-  // ----------------------------------------------------------------------------
-  // Async commandment execution
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Async commandment execution
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
-  public BasicCacheWithNullableValues pendingResponseStorage(RedisConnectionManager connectionManager) {
-    return new BasicCacheWithNullableValues(
-        new BmvRedisJsonSerializer(),
-        rdmSerializer -> new BasicCacheWithRedis(rdmSerializer, connectionManager)
-    );
-  }
+    @Bean
+    @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
+    public BasicCacheWithNullableValues pendingResponseStorage(RedisConnectionManager connectionManager) {
+        return new BasicCacheWithNullableValues(
+                new BmvRedisJsonSerializer(),
+                rdmSerializer -> new BasicCacheWithRedis(rdmSerializer, connectionManager)
+        );
+    }
 
-  @Bean
-  @ConditionalOnMissingBean(name = "pendingResponseStorage")
-  public BasicCacheWithNullableValues pendingResponseStorageLocal() {
-    return new BasicCacheWithNullableValues(
-        new BmvRedisJsonSerializer(),
-        _ -> new LocalBasicCache()
-    );
-  }
+    @Bean
+    @ConditionalOnMissingBean(name = "pendingResponseStorage")
+    public BasicCacheWithNullableValues pendingResponseStorageLocal() {
+        return new BasicCacheWithNullableValues(
+                new BmvRedisJsonSerializer(),
+                _ -> new LocalBasicCache()
+        );
+    }
 
-  @Bean
-  public AsyncCommandmentExecutionAdapter asyncCommandmentExecutionAdapter(
-      BasicCacheWithNullableValues pendingResponseStorage,
-      LockService lockService) {
-    return new AsyncCommandmentExecutionAdapter(pendingResponseStorage, lockService);
-  }
+    @Bean
+    public AsyncCommandmentExecutionAdapter asyncCommandmentExecutionAdapter(
+            BasicCacheWithNullableValues pendingResponseStorage,
+            LockService lockService) {
+        return new AsyncCommandmentExecutionAdapter(pendingResponseStorage, lockService);
+    }
 
-  // ----------------------------------------------------------------------------
-  // Services
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Services
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  public AuthorizeWithPermissionCheckService authorizeWithPermissionCheckService() {
-    return new AuthorizeWithPermissionCheckService();
-  }
+    @Bean
+    public AuthorizeWithPermissionCheckService authorizeWithPermissionCheckService() {
+        return new AuthorizeWithPermissionCheckService();
+    }
 
-  @Bean
-  public InvalidateCommandmentCacheInternalService invalidateCommandmentCacheInternalService() {
-    return new InvalidateCommandmentCacheInternalService();
-  }
+    @Bean
+    public InvalidateCommandmentCacheInternalService invalidateCommandmentCacheInternalService() {
+        return new InvalidateCommandmentCacheInternalService();
+    }
 
-  // ----------------------------------------------------------------------------
-  // Distributed lock
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Distributed lock
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  @ConditionalOnProperty(prefix = "rdm.cmd-execution-lock", name = "disabled", havingValue = "true")
-  public LockService noLockLockService() {
-    LOGGER.info("Initializing dummy skip locking LockService with NoLock provider");
-    return new LockService(new NoLockLockProvider());
-  }
+    @Bean
+    @ConditionalOnProperty(prefix = "rdm.cmd-execution-lock", name = "disabled", havingValue = "true")
+    public LockService noLockLockService() {
+        LOGGER.info("Initializing dummy skip locking LockService with NoLock provider");
+        return new LockService(new NoLockLockProvider());
+    }
 
-  @Bean
-  @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
-  @ConditionalOnMissingBean(LockService.class)
-  public LockService lockServiceWithRedis(BmvRedisService rdmRedisService) {
-    LOGGER.info("Initializing LockService with Redis provider");
-    return new LockService(
-        new LockProviderWithRedis(rdmRedisService)
-    );
-  }
+    @Bean
+    @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
+    @ConditionalOnMissingBean(LockService.class)
+    public LockService lockServiceWithRedis(BmvRedisService rdmRedisService) {
+        LOGGER.info("Initializing LockService with Redis provider");
+        return new LockService(
+                new LockProviderWithRedis(rdmRedisService)
+        );
+    }
 
-  @Bean
-  @ConditionalOnMissingBean(LockService.class)
-  public LockService lockService() {
-    LOGGER.info("Initializing LockService with Local provider");
-    return new LockService(new LocalLockProvider());
-  }
+    @Bean
+    @ConditionalOnMissingBean(LockService.class)
+    public LockService lockService() {
+        LOGGER.info("Initializing LockService with Local provider");
+        return new LockService(new LocalLockProvider());
+    }
 
-  // ----------------------------------------------------------------------------
-  // Service discovery
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Service discovery
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  @ConditionalOnMissingBean(DiscoveryService.class)
-  public DiscoveryService simpleDiscoveryService(RdmServiceDiscoveryConfig rdmServiceDiscoveryConfig) {
-    return new SimpleDiscoveryService(rdmServiceDiscoveryConfig);
-  }
+    @Bean
+    @ConditionalOnMissingBean(DiscoveryService.class)
+    public DiscoveryService simpleDiscoveryService(RdmServiceDiscoveryConfig rdmServiceDiscoveryConfig) {
+        return new SimpleDiscoveryService(rdmServiceDiscoveryConfig);
+    }
 
-  @Bean
-  @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
-  public BmvServiceDiscoveryClientWithRedis rdmServiceDiscoveryClient(BmvRedisService rdmRedisService) {
-    return new BmvServiceDiscoveryClientWithRedis(BmvService.GATEWAY, rdmRedisService, 5);
-  }
+    @Bean
+    @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
+    public BmvServiceDiscoveryClientWithRedis rdmServiceDiscoveryClient(BmvRedisService rdmRedisService) {
+        return new BmvServiceDiscoveryClientWithRedis(BmvService.GATEWAY, rdmRedisService, 5);
+    }
 
-  // ----------------------------------------------------------------------------
-  // Load Balancer
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Load Balancer
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
-  public BmvLoadBalancer rdmLoadBalancer(BmvRedisService rdmRedisService) {
-    return new BmvLoadBalancerWithRedis(
-        rdmRedisService,
-        10
-    );
-  }
+    @Bean
+    @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
+    public BmvLoadBalancer rdmLoadBalancer(BmvRedisService rdmRedisService) {
+        return new BmvLoadBalancerWithRedis(
+                rdmRedisService,
+                10
+        );
+    }
 
-  // ----------------------------------------------------------------------------
-  // Caches
-  // ----------------------------------------------------------------------------
+    // ----------------------------------------------------------------------------
+    // Caches
+    // ----------------------------------------------------------------------------
 
-  @Bean
-  @Qualifier(value = "RedisCommandmentExecutionCache")
-  @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
-  public RedisCommandmentExecutionCache redisCommandmentExecutionCache(RedisConnectionManager connectionManager) {
-    return new RedisCommandmentExecutionCache(connectionManager);
-  }
+    @Bean
+    @Qualifier(value = "RedisCommandmentExecutionCache")
+    @ConditionalOnProperty(prefix = "bmv.redis", name = "enabled", havingValue = "true")
+    public RedisCommandmentExecutionCache redisCommandmentExecutionCache(RedisConnectionManager connectionManager) {
+        return new RedisCommandmentExecutionCache(connectionManager);
+    }
 
-  @Bean
-  @Qualifier(value = "GatewayConditionalCommandmentExecutionCache")
-  public GatewayConditionalCommandmentExecutionCache gatewayConditionalCommandmentExecutionCache(
-      CaffeineCommandmentExecutionCache caffeineCommandmentExecutionCache,
-      ApplicationContext applicationContext
-  ) {
-    return new GatewayConditionalCommandmentExecutionCache(
-        caffeineCommandmentExecutionCache,
-        applicationContext
-    );
-  }
+    @Bean
+    @Qualifier(value = "GatewayConditionalCommandmentExecutionCache")
+    public GatewayConditionalCommandmentExecutionCache gatewayConditionalCommandmentExecutionCache(
+            CaffeineCommandmentExecutionCache caffeineCommandmentExecutionCache,
+            ApplicationContext applicationContext
+    ) {
+        return new GatewayConditionalCommandmentExecutionCache(
+                caffeineCommandmentExecutionCache,
+                applicationContext
+        );
+    }
 
-  public Duration getCommandmentExecutionTimeout() {
-    return Duration.ofSeconds(commandmentExecutionTimeoutSec);
-  }
+    public Duration getCommandmentExecutionTimeout() {
+        return Duration.ofSeconds(commandmentExecutionTimeoutSec);
+    }
 
-  public String getErrorResponseBaseUri() {
-    return errorResponseBaseUri;
-  }
+    public String getErrorResponseBaseUri() {
+        return errorResponseBaseUri;
+    }
 }

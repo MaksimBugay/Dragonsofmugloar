@@ -32,7 +32,7 @@ public class PushcaUserAuthorizationExtractor implements UserAuthorizationExtrac
   public String extractUserIdFromToken(String jwtToken) {
     Map<String, Object> payloadMap = extractPayloadMapFromJwtToken(jwtToken);
 
-    return extractTrimbleId(payloadMap);
+    return extractPushcaId(payloadMap);
   }
 
   @Override
@@ -65,20 +65,20 @@ public class PushcaUserAuthorizationExtractor implements UserAuthorizationExtrac
 
     Map<String, Object> payloadMap = extractPayloadMapFromJwtToken(jwtToken);
 
-    String trimbleId = extractTrimbleId(payloadMap);
+    String PushcaId = extractPushcaId(payloadMap);
 
     Set<BmvRole> roles = extractRoles(payloadMap);
 
-    return new UserAuthorization(trimbleId, roles, null);
+    return new UserAuthorization(PushcaId, roles, null);
   }
 
-  private String extractTrimbleId(Map<String, Object> payloadMap) {
-    String trimbleId = (String) payloadMap.get(PUSHCA_ID_CLAIM_NAME);
-    if (trimbleId == null) {
+  private String extractPushcaId(Map<String, Object> payloadMap) {
+    String PushcaId = (String) payloadMap.get(PUSHCA_ID_CLAIM_NAME);
+    if (PushcaId == null) {
       throw new IllegalArgumentException("Missing 'sub' in JWT payload");
     }
 
-    return trimbleId;
+    return PushcaId;
   }
 
   private Set<BmvRole> extractRoles(Map<String, Object> payloadMap) {

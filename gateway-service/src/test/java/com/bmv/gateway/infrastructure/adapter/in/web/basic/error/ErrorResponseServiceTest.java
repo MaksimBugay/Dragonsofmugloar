@@ -168,9 +168,6 @@ class ErrorResponseServiceTest {
     assertNotNull(response.status());
   }
 
-  /**
-   * Helper method to validate ErrorResponse structure follows Trimble API standards
-   */
   private void assertValidErrorResponse(ErrorResponse response, HttpStatus expectedStatus, String expectedUriSuffix) {
     assertNotNull(response, "ErrorResponse should not be null");
     assertNotNull(response.type(), "Type field is required");

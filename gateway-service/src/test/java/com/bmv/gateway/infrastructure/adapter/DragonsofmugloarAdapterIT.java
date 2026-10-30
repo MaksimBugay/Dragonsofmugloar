@@ -1,6 +1,3 @@
-/**
- * Classification: Trimble Confidential.
- */
 package com.bmv.gateway.infrastructure.adapter;
 
 import java.time.Duration;

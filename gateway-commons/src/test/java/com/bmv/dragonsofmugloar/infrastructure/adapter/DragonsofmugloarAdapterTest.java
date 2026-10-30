@@ -1,6 +1,4 @@
-/**
- * Classification: Trimble Confidential.
- */
+
 package com.bmv.dragonsofmugloar.infrastructure.adapter;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

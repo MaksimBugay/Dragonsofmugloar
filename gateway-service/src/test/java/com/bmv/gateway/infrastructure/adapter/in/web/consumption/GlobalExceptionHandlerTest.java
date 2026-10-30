@@ -268,7 +268,7 @@ class GlobalExceptionHandlerTest {
   }
 
   @Test
-  void errorResponseFormat_ShouldMatchTrimbleApiStandards() {
+  void errorResponseFormat_ShouldMatchApiStandards() {
     // Given
     IllegalArgumentException exception = new IllegalArgumentException("Test validation error");
 
@@ -290,7 +290,6 @@ class GlobalExceptionHandlerTest {
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
 
-          // Verify Trimble API standards compliance
           assertNotNull(errorResponse.type(), "type field is required");
           assertTrue(errorResponse.type().startsWith("http://test.example.com/rdm/errors"), "type should be a URI reference");
           assertNotNull(errorResponse.title(), "title field is required");
