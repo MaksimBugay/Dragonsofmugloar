@@ -21,7 +21,7 @@ import org.junit.jupiter.api.Test;
 class BuildHiddenMessageAiToolTest {
 
   private static final BuildHiddenMessageRequest REQUEST =
-      new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of("Обсудим планы", "Когда?"), "... мы ....");
+      new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of("Обсудим планы", "Когда?"), List.of("Привет", "Как дела?"));
 
   @Test
   void roundTripsWithSuccessfulResponse() {
@@ -46,7 +46,7 @@ class BuildHiddenMessageAiToolTest {
   }
 
   @Test
-  void restoresRequestWithoutOptionalTemplateAndWithEmptyHistory() {
+  void restoresRequestWithoutProhibitedMessagesAndWithEmptyHistory() {
     var request = new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of(), null);
 
     var restored = deserializeAsRegisteredCommandment(new BuildHiddenMessageAiTool(request));

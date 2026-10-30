@@ -14,6 +14,6 @@ public record BuildHiddenMessageRequest(
         @NotBlank String topic,
         @NotBlank String style,
         @NotNull List<String> history,
-        String template
+        List<String> prohibitedMessages
 ) {
 }
