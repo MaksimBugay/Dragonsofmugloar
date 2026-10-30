@@ -1,6 +1,6 @@
 package com.bmv.gateway.infrastructure.adapter.in.web.rest;
 
-import com.bmv.dragonsofmugloar.application.commandment.command.PlayDragonsofmugloarGameCommand;
+import com.bmv.dragonsofmugloar.application.commandment.PlayDragonsofmugloarGameCommand;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;
 import com.bmv.gateway.infrastructure.adapter.in.GatewayCommandmentRouter;

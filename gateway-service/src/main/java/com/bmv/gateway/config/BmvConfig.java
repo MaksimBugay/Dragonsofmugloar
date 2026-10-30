@@ -24,8 +24,6 @@ import com.bmv.gateway.infrastructure.adapter.in.cache.GatewayConditionalCommand
 import com.bmv.gateway.infrastructure.adapter.in.cache.caffeine.CaffeineCommandmentExecutionCache;
 import com.bmv.gateway.infrastructure.adapter.in.cache.redis.RedisCommandmentExecutionCache;
 import com.bmv.gateway.infrastructure.adapter.out.http.SimpleDiscoveryService;
-import com.bmv.flow.foundry.infrastructure.adapter.out.ai.azure.gpt_5_4.AiAgentToolAzureGpt54OutboundPort;
-import com.bmv.flow.foundry.infrastructure.adapter.out.ai.azure.gpt_5_4.conf.AzureAiGpt54Config;
 import com.bmv.flow.foundry.infrastructure.adapter.out.http.DiscoveryService;
 import com.bmv.flow.foundry.redis.BmvRedisService;
 import com.bmv.flow.foundry.redis.RedisConnectionManager;
@@ -56,12 +54,6 @@ public class BmvConfig {
     @Value("${bmv.error.base-uri:https://secure.fileshare.ovh/how-tos}")
     private String errorResponseBaseUri;
 
-    @Value("${bmv.ai.cloud.azure.gpt-54.url:}")
-    private String azureAiCloudGpt54Url;
-
-    @Value("${bmv.ai.cloud.azure.gpt-54.access-key:}")
-    private String azureAiCloudGpt54AccessKey;
-
     @EventListener(ApplicationReadyEvent.class)
     public void initializeDefaultLocaleAndServiceContextSupplier(ApplicationReadyEvent applicationReadyEvent) {
         DefaultLocaleSupplier.resetDefaultLocale();
@@ -73,27 +65,6 @@ public class BmvConfig {
 
         ServiceContextSupplier.setServiceContext(
                 new BmvServiceContext(applicationReadyEvent.getApplicationContext())
-        );
-    }
-
-    // ----------------------------------------------------------------------------
-    // Ports
-    // ----------------------------------------------------------------------------
-
-    @Bean
-    public AiAgentToolAzureGpt54OutboundPort aiAgentToolAzureGpt54OutboundPort() {
-        return new AiAgentToolAzureGpt54OutboundPort(
-                new AzureAiGpt54Config() {
-                    @Override
-                    public String accessToken() {
-                        return azureAiCloudGpt54AccessKey;
-                    }
-
-                    @Override
-                    public String apiUrl() {
-                        return azureAiCloudGpt54Url;
-                    }
-                }
         );
     }
 

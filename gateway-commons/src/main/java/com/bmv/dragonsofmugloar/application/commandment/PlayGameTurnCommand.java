@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.application.commandment.command;
+package com.bmv.dragonsofmugloar.application.commandment;
 
 import static com.bmv.flow.foundry.application.core.GlobalCommandmentDefinitionRegistry.registerCommandmentDefinition;
 
@@ -13,7 +13,7 @@ import com.bmv.flow.foundry.application.core.Command;
 import com.bmv.flow.foundry.application.core.CommandmentWithMultipleStagesAndMutableBufferImpl;
 import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
 import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
-import com.bmv.dragonsofmugloar.application.commandment.command.definition.PlayGameTurnCommandDefinition;
+import com.bmv.dragonsofmugloar.application.commandment.definition.PlayGameTurnCommandDefinition;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameTurnRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameTurnResponse;
 import com.bmv.dragonsofmugloar.domain.model.Ad;

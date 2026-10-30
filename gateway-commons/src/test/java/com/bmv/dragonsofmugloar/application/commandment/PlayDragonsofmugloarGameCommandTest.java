@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.application.commandment.command;
+package com.bmv.dragonsofmugloar.application.commandment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
@@ -31,9 +31,9 @@ import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
 import com.bmv.flow.foundry.domain.model.auth.BmvRole;
 import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.dragonsofmugloar.application.service.PlayDragonsofmugloarGameService;
-import com.bmv.dragonsofmugloar.application.commandment.command.PlayDragonsofmugloarGameCommand.Buffer;
-import com.bmv.dragonsofmugloar.application.commandment.command.definition.PlayDragonsofmugloarGameCommandDefinition;
-import com.bmv.dragonsofmugloar.application.commandment.command.definition.PlayDragonsofmugloarGameCommandDefinition.State;
+import com.bmv.dragonsofmugloar.application.commandment.PlayDragonsofmugloarGameCommand.Buffer;
+import com.bmv.dragonsofmugloar.application.commandment.definition.PlayDragonsofmugloarGameCommandDefinition;
+import com.bmv.dragonsofmugloar.application.commandment.definition.PlayDragonsofmugloarGameCommandDefinition.State;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
 import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameTurnRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;
