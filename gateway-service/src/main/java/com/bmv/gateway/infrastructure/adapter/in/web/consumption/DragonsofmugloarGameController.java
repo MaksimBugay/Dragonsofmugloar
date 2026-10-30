@@ -1,8 +1,8 @@
 package com.bmv.gateway.infrastructure.adapter.in.web.consumption;
 
-import com.bmv.dragonsofmugloar.domain.api.commandment.PlayDragonsofmugloarGameCommand;
-import com.bmv.dragonsofmugloar.domain.api.request.PlayGameRequest;
-import com.bmv.dragonsofmugloar.domain.api.response.PlayGameResponse;
+import com.bmv.dragonsofmugloar.application.commandment.command.PlayDragonsofmugloarGameCommand;
+import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
+import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;
 import com.bmv.gateway.infrastructure.adapter.in.GatewayCommandmentRouter;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;

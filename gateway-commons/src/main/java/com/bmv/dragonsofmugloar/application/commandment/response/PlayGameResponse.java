@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.domain.api.response;
+package com.bmv.dragonsofmugloar.application.commandment.response;
 
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;

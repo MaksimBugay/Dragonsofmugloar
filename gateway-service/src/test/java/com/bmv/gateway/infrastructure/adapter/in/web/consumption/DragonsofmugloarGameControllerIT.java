@@ -17,8 +17,8 @@ import com.trimble.transportation.reference.data.management.application.service.
 import com.trimble.transportation.reference.data.management.application.service.gateway.AuthorizeWithPermissionCheckService;
 import com.trimble.transportation.reference.data.management.application.service.permission.CheckPermissionsService;
 import com.trimble.transportation.reference.data.management.application.service.permission.RdmCheckCommandmentPermissionsHelper;
-import com.bmv.dragonsofmugloar.domain.api.request.PlayGameRequest;
-import com.bmv.dragonsofmugloar.domain.api.response.PlayGameResponse;
+import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
+import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;
 import com.bmv.gateway.config.DragonsofmugloarGameConfig;
 import com.bmv.gateway.config.RdmCacheConfig;
 import com.bmv.gateway.config.RdmConfig;

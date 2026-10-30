@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.domain.api.commandment.definition;
+package com.bmv.dragonsofmugloar.application.commandment.command.definition;
 
 import static com.bmv.flow.foundry.domain.model.auth.BmvRole.BMV_CLUSTER_SERVICE;
 
@@ -22,10 +22,10 @@ import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
 import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.dragonsofmugloar.application.service.ChooseGameActionService;
 import com.bmv.dragonsofmugloar.application.service.PlayGameTurnService;
-import com.bmv.dragonsofmugloar.domain.api.commandment.PlayGameTurnCommand;
-import com.bmv.dragonsofmugloar.domain.api.commandment.PlayGameTurnCommand.Buffer;
-import com.bmv.dragonsofmugloar.domain.api.request.PlayGameTurnRequest;
-import com.bmv.dragonsofmugloar.domain.api.response.PlayGameTurnResponse;
+import com.bmv.dragonsofmugloar.application.commandment.command.PlayGameTurnCommand;
+import com.bmv.dragonsofmugloar.application.commandment.command.PlayGameTurnCommand.Buffer;
+import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameTurnRequest;
+import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameTurnResponse;
 
 public class PlayGameTurnCommandDefinition extends CommandmentWithMultipleStagesAndMutableBufferDefinitionBase<
     BmvServiceAuthorization, PlayGameTurnRequest, PlayGameTurnResponse, PlayGameTurnCommand, Buffer> {

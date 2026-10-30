@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.domain.api.commandment;
+package com.bmv.dragonsofmugloar.application.commandment.command;
 
 import static com.bmv.flow.foundry.application.core.GlobalCommandmentDefinitionRegistry.registerCommandmentDefinition;
 
@@ -13,9 +13,9 @@ import com.bmv.flow.foundry.application.core.CommandmentWithMultipleStagesAndMut
 import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
 import com.bmv.flow.foundry.application.core.PublicCommandment;
 import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
-import com.bmv.dragonsofmugloar.domain.api.commandment.definition.PlayDragonsofmugloarGameCommandDefinition;
-import com.bmv.dragonsofmugloar.domain.api.request.PlayGameRequest;
-import com.bmv.dragonsofmugloar.domain.api.response.PlayGameResponse;
+import com.bmv.dragonsofmugloar.application.commandment.command.definition.PlayDragonsofmugloarGameCommandDefinition;
+import com.bmv.dragonsofmugloar.application.commandment.request.PlayGameRequest;
+import com.bmv.dragonsofmugloar.application.commandment.response.PlayGameResponse;
 import com.bmv.dragonsofmugloar.domain.model.GameConfig;
 import com.bmv.dragonsofmugloar.domain.model.GameState;
 

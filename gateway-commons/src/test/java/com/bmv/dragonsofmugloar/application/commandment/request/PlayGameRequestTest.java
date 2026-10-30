@@ -1,4 +1,4 @@
-package com.bmv.dragonsofmugloar.domain.api.request;
+package com.bmv.dragonsofmugloar.application.commandment.request;
 
 import static com.bmv.dragonsofmugloar.domain.model.AdProbability.SURE_THING;
 import static org.junit.jupiter.api.Assertions.assertEquals;
