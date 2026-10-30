@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import com.bmv.flow.foundry.application.service.authorization.AuthorizationService;
 import com.bmv.flow.foundry.application.service.authorization.UserAuthorizationProvider;
 import com.bmv.flow.foundry.application.service.authorization.UserIdentityExtractor;
-import com.bmv.authorization.application.service.TrimbleUserAuthorizationExtractor;
+import com.bmv.authorization.application.service.PushcaUserAuthorizationExtractor;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -19,13 +19,13 @@ public class AuthBmvConfig {
 
     @Bean
     public UserIdentityExtractor userIdentityExtractor() {
-        return TrimbleUserAuthorizationExtractor.createUserIdentityExtractor();
+        return PushcaUserAuthorizationExtractor.createUserIdentityExtractor();
     }
 
     @Bean
     @ConditionalOnProperty(prefix = "rdm.authz-integration", name = "enabled", havingValue = "false", matchIfMissing = true)
     public UserAuthorizationProvider defaultUserAuthorizationProvider() {
-        return new TrimbleUserAuthorizationExtractor();
+        return new PushcaUserAuthorizationExtractor();
     }
 
     @Bean

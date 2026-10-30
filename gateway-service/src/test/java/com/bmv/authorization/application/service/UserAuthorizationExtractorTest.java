@@ -19,7 +19,7 @@ import reactor.test.StepVerifier;
 class UserAuthorizationExtractorTest {
 
   @InjectMocks
-  private TrimbleUserAuthorizationExtractor userAuthorizationExtractor;
+  private PushcaUserAuthorizationExtractor userAuthorizationExtractor;
 
   @Test
   void testExtract_ValidToken() {

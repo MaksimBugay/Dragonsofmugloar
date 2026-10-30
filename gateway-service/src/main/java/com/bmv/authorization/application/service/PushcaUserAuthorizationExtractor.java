@@ -19,13 +19,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import reactor.core.publisher.Mono;
 
-public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtractor {
+public class PushcaUserAuthorizationExtractor implements UserAuthorizationExtractor {
 
-  public static final String TRIMBLE_ID_CLAIM_NAME = "sub";
+  public static final String PUSHCA_ID_CLAIM_NAME = "sub";
   public static final String ROLES_CLAIM_NAME = "roles";
   public static final String JWT_TOKEN_PARTS_DELIMITER = "\\.";
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(TrimbleUserAuthorizationExtractor.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(PushcaUserAuthorizationExtractor.class);
   private final StringToBytesBase64BiConverter stringToBytesBase64BiConverter = new StringToBytesBase64BiConverter();
 
   @Override
@@ -73,7 +73,7 @@ public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtra
   }
 
   private String extractTrimbleId(Map<String, Object> payloadMap) {
-    String trimbleId = (String) payloadMap.get(TRIMBLE_ID_CLAIM_NAME);
+    String trimbleId = (String) payloadMap.get(PUSHCA_ID_CLAIM_NAME);
     if (trimbleId == null) {
       throw new IllegalArgumentException("Missing 'sub' in JWT payload");
     }
@@ -100,14 +100,14 @@ public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtra
   }
 
   public static UserIdentityExtractor createUserIdentityExtractor() {
-    TrimbleUserAuthorizationExtractor trimbleUserAuthorizationExtractor = new TrimbleUserAuthorizationExtractor();
+    PushcaUserAuthorizationExtractor pushcaUserAuthorizationExtractor = new PushcaUserAuthorizationExtractor();
 
     //noinspection Convert2Lambda
     return new UserIdentityExtractor() {
 
       @Override
       public String extractUserId(@NotNull AuthorizationQuery commandment) {
-        return trimbleUserAuthorizationExtractor.extractUserId(commandment);
+        return pushcaUserAuthorizationExtractor.extractUserId(commandment);
       }
     };
   }
