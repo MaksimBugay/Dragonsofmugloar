@@ -1,30 +1,27 @@
 package com.bmv.gateway.infrastructure.adapter.in;
 
-import static com.trimble.transportation.reference.data.management.serialization.json.JsonUtility.toJson;
+
 
 import java.nio.charset.StandardCharsets;
-import java.util.List;
 import java.util.function.Supplier;
 
-import com.trimble.transportation.reference.data.management.application.exception.CommandmentInvocationException;
-import com.trimble.transportation.reference.data.management.application.lock.LockService;
-import com.trimble.transportation.reference.data.management.application.port.CommandmentDispatcher;
-import com.trimble.transportation.reference.data.management.application.port.cache.CommandmentExecutionCache;
-import com.trimble.transportation.reference.data.management.application.port.out.InternalApiOutboundPort;
-import com.trimble.transportation.reference.data.management.application.port.out.async.AsyncCommandmentExecutionAdapter;
-import com.trimble.transportation.reference.data.management.application.service.authorization.AuthorizationService;
-import com.trimble.transportation.reference.data.management.application.service.permission.CheckPermissionsService;
-import com.trimble.transportation.reference.data.management.domain.model.api.Commandment;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithDefinition;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.RdmError;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.WithErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.api.exception.RdmExceptionBase;
-import com.trimble.transportation.reference.data.management.domain.model.auth.ClientAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.domain.model.api.exception.CommandmentInvocationException;
+import com.bmv.flow.foundry.application.lock.LockService;
+import com.bmv.flow.foundry.application.port.cache.CommandmentExecutionCache;
+import com.bmv.flow.foundry.application.port.out.InternalApiOutboundPort;
+import com.bmv.flow.foundry.application.port.out.async.AsyncCommandmentExecutionAdapter;
+import com.bmv.flow.foundry.application.service.authorization.AuthorizationService;
+import com.bmv.flow.foundry.application.service.permission.CheckPermissionsService;
+import com.bmv.flow.foundry.application.core.Commandment;
+import com.bmv.flow.foundry.application.core.CommandmentWithDefinition;
+import com.bmv.flow.foundry.domain.model.api.error.BmvError;
+import com.bmv.flow.foundry.domain.model.api.error.WithErrorDetails;
+import com.bmv.flow.foundry.domain.model.api.exception.BmvExceptionBase;
+import com.bmv.flow.foundry.domain.model.auth.ClientAuthorization;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.gateway.config.RdmCacheConfig;
 import com.bmv.gateway.config.RdmConfig;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.in.CommandmentRouter;
-import com.trimble.transportation.reference.data.management.util.LoggingHelper;
+import com.bmv.flow.foundry.infrastructure.adapter.in.CommandmentRouter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -43,7 +40,8 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
   private final CheckPermissionsService checkPermissionsService;
 
   public GatewayCommandmentRouter(
-      List<CommandmentDispatcher> commandmentDispatchers,
+      AuthorizationService authorizationService,
+      CheckPermissionsService checkPermissionsService,
       @Qualifier(value = "GatewayCommandmentExecutor") InternalApiOutboundPort internalApiOutboundPort,
       AsyncCommandmentExecutionAdapter asyncCommandmentExecutionAdapter,
       @Qualifier(value = "GatewayConditionalCommandmentExecutionCache") CommandmentExecutionCache commandmentExecutionCache,
@@ -52,8 +50,7 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
       @Value("${rdm.cluster.secret}") String rdmClusterSecret,
       LockService lockService) {
     super(
-        RdmService.GATEWAY,
-        commandmentDispatchers,
+        BmvService.GATEWAY,
         internalApiOutboundPort,
         null,
         asyncCommandmentExecutionAdapter,
@@ -68,15 +65,8 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
         true
     );
 
-    this.authorizationService = this.commandmentDispatchers.stream()
-        .filter(AuthorizationService.class::isInstance)
-        .map(AuthorizationService.class::cast)
-        .findFirst().orElse(null);
-
-    this.checkPermissionsService = this.commandmentDispatchers.stream()
-        .filter(CheckPermissionsService.class::isInstance)
-        .map(CheckPermissionsService.class::cast)
-        .findFirst().orElse(null);
+    this.authorizationService = authorizationService;
+    this.checkPermissionsService = checkPermissionsService;
   }
 
   public <A extends ClientAuthorization, P, R extends WithErrorDetails, C extends Commandment<A, P, R>> Mono<R> execute(
@@ -85,7 +75,7 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
         .onErrorResume(
             throwable -> Mono.error(
                 new CommandmentInvocationException(
-                    RdmExceptionBase.buildCauseMessage(throwable, RdmService.GATEWAY),
+                    BmvExceptionBase.buildCauseMessage(throwable, BmvService.GATEWAY),
                     commandmentName
                 )
             )
@@ -99,16 +89,16 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
     return super.execute(commandment)
         .doOnNext(response -> {
               if (response.hasError()) {
-                if (response.errorDetails().code() == RdmError.FUTURE_RESPONSE_IS_NOT_READY.getCode()) {
+                if (response.errorDetails().code() == BmvError.FUTURE_RESPONSE_IS_NOT_READY.getCode()) {
                   LOGGER.debug(
                       "Error during commandment execution: commandment {}, error {}",
-                      toJson(LoggingHelper.stripSensitiveData(commandment)),
+                      commandment.getName(),
                       response.errorDetails()
                   );
                 } else {
                   LOGGER.error(
                       "Error during commandment execution: commandment {}, error {}",
-                      toJson(LoggingHelper.stripSensitiveData(commandment)),
+                      commandment.getName(),
                       response.errorDetails()
                   );
                 }
@@ -118,7 +108,7 @@ public class GatewayCommandmentRouter extends CommandmentRouter {
         .doOnError(
             throwable -> LOGGER.error(
                 "Unexpected Error during commandment execution: commandment {}",
-                toJson(LoggingHelper.stripSensitiveData(commandment)),
+                commandment.getName(),
                 throwable)
         );
   }

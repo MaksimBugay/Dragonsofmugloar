@@ -2,7 +2,7 @@ package com.bmv.gateway.config;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.trimble.transportation.reference.data.management.config.HttpWebClientConfig;
+import com.bmv.flow.foundry.config.HttpWebClientConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

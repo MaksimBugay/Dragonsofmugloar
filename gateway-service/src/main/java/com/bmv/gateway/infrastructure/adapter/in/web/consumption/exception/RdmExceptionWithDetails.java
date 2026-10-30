@@ -1,7 +1,7 @@
 package com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception;
 
-import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.trimble.transportation.reference.data.management.serialization.json.JsonUtility;
+import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
+import com.bmv.flow.foundry.serialization.json.JsonUtility;
 
 public class RdmExceptionWithDetails extends RuntimeException {
 

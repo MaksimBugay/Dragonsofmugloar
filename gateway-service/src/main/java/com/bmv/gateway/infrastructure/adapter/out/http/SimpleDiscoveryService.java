@@ -1,8 +1,8 @@
 package com.bmv.gateway.infrastructure.adapter.out.http;
 
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import com.bmv.gateway.config.RdmServiceDiscoveryConfig;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.out.http.DiscoveryService;
+import com.bmv.flow.foundry.infrastructure.adapter.out.http.DiscoveryService;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -15,7 +15,7 @@ public class SimpleDiscoveryService implements DiscoveryService {
   }
 
   @Override
-  public Mono<String> getAccessEndpointUrl(RdmService rdmService) {
+  public Mono<String> getAccessEndpointUrl(BmvService rdmService) {
 
     return Mono.just(
         rdmServiceDiscoveryConfig.getAccessEndpointUrl(rdmService)
@@ -23,7 +23,7 @@ public class SimpleDiscoveryService implements DiscoveryService {
   }
 
   @Override
-  public Flux<String> getInstanceAccessEndpointUrls(RdmService rdmService) {
+  public Flux<String> getInstanceAccessEndpointUrls(BmvService rdmService) {
     return getAccessEndpointUrl(rdmService)
         .flatMapMany(
             Flux::just

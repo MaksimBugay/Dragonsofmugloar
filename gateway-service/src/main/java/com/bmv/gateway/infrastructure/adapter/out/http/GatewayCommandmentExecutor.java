@@ -1,9 +1,9 @@
 package com.bmv.gateway.infrastructure.adapter.out.http;
 
-import com.trimble.transportation.reference.data.management.application.port.InternalApiPortMode;
+import com.bmv.flow.foundry.application.port.InternalApiPortMode;
 import com.bmv.gateway.config.GatewayHttpWebClientConfig;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.out.http.DiscoveryService;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.out.http.HttpBasedCommandmentExecutor;
+import com.bmv.flow.foundry.infrastructure.adapter.out.http.DiscoveryService;
+import com.bmv.flow.foundry.infrastructure.adapter.out.http.HttpBasedCommandmentExecutor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;

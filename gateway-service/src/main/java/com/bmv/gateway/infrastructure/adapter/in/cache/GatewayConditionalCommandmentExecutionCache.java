@@ -1,7 +1,6 @@
 package com.bmv.gateway.infrastructure.adapter.in.cache;
 
-import com.trimble.transportation.reference.data.management.application.port.cache.ConditionalCommandmentExecutionCache;
-import com.trimble.transportation.reference.data.management.domain.model.api.Query;
+import com.bmv.flow.foundry.application.port.cache.ConditionalCommandmentExecutionCache;
 import com.bmv.gateway.infrastructure.adapter.in.cache.caffeine.CaffeineCommandmentExecutionCache;
 import com.bmv.gateway.infrastructure.adapter.in.cache.redis.RedisCommandmentExecutionCache;
 import org.springframework.beans.factory.NoSuchBeanDefinitionException;
@@ -29,7 +28,7 @@ public class GatewayConditionalCommandmentExecutionCache extends ConditionalComm
         RedisCommandmentExecutionCache redisCommandmentExecutionCache = getRedisCommandmentExecutionCache(applicationContext);
         super(
                 typeDefinition -> {
-                    if (typeDefinition.getName().equals(Query.Name.GET_REF_RECORDS.name())) {
+                    if (typeDefinition.getName().equals("GET_REF_RECORDS")) {
                         return redisCommandmentExecutionCache;
                     }
                     return caffeineCommandmentExecutionCache;

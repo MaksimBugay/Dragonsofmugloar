@@ -1,6 +1,6 @@
 package com.bmv.gateway.application.lock;
 
-import com.trimble.transportation.reference.data.management.application.lock.LockProvider;
+import com.bmv.flow.foundry.application.lock.LockProvider;
 import jakarta.validation.constraints.NotBlank;
 import reactor.core.publisher.Mono;
 

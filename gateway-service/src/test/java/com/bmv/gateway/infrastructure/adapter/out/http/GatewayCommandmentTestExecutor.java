@@ -2,15 +2,15 @@ package com.bmv.gateway.infrastructure.adapter.out.http;
 
 import java.nio.charset.StandardCharsets;
 
-import com.trimble.transportation.reference.data.management.application.port.InternalApiPortMode;
-import com.trimble.transportation.reference.data.management.application.service.authorization.InternalAuthorizationBasicService;
-import com.trimble.transportation.reference.data.management.application.service.authorization.InternalAuthorizationService;
-import com.trimble.transportation.reference.data.management.domain.model.api.Commandment;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithDefinition;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.WithErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.auth.ClientAuthorization;
+import com.bmv.flow.foundry.application.port.InternalApiPortMode;
+import com.bmv.flow.foundry.application.service.authorization.InternalAuthorizationBasicService;
+import com.bmv.flow.foundry.application.service.authorization.InternalAuthorizationService;
+import com.bmv.flow.foundry.application.core.Commandment;
+import com.bmv.flow.foundry.application.core.CommandmentWithDefinition;
+import com.bmv.flow.foundry.domain.model.api.error.WithErrorDetails;
+import com.bmv.flow.foundry.domain.model.auth.ClientAuthorization;
 import com.bmv.gateway.config.GatewayHttpWebClientConfig;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.out.http.DiscoveryService;
+import com.bmv.flow.foundry.infrastructure.adapter.out.http.DiscoveryService;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;

@@ -2,7 +2,7 @@ package com.bmv.gateway.config;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,11 +27,11 @@ public class RdmServiceDiscoveryConfigTest {
 
   @Test
   void getAccessEndpointUrlTest() {
-    assertEquals("http://test-gateway.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(RdmService.GATEWAY));
-    assertEquals("http://test-datareader.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(RdmService.DATA_READER));
-    assertEquals("http://test-datamodifier.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(RdmService.DATA_MODIFIER));
-    assertEquals("http://ttc-rdm-sra-service:8080/internal-api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(RdmService.SRA));
-    assertEquals("http://test-translation.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(RdmService.TRANSLATION));
-    assertEquals("http://test-account.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(RdmService.ACCOUNT));
+    assertEquals("http://test-gateway.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(BmvService.GATEWAY));
+    assertEquals("http://test-datareader.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(BmvService.DATA_READER));
+    assertEquals("http://test-datamodifier.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(BmvService.DATA_MODIFIER));
+    assertEquals("http://ttc-rdm-sra-service:8080/internal-api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(BmvService.SRA));
+    assertEquals("http://test-translation.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(BmvService.TRANSLATION));
+    assertEquals("http://test-account.internal/api", rdmServiceDiscoveryConfig.getAccessEndpointUrl(BmvService.ACCOUNT));
   }
 }

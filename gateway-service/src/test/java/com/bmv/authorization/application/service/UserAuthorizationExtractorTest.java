@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.Base64;
 import java.util.Set;
 
-import com.trimble.transportation.reference.data.management.domain.model.api.exception.RdmUnauthorizedException;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole;
-import com.trimble.transportation.reference.data.management.domain.model.auth.UserAuthorization;
+import com.bmv.flow.foundry.domain.model.api.exception.BmvUnauthorizedException;
+import com.bmv.flow.foundry.domain.model.auth.BmvRole;
+import com.bmv.flow.foundry.domain.model.auth.UserAuthorization;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -24,7 +24,7 @@ class UserAuthorizationExtractorTest {
   @Test
   void testExtract_ValidToken() {
     String jwtToken =
-        "header." + Base64.getEncoder().encodeToString("{\"sub\":\"12345\",\"roles\":[\"RDM_DATA_READER_ROLE\"]}".getBytes()) +
+        "header." + Base64.getEncoder().encodeToString("{\"sub\":\"12345\",\"roles\":[\"BMV_DATA_READER_ROLE\"]}".getBytes()) +
             ".signature";
 
     Mono<UserAuthorization> result = userAuthorizationExtractor.authorizeByToken(jwtToken);
@@ -32,7 +32,7 @@ class UserAuthorizationExtractorTest {
     StepVerifier.create(result)
         .assertNext(response -> {
           assertEquals("12345", response.getId());
-          assertEquals(Set.of(RdmRole.DATA_READER), response.getRoles());
+          assertEquals(Set.of(BmvRole.DATA_READER), response.getRoles());
         })
         .verifyComplete();
   }
@@ -44,7 +44,7 @@ class UserAuthorizationExtractorTest {
     Mono<UserAuthorization> result = userAuthorizationExtractor.authorizeByToken(jwtToken);
 
     StepVerifier.create(result)
-        .expectError(RdmUnauthorizedException.class)
+        .expectError(BmvUnauthorizedException.class)
         .verify();
   }
 
@@ -55,7 +55,7 @@ class UserAuthorizationExtractorTest {
     Mono<UserAuthorization> result = userAuthorizationExtractor.authorizeByToken(jwtToken);
 
     StepVerifier.create(result)
-        .expectError(RdmUnauthorizedException.class)
+        .expectError(BmvUnauthorizedException.class)
         .verify();
   }
 
@@ -80,7 +80,7 @@ class UserAuthorizationExtractorTest {
     Mono<UserAuthorization> result = userAuthorizationExtractor.authorizeByToken("exceptionToken");
 
     StepVerifier.create(result)
-        .expectError(RdmUnauthorizedException.class)
+        .expectError(BmvUnauthorizedException.class)
         .verify();
   }
 }

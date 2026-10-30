@@ -37,8 +37,8 @@
         <logstash-logback-encoder.version>9.0</logstash-logback-encoder.version>
         <mockito.version>5.24.0</mockito.version>
         <springdoc-openapi-starter-webflux-ui.version>3.1.1</springdoc-openapi-starter-webflux-ui.version>
-        <ttc-rdm-common.version>3.3.35</ttc-rdm-common.version>
-        <rdm-data-redis-starter.version>1.7.0</rdm-data-redis-starter.version>
+        <bmv-flow-foundry.version>1.0.0</bmv-flow-foundry.version>
+        <bmv-data-redis-starter.version>1.0.0</bmv-data-redis-starter.version>
         <jetty.version>12.1.14</jetty.version>
         <handlebars.version>4.5.5</handlebars.version>
         <commons-compress.version>1.28.0</commons-compress.version>
@@ -127,9 +127,9 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.trimble.transportation.reference.data.management</groupId>
-            <artifactId>rdm-spring-boot-data-redis-starter</artifactId>
-            <version>${rdm-data-redis-starter.version}</version>
+            <groupId>com.bmv</groupId>
+            <artifactId>bmv-data-redis-starter</artifactId>
+            <version>${bmv-data-redis-starter.version}</version>
         </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
@@ -197,9 +197,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.trimble.transportation.reference.data.management</groupId>
-            <artifactId>ttc-rdm-common</artifactId>
-            <version>${ttc-rdm-common.version}</version>
+            <groupId>com.bmv</groupId>
+            <artifactId>flow-foundry</artifactId>
+            <version>${bmv-flow-foundry.version}</version>
             <classifier>tests</classifier>
             <scope>test</scope>
         </dependency>

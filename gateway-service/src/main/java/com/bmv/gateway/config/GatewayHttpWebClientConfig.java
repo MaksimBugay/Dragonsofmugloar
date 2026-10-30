@@ -1,6 +1,6 @@
 package com.bmv.gateway.config;
 
-import com.trimble.transportation.reference.data.management.config.HttpWebClientConfig;
+import com.bmv.flow.foundry.config.HttpWebClientConfig;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 

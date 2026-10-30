@@ -2,7 +2,7 @@ package com.bmv.gateway.infrastructure.adapter.in.web.consumption;
 
 import java.util.ArrayList;
 
-import com.trimble.transportation.reference.data.management.domain.model.api.error.RdmError;
+import com.bmv.flow.foundry.domain.model.api.error.BmvError;
 import com.bmv.dragonsofmugloar.application.commandment.response.ErrorResponse;
 import com.bmv.gateway.infrastructure.adapter.in.web.basic.error.ErrorResponseService;
 import com.bmv.gateway.infrastructure.adapter.in.web.consumption.exception.RdmExceptionWithDetails;
@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
   /**
    * Resolve HTTP status for RDM errors (existing logic preserved)
    */
-  public static HttpStatus resolveHttpStatus(RdmError error) {
+  public static HttpStatus resolveHttpStatus(BmvError error) {
     return switch (error) {
       case COMMANDMENT_NOT_FOUND, REF_RECORD_NOT_EXISTS, REF_TABLE_NOT_FOUND, USER_NOT_FOUND, DOMAIN_ENTITY_NOT_FOUND ->
           HttpStatus.NOT_FOUND;
@@ -46,7 +46,7 @@ public class GlobalExceptionHandler {
            REF_TABLE_REVISION_IN_ILLEGAL_SRA_STATE, REF_RECORD_DELETION_OR_DEPRECATION_VALIDATION_ERROR,
            NON_UNIQUE_REF_RECORD_ID_VALIDATION_ERROR, NON_UNIQUE_REF_RECORD_PRIMARY_KEY_VALIDATION_ERROR -> HttpStatus.BAD_REQUEST;
 
-      case RDM_SERVICE_UNAVAILABLE -> HttpStatus.SERVICE_UNAVAILABLE;
+      case BMV_SERVICE_UNAVAILABLE -> HttpStatus.SERVICE_UNAVAILABLE;
 
       case UNAUTHORIZED -> HttpStatus.UNAUTHORIZED;
 
@@ -132,7 +132,7 @@ public class GlobalExceptionHandler {
    */
   @ExceptionHandler(RdmExceptionWithDetails.class)
   public Mono<ResponseEntity<ErrorResponse>> handleRdmException(RdmExceptionWithDetails ex) {
-    RdmError error = RdmError.fromCode(ex.getErrorDetails().code());
+    BmvError error = BmvError.fromCode(ex.getErrorDetails().code());
     HttpStatus status = error != null ? resolveHttpStatus(error) : HttpStatus.INTERNAL_SERVER_ERROR;
 
     LOGGER.warn("RDM error: {} - {}", error != null ? error.name() : "UNKNOWN", ex.getErrorDetails().message());

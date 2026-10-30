@@ -6,14 +6,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-import com.trimble.transportation.reference.data.management.application.service.authorization.UserAuthorizationExtractor;
-import com.trimble.transportation.reference.data.management.application.service.authorization.UserIdentityExtractor;
-import com.trimble.transportation.reference.data.management.domain.model.api.commandment.internal.query.AuthorizationQuery;
-import com.trimble.transportation.reference.data.management.domain.model.api.exception.RdmUnauthorizedException;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmRole;
-import com.trimble.transportation.reference.data.management.domain.model.auth.UserAuthorization;
-import com.trimble.transportation.reference.data.management.serialization.json.JsonUtility;
-import com.trimble.transportation.reference.data.management.util.StringToBytesBase64BiConverter;
+import com.bmv.flow.foundry.application.service.authorization.UserAuthorizationExtractor;
+import com.bmv.flow.foundry.application.service.authorization.UserIdentityExtractor;
+import com.bmv.flow.foundry.application.commandment.internal.query.AuthorizationQuery;
+import com.bmv.flow.foundry.domain.model.api.exception.BmvUnauthorizedException;
+import com.bmv.flow.foundry.domain.model.auth.BmvRole;
+import com.bmv.flow.foundry.domain.model.auth.UserAuthorization;
+import com.bmv.flow.foundry.serialization.json.JsonUtility;
+import com.bmv.flow.foundry.util.StringToBytesBase64BiConverter;
 import jakarta.validation.constraints.NotNull;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,7 +43,7 @@ public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtra
             error -> LOGGER.debug("Failed retrieve user authorization attempt", error)
         )
         .onErrorMap(
-            _ -> new RdmUnauthorizedException()
+            _ -> new BmvUnauthorizedException()
         );
   }
 
@@ -67,7 +67,7 @@ public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtra
 
     String trimbleId = extractTrimbleId(payloadMap);
 
-    Set<RdmRole> roles = extractRoles(payloadMap);
+    Set<BmvRole> roles = extractRoles(payloadMap);
 
     return new UserAuthorization(trimbleId, roles, null);
   }
@@ -81,7 +81,7 @@ public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtra
     return trimbleId;
   }
 
-  private Set<RdmRole> extractRoles(Map<String, Object> payloadMap) {
+  private Set<BmvRole> extractRoles(Map<String, Object> payloadMap) {
     return Optional.ofNullable(payloadMap.get(ROLES_CLAIM_NAME))
         .map(claim -> JsonUtility.fromJsonToList(JsonUtility.toJson(claim), String.class))
         .map(roleList -> roleList.stream()
@@ -91,9 +91,9 @@ public class TrimbleUserAuthorizationExtractor implements UserAuthorizationExtra
         .orElse(Set.of());
   }
 
-  private RdmRole mapToRdmRole(String role) {
+  private BmvRole mapToRdmRole(String role) {
     try {
-      return RdmRole.fromExternalIdentifier(role);
+      return BmvRole.fromExternalIdentifier(role);
     } catch (IllegalArgumentException _) {
       return null;
     }

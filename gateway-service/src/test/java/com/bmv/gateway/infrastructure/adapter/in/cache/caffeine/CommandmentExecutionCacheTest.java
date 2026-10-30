@@ -4,7 +4,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.time.Duration;
-import java.time.Instant;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,32 +12,25 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.function.Supplier;
 
-import com.trimble.transportation.reference.data.management.application.port.cache.CommandmentExecutionCacheProvider;
-import com.trimble.transportation.reference.data.management.application.port.in.InternalApiInboundPort;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowStageCompletedListener;
-import com.trimble.transportation.reference.data.management.domain.cflow.CFlowState;
-import com.trimble.transportation.reference.data.management.domain.cflow.CommandmentStageExecutor;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentImpl;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentTypeData;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentTypeDefinition;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentTypeDefinitionBase;
-import com.trimble.transportation.reference.data.management.domain.model.api.CommandmentWithDefinition;
-import com.trimble.transportation.reference.data.management.domain.model.api.CustomRunTimeAttributes;
-import com.trimble.transportation.reference.data.management.domain.model.api.Query;
-import com.trimble.transportation.reference.data.management.domain.model.api.cache.CacheableCommandment;
-import com.trimble.transportation.reference.data.management.domain.model.api.commandment.internal.query.GetApplicationAuthorizationAttributesByIdQuery;
-import com.trimble.transportation.reference.data.management.domain.model.api.error.ErrorDetails;
-import com.trimble.transportation.reference.data.management.domain.model.api.request.IdRequest;
-import com.trimble.transportation.reference.data.management.domain.model.api.request.RefTableRevisionRequest;
-import com.trimble.transportation.reference.data.management.domain.model.api.response.ApplicationAuthorizationAttributesResponse;
-import com.trimble.transportation.reference.data.management.domain.model.api.response.YesNoResponse;
-import com.trimble.transportation.reference.data.management.domain.model.app.RdmApplication;
-import com.trimble.transportation.reference.data.management.domain.model.app.RdmApplicationAccessKey;
-import com.trimble.transportation.reference.data.management.domain.model.auth.ApiKeyBasedAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmServiceAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.cluster.RdmService;
-import com.trimble.transportation.reference.data.management.domain.model.core.RefTableRevision;
-import com.trimble.transportation.reference.data.management.util.RdmObjectUtils;
+import com.bmv.flow.foundry.application.port.cache.CommandmentExecutionCacheProvider;
+import com.bmv.flow.foundry.application.port.in.InternalApiInboundPort;
+import com.bmv.flow.foundry.application.core.cflow.CFlowStageCompletedListener;
+import com.bmv.flow.foundry.application.core.cflow.CFlowState;
+import com.bmv.flow.foundry.application.core.cflow.CommandmentStageExecutor;
+import com.bmv.flow.foundry.application.core.CommandmentImpl;
+import com.bmv.flow.foundry.application.core.CommandmentTypeData;
+import com.bmv.flow.foundry.application.core.CommandmentDefinition;
+import com.bmv.flow.foundry.application.core.CommandmentDefinitionBase;
+import com.bmv.flow.foundry.application.core.CommandmentWithDefinition;
+import com.bmv.flow.foundry.application.core.CustomRunTimeAttributes;
+import com.bmv.flow.foundry.application.core.Query;
+import com.bmv.flow.foundry.application.core.cache.CacheableCommandment;
+import com.bmv.flow.foundry.domain.model.api.error.ErrorDetails;
+import com.bmv.flow.foundry.application.commandment.response.YesNoResponse;
+import com.bmv.flow.foundry.domain.model.auth.BmvServiceAuthorization;
+import com.bmv.flow.foundry.domain.model.cluster.BmvService;
+import com.bmv.flow.foundry.domain.model.rdm.RefTableRevision;
+import com.bmv.flow.foundry.util.BmvObjectUtils;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import reactor.core.publisher.Flux;
@@ -51,22 +43,11 @@ class CommandmentExecutionCacheTest {
     void shouldCacheAndRetrieveCommandmentNullExecutionResult() {
         CommandmentExecutionCacheProvider<Object> cache = new CaffeineCommandmentExecutionCache(300, 10_000);
 
-        // Given: generate cacheable commandment
-        UUID id = RdmObjectUtils.generateUUID();
-        UUID authId = RdmObjectUtils.generateUUID();
-
-        GetApplicationAuthorizationAttributesByIdQuery query = GetApplicationAuthorizationAttributesByIdQuery.TYPE_DEFINITION.createInstance(
-                id,
-                null,
-                new IdRequest(authId),
-                null,
-                null,
-                0
-        );
+        var query = new CacheableTestQuery(new BmvServiceAuthorization(), new RefTableRevision(UUID.randomUUID(), 1));
 
         // When: Store and retrieve the value using reactive approach
         AtomicInteger executeNoCacheCounter = new AtomicInteger(0);
-        Supplier<Mono<ApplicationAuthorizationAttributesResponse>> executor = () -> {
+        Supplier<Mono<YesNoResponse>> executor = () -> {
             executeNoCacheCounter.incrementAndGet();
             return Mono.delay(Duration.ofMillis(100)).flatMap(ignored -> Mono.empty());
         };
@@ -94,44 +75,12 @@ class CommandmentExecutionCacheTest {
     void shouldCacheAndRetrieveCommandmentExecutionResult() {
         CommandmentExecutionCacheProvider<Object> cache = new CaffeineCommandmentExecutionCache(300, 10_000);
 
-        // Given: generate cacheable commandment
-        UUID id = RdmObjectUtils.generateUUID();
-        UUID authId = RdmObjectUtils.generateUUID();
-        String apiKeyHash = UUID.randomUUID().toString();
-        String apiKeySalt = UUID.randomUUID().toString();
-        RdmApplication application = new RdmApplication(
-                RdmObjectUtils.generateUUID(),
-                "TestApp",
-                "mbugai",
-                Instant.now().toEpochMilli(),
-                null,
-                Instant.now().toEpochMilli()
-        );
-        ApplicationAuthorizationAttributesResponse response = new ApplicationAuthorizationAttributesResponse(
-                null,
-                new RdmApplicationAccessKey(
-                        authId,
-                        application.getId(),
-                        new ApiKeyBasedAuthorization.ApiKeyPersistentAttributes(
-                                apiKeySalt,
-                                apiKeyHash
-                        ),
-                        "MBugai",
-                        Instant.now().toEpochMilli()
-                ), null
-        );
-        GetApplicationAuthorizationAttributesByIdQuery query = GetApplicationAuthorizationAttributesByIdQuery.TYPE_DEFINITION.createInstance(
-                id,
-                null,
-                new IdRequest(authId),
-                null,
-                null,
-                0
-        );
+        var query = new CacheableTestQuery(new BmvServiceAuthorization(), new RefTableRevision(UUID.randomUUID(), 1));
+        var response = YesNoResponse.yes();
 
         // When: Store and retrieve the value using reactive approach
         AtomicInteger executeNoCacheCounter = new AtomicInteger(0);
-        Supplier<Mono<ApplicationAuthorizationAttributesResponse>> executor = () -> {
+        Supplier<Mono<YesNoResponse>> executor = () -> {
             executeNoCacheCounter.incrementAndGet();
             return Mono.delay(Duration.ofMillis(100)).flatMap(ignored -> Mono.just(response));
         };
@@ -163,16 +112,16 @@ class CommandmentExecutionCacheTest {
         // given a cache
         CommandmentExecutionCacheProvider<Object> cache = new CaffeineCommandmentExecutionCache(300, 10_000);
         // given two ref table revisions for table A (same table id, different version)
-        UUID refTableIdA = RdmObjectUtils.generateUUID();
+        UUID refTableIdA = BmvObjectUtils.generateUUID();
         RefTableRevision refTableRevisionA1 = new RefTableRevision(refTableIdA, 1);
         RefTableRevision refTableRevisionA2 = new RefTableRevision(refTableIdA, 2);
         // given one ref table revision for table B (different table id)
-        UUID refTableIdB = RdmObjectUtils.generateUUID();
+        UUID refTableIdB = BmvObjectUtils.generateUUID();
         RefTableRevision refTableRevisionB1 = new RefTableRevision(refTableIdB, 1);
         // given cacheable queries that use {table id}::{version} as the cache key
-        CacheableTestQuery queryA1 = new CacheableTestQuery(new RdmServiceAuthorization(), new RefTableRevisionRequest(refTableRevisionA1));
-        CacheableTestQuery queryA2 = new CacheableTestQuery(new RdmServiceAuthorization(), new RefTableRevisionRequest(refTableRevisionA2));
-        CacheableTestQuery queryB1 = new CacheableTestQuery(new RdmServiceAuthorization(), new RefTableRevisionRequest(refTableRevisionB1));
+        CacheableTestQuery queryA1 = new CacheableTestQuery(new BmvServiceAuthorization(), refTableRevisionA1);
+        CacheableTestQuery queryA2 = new CacheableTestQuery(new BmvServiceAuthorization(), refTableRevisionA2);
+        CacheableTestQuery queryB1 = new CacheableTestQuery(new BmvServiceAuthorization(), refTableRevisionB1);
         // given helpers to execute the queries multiple times and verify how often they were actually executed
         CountingExecutor executorA1 = CountingExecutor.create();
         CountingExecutor executorA2 = CountingExecutor.create();
@@ -192,7 +141,7 @@ class CommandmentExecutionCacheTest {
         assertEquals(1, executorB1.executionCount().get(), "Query B1 should have been cached after first execution");
 
         // when evicting the cache using the full cache key of A1 as the prefix
-        evictCacheByPrefix(cache, queryA1.getCommandmentTypeDefinition(), queryA1.getCacheKey());
+        evictCacheByPrefix(cache, queryA1.getCommandmentDefinition(), queryA1.getCacheKey());
         // and executing each query 10 times again
         executeCacheTest(cacheTestA1);
         executeCacheTest(cacheTestA2);
@@ -204,7 +153,7 @@ class CommandmentExecutionCacheTest {
         assertEquals(1, executorB1.executionCount().get(), "Query B1 should not have been executed since it was not evicted from cache");
 
         // when evicting the cache using table A's id as the prefix
-        evictCacheByPrefix(cache, queryA1.getCommandmentTypeDefinition(), refTableIdA.toString());
+        evictCacheByPrefix(cache, queryA1.getCommandmentDefinition(), refTableIdA.toString());
         // and executing each query 10 times again
         executeCacheTest(cacheTestA1);
         executeCacheTest(cacheTestA2);
@@ -227,7 +176,7 @@ class CommandmentExecutionCacheTest {
     }
 
     private static void evictCacheByPrefix(CommandmentExecutionCacheProvider<Object> cache,
-                                           CommandmentTypeDefinition<?, ?, ?, ?> commandmentTypeDefinition, String prefix) {
+                                           CommandmentDefinition<?, ?, ?, ?> commandmentTypeDefinition, String prefix) {
         StepVerifier.create(cache.evictByPrefix(commandmentTypeDefinition, prefix))
                 .expectComplete()
                 .verify();
@@ -250,31 +199,31 @@ class CommandmentExecutionCacheTest {
     }
 
     public static class CacheableTestQuery
-            extends CommandmentImpl<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery>
-            implements Query<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery>,
-            CacheableCommandment<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery> {
+            extends CommandmentImpl<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery>
+            implements Query<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery>,
+            CacheableCommandment<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery> {
 
-        protected CacheableTestQuery(RdmServiceAuthorization authorization, RefTableRevisionRequest requestObject) {
+        protected CacheableTestQuery(BmvServiceAuthorization authorization, RefTableRevision requestObject) {
             super(authorization, requestObject);
         }
 
         @Override
-        public CommandmentTypeDefinition<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery> getCommandmentTypeDefinition() {
-            return new CommandmentTypeDefinitionBase<>(
+        public CommandmentDefinition<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery> getCommandmentDefinition() {
+            return new CommandmentDefinitionBase<>(
                     Set.of(),
                     new CommandmentTypeData<>(
                             "CacheableTestQuery",
                             CacheableTestQuery.class,
-                            RdmServiceAuthorization.class,
-                            RefTableRevisionRequest.class,
+                            BmvServiceAuthorization.class,
+                            RefTableRevision.class,
                             YesNoResponse.class,
                             State.class
                     ),
-                    RdmService.GATEWAY
+                    BmvService.GATEWAY
             ) {
                 @Override
-                public CommandmentWithDefinition<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery> createInstance(
-                        UUID id, RdmServiceAuthorization authorization, RefTableRevisionRequest requestObject, YesNoResponse responseObject,
+                public CommandmentWithDefinition<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery> createInstance(
+                        UUID id, BmvServiceAuthorization authorization, RefTableRevision requestObject, YesNoResponse responseObject,
                         CustomRunTimeAttributes customRunTimeAttributes,
                         int stageNumber) {
                     return null;
@@ -286,10 +235,10 @@ class CommandmentExecutionCacheTest {
                 }
 
                 @Override
-                public CFlowState<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery> createState(
+                public CFlowState<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery> createState(
                         CacheableTestQuery commandment,
                         Map<Object, Object> commandmentContext,
-                        List<CFlowStageCompletedListener<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery>> cFlowStageCompletedListeners,
+                        List<CFlowStageCompletedListener<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery>> cFlowStageCompletedListeners,
                         InternalApiInboundPort internalApiInboundPort,
                         CommandmentStageExecutor commandmentStageExecutor) {
                     return new State(commandment, commandmentContext, cFlowStageCompletedListeners, internalApiInboundPort, commandmentStageExecutor);
@@ -299,15 +248,15 @@ class CommandmentExecutionCacheTest {
 
         @Override
         public String getCacheKey() {
-            return getRequestObject().refTableId() + "::" + getRequestObject().version();
+            return getRequestObject().id() + "::" + getRequestObject().version();
         }
 
         public static class State
-                extends CFlowState<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery> {
+                extends CFlowState<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery> {
             public State(
-                    CommandmentWithDefinition<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery> commandment,
+                    CommandmentWithDefinition<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery> commandment,
                     Map<Object, Object> commandmentContext,
-                    List<CFlowStageCompletedListener<RdmServiceAuthorization, RefTableRevisionRequest, YesNoResponse, CacheableTestQuery>> cFlowStageCompletedListeners,
+                    List<CFlowStageCompletedListener<BmvServiceAuthorization, RefTableRevision, YesNoResponse, CacheableTestQuery>> cFlowStageCompletedListeners,
                     InternalApiInboundPort internalApiInboundPort,
                     CommandmentStageExecutor commandmentStageExecutor) {
                 super(commandment, commandmentContext, cFlowStageCompletedListeners, internalApiInboundPort, commandmentStageExecutor);

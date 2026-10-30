@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import com.github.benmanes.caffeine.cache.AsyncCache;
 import com.github.benmanes.caffeine.cache.Caffeine;
-import com.trimble.transportation.reference.data.management.application.port.cache.CommandmentExecutionCacheProvider;
+import com.bmv.flow.foundry.application.port.cache.CommandmentExecutionCacheProvider;
 import com.bmv.gateway.config.RdmCacheConfig;
 import jakarta.validation.constraints.NotNull;
 import org.slf4j.Logger;

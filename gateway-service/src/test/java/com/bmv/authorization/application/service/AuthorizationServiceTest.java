@@ -1,6 +1,6 @@
 package com.bmv.authorization.application.service;
 
-import static com.trimble.transportation.reference.data.management.util.RdmTestUtil.RDM_CLUSTER_SECRET;
+import static com.bmv.flow.foundry.util.BmvTestUtil.BMV_CLUSTER_SECRET;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -12,27 +12,26 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
-import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 import java.util.Set;
 import java.util.UUID;
 
-import com.trimble.transportation.reference.data.management.application.service.authorization.ApplicationAuthorizationProvider;
-import com.trimble.transportation.reference.data.management.application.service.authorization.AuthorizationService;
-import com.trimble.transportation.reference.data.management.application.service.authorization.InternalAuthorizationBasicService;
-import com.trimble.transportation.reference.data.management.application.service.authorization.UserAuthorizationProvider;
-import com.trimble.transportation.reference.data.management.domain.model.api.commandment.internal.query.AuthorizationQuery;
-import com.trimble.transportation.reference.data.management.domain.model.api.request.AuthorizeCommandmentRequest;
-import com.trimble.transportation.reference.data.management.domain.model.api.response.AuthorizationResponse;
-import com.trimble.transportation.reference.data.management.domain.model.auth.AnonymousAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.auth.ApplicationAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.auth.ApplicationOrUserAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.auth.ClientType;
-import com.trimble.transportation.reference.data.management.domain.model.auth.RdmBackendAuthorization;
-import com.trimble.transportation.reference.data.management.domain.model.auth.UserAuthorization;
-import com.trimble.transportation.reference.data.management.infrastructure.adapter.in.CommandmentRouter;
-import com.trimble.transportation.reference.data.management.util.RdmObjectUtils;
+import com.bmv.flow.foundry.application.service.authorization.AuthorizationProvider;
+import com.bmv.flow.foundry.application.service.authorization.AuthorizationService;
+import com.bmv.flow.foundry.application.service.authorization.InternalAuthorizationBasicService;
+import com.bmv.flow.foundry.application.service.authorization.UserAuthorizationProvider;
+import com.bmv.flow.foundry.application.commandment.internal.query.AuthorizationQuery;
+import com.bmv.flow.foundry.application.commandment.request.AuthorizeCommandmentRequest;
+import com.bmv.flow.foundry.application.commandment.response.AuthorizationResponse;
+import com.bmv.flow.foundry.domain.model.auth.AnonymousAuthorization;
+import com.bmv.flow.foundry.domain.model.auth.ApplicationAuthorization;
+import com.bmv.flow.foundry.domain.model.auth.ApplicationOrUserAuthorization;
+import com.bmv.flow.foundry.domain.model.auth.ClientType;
+import com.bmv.flow.foundry.domain.model.auth.BmvBackendAuthorization;
+import com.bmv.flow.foundry.domain.model.auth.UserAuthorization;
+import com.bmv.flow.foundry.infrastructure.adapter.in.CommandmentRouter;
+import com.bmv.flow.foundry.util.BmvObjectUtils;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
@@ -50,32 +49,30 @@ class AuthorizationServiceTest {
   private UserAuthorizationProvider userAuthorizationProvider;
 
   @Mock
-  private ApplicationAuthorizationProvider mockApplicationAuthorizationProvider;
+  private AuthorizationProvider mockApplicationAuthorizationProvider;
 
-  private static final UUID DATA_SYNC_AGENT_ID = RdmObjectUtils.generateUUID();
+  private static final UUID DATA_SYNC_AGENT_ID = BmvObjectUtils.generateUUID();
 
   private AuthorizationService authorizationService;
 
   private CommandmentRouter commandmentRouter;
 
   @BeforeEach
-  void setUp() throws Exception {
+  void setUp() {
     authorizationService = new AuthorizationService(
         userAuthorizationProvider,
+        mockApplicationAuthorizationProvider,
         Set.of(DATA_SYNC_AGENT_ID.toString())
     );
-    Field field = AuthorizationService.class.getDeclaredField("applicationAuthorizationProvider");
-    field.setAccessible(true);
-    field.set(authorizationService, mockApplicationAuthorizationProvider);
+
 
     commandmentRouter = Mockito.mock(CommandmentRouter.class);
     lenient().when(commandmentRouter.getInternalAuthorizationService())
-        .thenReturn(new InternalAuthorizationBasicService(30_000L, RDM_CLUSTER_SECRET));
+        .thenReturn(new InternalAuthorizationBasicService(30_000L, BMV_CLUSTER_SECRET));
   }
 
   private Mono<AuthorizationResponse> authorize(AuthorizationService service, AuthorizationQuery query) {
-    query.setInternalApiInboundPort(commandmentRouter);
-    return service.authorize(query);
+    return service.authorize(AuthorizationQuery.DEFINITION.createState(query, new java.util.HashMap<>(), java.util.List.of(), commandmentRouter, null));
   }
 
   private static byte[] buildJwtCredentials() {
@@ -91,7 +88,7 @@ class AuthorizationServiceTest {
 
   private static byte[] buildApiKeyCredentials() {
     String composedKey = Base64.getEncoder().encodeToString(
-        (RdmObjectUtils.generateUUID() + ":plainKey").getBytes(StandardCharsets.UTF_8));
+        (BmvObjectUtils.generateUUID() + ":plainKey").getBytes(StandardCharsets.UTF_8));
     return Base64.getEncoder().encode(composedKey.getBytes(StandardCharsets.UTF_8));
   }
 
@@ -130,7 +127,7 @@ class AuthorizationServiceTest {
           new AuthorizeCommandmentRequest(new ApplicationOrUserAuthorization(apiKeyCreds))
       );
 
-      UUID appId = RdmObjectUtils.generateUUID();
+      UUID appId = BmvObjectUtils.generateUUID();
       AuthorizationResponse appResponse = new AuthorizationResponse(
           new ApplicationAuthorization(appId), null
       );
@@ -190,7 +187,7 @@ class AuthorizationServiceTest {
     @Test
     void nullRequestObject_returnsAnonymousAuthorization() {
       AuthorizationQuery query = new AuthorizationQuery(
-          RdmObjectUtils.generateUUID(), null
+          BmvObjectUtils.generateUUID(), null
       );
 
       StepVerifier.create(authorize(authorizationService, query))
@@ -242,7 +239,7 @@ class AuthorizationServiceTest {
       StepVerifier.create(authorize(authorizationService, query))
           .assertNext(response -> {
             assertNotNull(response.authorization());
-            assertInstanceOf(RdmBackendAuthorization.class, response.authorization());
+            assertInstanceOf(BmvBackendAuthorization.class, response.authorization());
             assertEquals(DATA_SYNC_AGENT_ID.toString(), response.authorization().getId());
           })
           .verifyComplete();
@@ -251,7 +248,7 @@ class AuthorizationServiceTest {
     @Test
     void applicationNotInDataSyncAgentIds_returnsOriginalAuthorization() {
       byte[] apiKeyCreds = buildApiKeyCredentials();
-      UUID regularAppId = RdmObjectUtils.generateUUID();
+      UUID regularAppId = BmvObjectUtils.generateUUID();
       AuthorizationQuery query = new AuthorizationQuery(
           new AuthorizeCommandmentRequest(new ApplicationAuthorization(null, apiKeyCreds))
       );
@@ -296,10 +293,10 @@ class AuthorizationServiceTest {
 
     @Test
     void nullDataSyncAgentIds_doesNotThrow() {
-      AuthorizationService serviceWithNullIds = new AuthorizationService(userAuthorizationProvider, null);
+      AuthorizationService serviceWithNullIds = new AuthorizationService(userAuthorizationProvider, mockApplicationAuthorizationProvider, null);
 
       AuthorizationQuery query = new AuthorizationQuery(
-          RdmObjectUtils.generateUUID(), null
+          BmvObjectUtils.generateUUID(), null
       );
 
       StepVerifier.create(authorize(serviceWithNullIds, query))
