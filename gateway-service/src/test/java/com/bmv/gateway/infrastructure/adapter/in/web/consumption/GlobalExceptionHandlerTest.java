@@ -57,7 +57,7 @@ class GlobalExceptionHandlerTest {
     @SuppressWarnings("DataFlowIssue") WebExchangeBindException exception = new WebExchangeBindException(null, bindingResult);
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#validation-error",
+        "http://test.example.com/bmv/errors#validation-error",
         "Request validation failed",
         HttpStatus.BAD_REQUEST.value(),
         null
@@ -74,7 +74,7 @@ class GlobalExceptionHandlerTest {
           assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertEquals("http://test.example.com/rdm/errors#validation-error", errorResponse.type());
+          assertEquals("http://test.example.com/bmv/errors#validation-error", errorResponse.type());
           assertEquals("Request validation failed", errorResponse.title());
           assertEquals(400, errorResponse.status());
         })
@@ -93,7 +93,7 @@ class GlobalExceptionHandlerTest {
     ConstraintViolationException exception = new ConstraintViolationException(Set.of(violation));
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#constraint-violation",
+        "http://test.example.com/bmv/errors#constraint-violation",
         "Request parameter validation failed",
         400,
         null
@@ -110,7 +110,7 @@ class GlobalExceptionHandlerTest {
           assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertEquals("http://test.example.com/rdm/errors#constraint-violation", errorResponse.type());
+          assertEquals("http://test.example.com/bmv/errors#constraint-violation", errorResponse.type());
           assertEquals("Request parameter validation failed", errorResponse.title());
           assertEquals(400, errorResponse.status());
         })
@@ -123,7 +123,7 @@ class GlobalExceptionHandlerTest {
     ServerWebInputException exception = new ServerWebInputException("Invalid JSON format");
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#input-error",
+        "http://test.example.com/bmv/errors#input-error",
         "Invalid request format: Invalid JSON format",
         400,
         null
@@ -140,7 +140,7 @@ class GlobalExceptionHandlerTest {
           assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertEquals("http://test.example.com/rdm/errors#input-error", errorResponse.type());
+          assertEquals("http://test.example.com/bmv/errors#input-error", errorResponse.type());
           assertEquals("Invalid request format: Invalid JSON format", errorResponse.title());
           assertEquals(400, errorResponse.status());
         })
@@ -153,7 +153,7 @@ class GlobalExceptionHandlerTest {
     ResponseStatusException exception = new ResponseStatusException(HttpStatus.NOT_FOUND, "Resource not found");
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#http-404",
+        "http://test.example.com/bmv/errors#http-404",
         "Resource not found",
         404,
         null
@@ -170,7 +170,7 @@ class GlobalExceptionHandlerTest {
           assertEquals(HttpStatus.NOT_FOUND, response.getStatusCode());
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertEquals("http://test.example.com/rdm/errors#http-404", errorResponse.type());
+          assertEquals("http://test.example.com/bmv/errors#http-404", errorResponse.type());
           assertEquals("Resource not found", errorResponse.title());
           assertEquals(404, errorResponse.status());
         })
@@ -183,7 +183,7 @@ class GlobalExceptionHandlerTest {
     IllegalArgumentException exception = new IllegalArgumentException("Duplicate column names are not allowed");
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#invalid-argument",
+        "http://test.example.com/bmv/errors#invalid-argument",
         "Duplicate column names are not allowed",
         400,
         null
@@ -200,7 +200,7 @@ class GlobalExceptionHandlerTest {
           assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertEquals("http://test.example.com/rdm/errors#invalid-argument", errorResponse.type());
+          assertEquals("http://test.example.com/bmv/errors#invalid-argument", errorResponse.type());
           assertEquals("Duplicate column names are not allowed", errorResponse.title());
           assertEquals(400, errorResponse.status());
         })
@@ -214,7 +214,7 @@ class GlobalExceptionHandlerTest {
     BmvExceptionWithDetails exception = new BmvExceptionWithDetails(errorDetails);
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#rdm-unknown",
+        "http://test.example.com/bmv/errors#bmv-unknown",
         "Reference table not found",
         500,
         null
@@ -230,7 +230,7 @@ class GlobalExceptionHandlerTest {
         .assertNext(response -> {
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertTrue(errorResponse.type().startsWith("http://test.example.com/rdm/errors#rdm-"));
+          assertTrue(errorResponse.type().startsWith("http://test.example.com/bmv/errors#bmv-"));
           assertEquals("Reference table not found", errorResponse.title());
           assertTrue(errorResponse.status() >= 400);
         })
@@ -243,7 +243,7 @@ class GlobalExceptionHandlerTest {
     RuntimeException exception = new RuntimeException("Unexpected error");
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#internal-error",
+        "http://test.example.com/bmv/errors#internal-error",
         "An unexpected error occurred",
         500,
         null
@@ -260,7 +260,7 @@ class GlobalExceptionHandlerTest {
           assertEquals(HttpStatus.INTERNAL_SERVER_ERROR, response.getStatusCode());
           ErrorResponse errorResponse = response.getBody();
           assertNotNull(errorResponse);
-          assertEquals("http://test.example.com/rdm/errors#internal-error", errorResponse.type());
+          assertEquals("http://test.example.com/bmv/errors#internal-error", errorResponse.type());
           assertEquals("An unexpected error occurred", errorResponse.title());
           assertEquals(500, errorResponse.status());
         })
@@ -273,7 +273,7 @@ class GlobalExceptionHandlerTest {
     IllegalArgumentException exception = new IllegalArgumentException("Test validation error");
 
     ErrorResponse mockErrorResponse = new ErrorResponse(
-        "http://test.example.com/rdm/errors#invalid-argument",
+        "http://test.example.com/bmv/errors#invalid-argument",
         "Test validation error",
         400,
         null
@@ -291,7 +291,7 @@ class GlobalExceptionHandlerTest {
           assertNotNull(errorResponse);
 
           assertNotNull(errorResponse.type(), "type field is required");
-          assertTrue(errorResponse.type().startsWith("http://test.example.com/rdm/errors"), "type should be a URI reference");
+          assertTrue(errorResponse.type().startsWith("http://test.example.com/bmv/errors"), "type should be a URI reference");
           assertNotNull(errorResponse.title(), "title field is required");
           assertNotNull(errorResponse.status(), "status field is required");
           // errors field is optional and can be null

@@ -11,47 +11,47 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix = "bmv.service.internal-api.url")
 public class BmvServiceDiscoveryConfig {
 
-  private final Map<BmvService, String> internalApiUrlRegistry = new EnumMap<>(BmvService.class);
+    private final Map<BmvService, String> internalApiUrlRegistry = new EnumMap<>(BmvService.class);
 
-  public BmvServiceDiscoveryConfig() {
-    // Initialize with default values
-    internalApiUrlRegistry.put(BmvService.GATEWAY, "http://rdm-gateway/internal-api");
-    internalApiUrlRegistry.put(BmvService.DATA_READER, "http://rdm-datareader/internal-api");
-    internalApiUrlRegistry.put(BmvService.DATA_MODIFIER, "http://rdm-datamodifier/internal-api");
-    internalApiUrlRegistry.put(BmvService.SRA, "http://rdm-sra/internal-api");
-    internalApiUrlRegistry.put(BmvService.TRANSLATION, "http://rdm-translation/internal-api");
-    internalApiUrlRegistry.put(BmvService.ACCOUNT, "http://rdm-account/internal-api");
-  }
+    public BmvServiceDiscoveryConfig() {
+        // Initialize with default values
+        internalApiUrlRegistry.put(BmvService.GATEWAY, "http://gateway/internal-api");
+        internalApiUrlRegistry.put(BmvService.DATA_READER, "http://datareader/internal-api");
+        internalApiUrlRegistry.put(BmvService.DATA_MODIFIER, "http://datamodifier/internal-api");
+        internalApiUrlRegistry.put(BmvService.SRA, "http://sra/internal-api");
+        internalApiUrlRegistry.put(BmvService.TRANSLATION, "http://translation/internal-api");
+        internalApiUrlRegistry.put(BmvService.ACCOUNT, "http://account/internal-api");
+    }
 
-  public Map<BmvService, String> getInternalApiUrlRegistry() {
-    return internalApiUrlRegistry;
-  }
+    public Map<BmvService, String> getInternalApiUrlRegistry() {
+        return internalApiUrlRegistry;
+    }
 
-  public void setGATEWAY(String url) {
-    internalApiUrlRegistry.put(BmvService.GATEWAY, url);
-  }
+    public void setGATEWAY(String url) {
+        internalApiUrlRegistry.put(BmvService.GATEWAY, url);
+    }
 
-  public void setDATA_READER(String url) {
-    internalApiUrlRegistry.put(BmvService.DATA_READER, url);
-  }
+    public void setDATA_READER(String url) {
+        internalApiUrlRegistry.put(BmvService.DATA_READER, url);
+    }
 
-  public void setDATA_MODIFIER(String url) {
-    internalApiUrlRegistry.put(BmvService.DATA_MODIFIER, url);
-  }
+    public void setDATA_MODIFIER(String url) {
+        internalApiUrlRegistry.put(BmvService.DATA_MODIFIER, url);
+    }
 
-  public void setSRA(String url) {
-    internalApiUrlRegistry.put(BmvService.SRA, url);
-  }
+    public void setSRA(String url) {
+        internalApiUrlRegistry.put(BmvService.SRA, url);
+    }
 
-  public void setTRANSLATION(String url) {
-    internalApiUrlRegistry.put(BmvService.TRANSLATION, url);
-  }
+    public void setTRANSLATION(String url) {
+        internalApiUrlRegistry.put(BmvService.TRANSLATION, url);
+    }
 
-  public void setACCOUNT(String url) {
-    internalApiUrlRegistry.put(BmvService.ACCOUNT, url);
-  }
+    public void setACCOUNT(String url) {
+        internalApiUrlRegistry.put(BmvService.ACCOUNT, url);
+    }
 
-  public String getAccessEndpointUrl(BmvService bmvService) {
-    return internalApiUrlRegistry.get(bmvService);
-  }
+    public String getAccessEndpointUrl(BmvService bmvService) {
+        return internalApiUrlRegistry.get(bmvService);
+    }
 }

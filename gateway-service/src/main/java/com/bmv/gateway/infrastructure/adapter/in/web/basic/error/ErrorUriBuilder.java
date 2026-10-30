@@ -54,7 +54,7 @@ public class ErrorUriBuilder {
    * Builds URI for BMV errors
    */
   public String buildBmvErrorUri(String errorCode) {
-    return baseUri + "#rdm-" + errorCode.toLowerCase();
+    return baseUri + "#bmv-" + errorCode.toLowerCase();
   }
 
   /**

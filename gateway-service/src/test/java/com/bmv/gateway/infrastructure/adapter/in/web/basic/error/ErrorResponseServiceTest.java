@@ -35,8 +35,8 @@ class ErrorResponseServiceTest {
   @Test
   void createValidationErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildValidationErrorUri()).thenReturn("http://test.example.com/rdm/errors#validation-error");
-    when(errorUriBuilder.buildFieldValidationUri()).thenReturn("http://test.example.com/rdm/errors#field-validation");
+    when(errorUriBuilder.buildValidationErrorUri()).thenReturn("http://test.example.com/bmv/errors#validation-error");
+    when(errorUriBuilder.buildFieldValidationUri()).thenReturn("http://test.example.com/bmv/errors#field-validation");
 
     FieldError fieldError1 = new FieldError("testObject", "name", "must not be blank");
     FieldError fieldError2 = new FieldError("testObject", "description", "must not be null");
@@ -61,8 +61,8 @@ class ErrorResponseServiceTest {
   @Test
   void createConstraintViolationErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildConstraintViolationUri()).thenReturn("http://test.example.com/rdm/errors#constraint-violation");
-    when(errorUriBuilder.buildConstraintValidationUri()).thenReturn("http://test.example.com/rdm/errors#constraint-validation");
+    when(errorUriBuilder.buildConstraintViolationUri()).thenReturn("http://test.example.com/bmv/errors#constraint-violation");
+    when(errorUriBuilder.buildConstraintValidationUri()).thenReturn("http://test.example.com/bmv/errors#constraint-validation");
 
     ConstraintViolation<?> violation = mock(ConstraintViolation.class);
     Path propertyPath = mock(Path.class);
@@ -86,7 +86,7 @@ class ErrorResponseServiceTest {
   @Test
   void createInputErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildInputErrorUri()).thenReturn("http://test.example.com/rdm/errors#input-error");
+    when(errorUriBuilder.buildInputErrorUri()).thenReturn("http://test.example.com/bmv/errors#input-error");
     String reason = "Invalid JSON format";
 
     // When
@@ -100,7 +100,7 @@ class ErrorResponseServiceTest {
   @Test
   void createHttpStatusErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildHttpStatusUri(404)).thenReturn("http://test.example.com/rdm/errors#http-404");
+    when(errorUriBuilder.buildHttpStatusUri(404)).thenReturn("http://test.example.com/bmv/errors#http-404");
     HttpStatus status = HttpStatus.NOT_FOUND;
     String reason = "Resource not found";
 
@@ -115,7 +115,7 @@ class ErrorResponseServiceTest {
   @Test
   void createCustomValidationErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildInvalidArgumentUri()).thenReturn("http://test.example.com/rdm/errors#invalid-argument");
+    when(errorUriBuilder.buildInvalidArgumentUri()).thenReturn("http://test.example.com/bmv/errors#invalid-argument");
     String message = "Duplicate column names are not allowed";
 
     // When
@@ -130,7 +130,7 @@ class ErrorResponseServiceTest {
   void createBmvErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
     when(errorUriBuilder.buildBmvErrorUri("REF_TABLE_NOT_FOUND")).thenReturn(
-        "http://test.example.com/rdm/errors#rdm-ref_table_not_found");
+        "http://test.example.com/bmv/errors#rdm-ref_table_not_found");
     String errorCode = "REF_TABLE_NOT_FOUND";
     String message = "Reference table not found";
     HttpStatus status = HttpStatus.NOT_FOUND;
@@ -146,7 +146,7 @@ class ErrorResponseServiceTest {
   @Test
   void createInternalErrorResponse_ShouldReturnConsistentErrorFormat() {
     // Given
-    when(errorUriBuilder.buildInternalErrorUri()).thenReturn("http://test.example.com/rdm/errors#internal-error");
+    when(errorUriBuilder.buildInternalErrorUri()).thenReturn("http://test.example.com/bmv/errors#internal-error");
 
     // When
     ErrorResponse response = errorResponseService.createInternalErrorResponse();
@@ -158,12 +158,12 @@ class ErrorResponseServiceTest {
 
   @Test
   void errorResponseService_ShouldFollowSingleResponsibilityPrinciple() {
-    when(errorUriBuilder.buildInvalidArgumentUri()).thenReturn("http://test.example.com/rdm/errors#invalid-argument");
+    when(errorUriBuilder.buildInvalidArgumentUri()).thenReturn("http://test.example.com/bmv/errors#invalid-argument");
 
     ErrorResponse response = errorResponseService.createCustomValidationErrorResponse("Test message");
 
     assertNotNull(response);
-    assertTrue(response.type().startsWith("http://test.example.com/rdm/errors"));
+    assertTrue(response.type().startsWith("http://test.example.com/bmv/errors"));
     assertNotNull(response.title());
     assertNotNull(response.status());
   }
@@ -171,7 +171,7 @@ class ErrorResponseServiceTest {
   private void assertValidErrorResponse(ErrorResponse response, HttpStatus expectedStatus, String expectedUriSuffix) {
     assertNotNull(response, "ErrorResponse should not be null");
     assertNotNull(response.type(), "Type field is required");
-    assertTrue(response.type().startsWith("http://test.example.com/rdm/errors"), "Type should be a URI reference");
+    assertTrue(response.type().startsWith("http://test.example.com/bmv/errors"), "Type should be a URI reference");
     assertTrue(response.type().contains(expectedUriSuffix), "Type URI should contain expected suffix");
     assertNotNull(response.title(), "Title field is required");
     assertEquals(expectedStatus.value(), response.status(), "Status should match expected HTTP status");

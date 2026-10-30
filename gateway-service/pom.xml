@@ -42,8 +42,6 @@
         <jetty.version>12.1.14</jetty.version>
         <handlebars.version>4.5.5</handlebars.version>
         <commons-compress.version>1.28.0</commons-compress.version>
-        <!-- Align shared runtimes with ttc-rdm-common 3.3.35 and the Redis starter 1.7.0. -->
-        <jackson-bom.version>3.2.3</jackson-bom.version>
         <!-- springdoc and WireMock still use Jackson 2; keep its full family patched too. -->
         <jackson-2-bom.version>2.22.3</jackson-2-bom.version>
         <protobuf-java.version>4.36.2</protobuf-java.version>
@@ -64,14 +62,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Import first so Jackson 3 also manages its required Jackson annotations version. -->
-            <dependency>
-                <groupId>tools.jackson</groupId>
-                <artifactId>jackson-bom</artifactId>
-                <version>${jackson-bom.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
             <!-- Match the annotations API to springdoc OpenAPI's Swagger implementation. -->
             <dependency>
                 <groupId>io.swagger.core.v3</groupId>
