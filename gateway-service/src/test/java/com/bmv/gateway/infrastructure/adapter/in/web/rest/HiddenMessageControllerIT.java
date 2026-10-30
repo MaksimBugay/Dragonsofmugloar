@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.bmv.dragonsofmugloar.application.commandment.request.BuildHiddenMessageRequest;
@@ -48,6 +49,47 @@ class HiddenMessageControllerIT {
                 List.of("Как дела?")
         );
 
+        var response = generateHiddenMessage(request);
+
+        assertFalse(request.prohibitedMessages().contains(response.text()));
+    }
+
+    @Test
+    void buildsTenHiddenMessagesWithAccumulatedHistoryThroughTheRealOpenAiEndpoint() {
+        var history = new ArrayList<String>();
+
+        for (int i = 0; i < 10; i++) {
+            var request = new BuildHiddenMessageRequest(
+                    "Does every human deserve privacy?", "civil", List.copyOf(history), null);
+
+            var response = generateHiddenMessage(request);
+
+            System.out.println(response.text());
+            history.add(response.text());
+        }
+    }
+
+    @Test
+    void excludesProhibitedMessagesThroughTheRealOpenAiEndpoint() {
+        var prohibitedMessages = new ArrayList<>(List.of(
+                "Каждый человек заслуживает права на личную жизнь.",
+                "Да, каждый человек имеет право на приватность."));
+
+        for (int i = 0; i < 3; i++) {
+            // Keep the conversation unchanged so only the prohibited list grows.
+            var request = new BuildHiddenMessageRequest(
+                    "Does every human deserve privacy?", "civil", List.of(),
+                    List.copyOf(prohibitedMessages));
+
+            var response = generateHiddenMessage(request);
+
+            assertFalse(request.prohibitedMessages().contains(response.text()),
+                    () -> "Generated a prohibited message: " + response.text());
+            prohibitedMessages.add(response.text());
+        }
+    }
+
+    private HiddenMessageResponse generateHiddenMessage(BuildHiddenMessageRequest request) {
         HiddenMessageResponse response = client.post()
                 .uri("/generate-hidden-message")
                 .contentType(MediaType.APPLICATION_JSON)
@@ -62,5 +104,6 @@ class HiddenMessageControllerIT {
         assertNull(response.errorDetails(), () -> "Message generation failed: " + response.errorDetails());
         assertNotNull(response.text());
         assertFalse(response.text().isBlank());
+        return response;
     }
 }
