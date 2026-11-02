@@ -1,11 +1,13 @@
 package com.bmv.gateway.infrastructure.adapter.in.web.rest;
 
+import static com.bmv.dragonsofmugloar.domain.model.Locales.RU_LOCALE;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import com.bmv.dragonsofmugloar.application.commandment.request.BuildHiddenMessageRequest;
 import com.bmv.dragonsofmugloar.application.commandment.response.HiddenMessageResponse;
@@ -46,7 +48,8 @@ class HiddenMessageControllerIT {
                 "Планы на выходные",
                 "Дружелюбный и неформальный",
                 List.of("Привет! Что будешь делать в субботу?"),
-                List.of("Как дела?")
+                List.of("Как дела?"),
+                RU_LOCALE
         );
 
         var response = generateHiddenMessage(request);
@@ -60,7 +63,7 @@ class HiddenMessageControllerIT {
 
         for (int i = 0; i < 10; i++) {
             var request = new BuildHiddenMessageRequest(
-                    "Does every human deserve privacy?", "civil", List.copyOf(history), null);
+                    "Does every human deserve privacy?", "civil", List.copyOf(history), null, Locale.GERMAN);
 
             var response = generateHiddenMessage(request);
 
@@ -79,7 +82,7 @@ class HiddenMessageControllerIT {
             // Keep the conversation unchanged so only the prohibited list grows.
             var request = new BuildHiddenMessageRequest(
                     "Does every human deserve privacy?", "civil", List.of(),
-                    List.copyOf(prohibitedMessages));
+                    List.copyOf(prohibitedMessages), RU_LOCALE);
 
             var response = generateHiddenMessage(request);
 

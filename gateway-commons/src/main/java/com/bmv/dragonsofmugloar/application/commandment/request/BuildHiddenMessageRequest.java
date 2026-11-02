@@ -6,6 +6,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.List;
+import java.util.Locale;
 
 
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY, property = "type")
@@ -14,6 +15,7 @@ public record BuildHiddenMessageRequest(
         @NotBlank String topic,
         @NotBlank String style,
         @NotNull List<String> history,
-        List<String> prohibitedMessages
+        List<String> prohibitedMessages,
+        Locale locale
 ) {
 }

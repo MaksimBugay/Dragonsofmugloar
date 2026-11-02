@@ -1,5 +1,6 @@
 package com.bmv.dragonsofmugloar.application.commandment;
 
+import static com.bmv.dragonsofmugloar.domain.model.Locales.RU_LOCALE;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertInstanceOf;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -21,7 +22,7 @@ import org.junit.jupiter.api.Test;
 class BuildHiddenMessageAiToolTest {
 
   private static final BuildHiddenMessageRequest REQUEST =
-      new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of("Обсудим планы", "Когда?"), List.of("Привет", "Как дела?"));
+      new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of("Обсудим планы", "Когда?"), List.of("Привет", "Как дела?"), RU_LOCALE);
 
   @Test
   void roundTripsWithSuccessfulResponse() {
@@ -47,7 +48,7 @@ class BuildHiddenMessageAiToolTest {
 
   @Test
   void restoresRequestWithoutProhibitedMessagesAndWithEmptyHistory() {
-    var request = new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of(), null);
+    var request = new BuildHiddenMessageRequest("Работа", "Нейтральный", List.of(), null, RU_LOCALE);
 
     var restored = deserializeAsRegisteredCommandment(new BuildHiddenMessageAiTool(request));
 
